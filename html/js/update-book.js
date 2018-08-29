@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 isbn: form.isbn.value,
                 price: form.price.value,
                 description: form.description.value,
-                id: form.id.value
             };
 
             updateBook(book)

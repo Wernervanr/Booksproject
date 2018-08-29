@@ -8,10 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         alert('Are you sure you want to delete this book?');
 
-        const book = {
-            id: form.id.value
-        };
-
-        deleteBook(book);
+        deleteBook(bookId);
     });
 });

@@ -27,7 +27,6 @@
         <input type="text" id="price" name="price" class="form-control" value="<?php echo $viewModel['book']['price'] ?>" pattern="^\d{1,5}(\.\d{1,2})?$" required/>
     </div>
 
-        <input type="hidden" id="id" name="id" value="<?php echo $viewModel['book']['id'] ?>"/>
 
     <div class="form-description">
         <label for="description">Description</label>
@@ -46,6 +45,7 @@
 
 <div class="message-container"></div>
 
+<script>let bookId = <?php echo $viewModel['book']['id']; ?>;</script>
 <script src="js/update-book.js"></script>
 
 <!--end 28 augustus-->

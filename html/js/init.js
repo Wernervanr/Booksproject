@@ -13,12 +13,12 @@ const updateBook = (book) => {
     return $.post(env.api + '?route=update', JSON.stringify(book));
 };
 
-const deleteBook = (book) => {
-    return $.post(env.api + '?route=delete', JSON.stringify(book));
+const deleteBook = (bookId) => {
+    return $.post(env.api + '?route=delete&id=' + bookId);
 };
 
-const getOneBook = (book) => {
-    return $.get(env.api + '?route=book', JSON.stringify(book));
+const getOneBook = (bookId) => {
+    return $.get(env.api + '?route=book&id=' + bookId);
 };
 // end 28 augustus
 

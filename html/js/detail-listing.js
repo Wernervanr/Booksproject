@@ -1,35 +1,33 @@
 $(document).ready(() => {
 
-    getOneBook()
+    getOneBook(bookId)
         .done((data, text) => {
 
             let details = JSON.parse(data);
+
+            console.log(details);
 
             const authorCont = document.querySelector('.authorCont');
             const isbnCont = document.querySelector('.isbnCont');
             const priceCont = document.querySelector('.priceCont');
             const descriptionCont = document.querySelector('.descriptionCont');
 
-            details.map(function(book) {
-                const authorDiv = document.createElement('div');
-                authorDiv.textContent = book.author_id;
+            const authorDiv = document.createElement('div');
+            authorDiv.textContent = details.author_id;
 
-                const isbnDiv = document.createElement('div');
-                isbnDiv.textContent = book.isbn;
+            const isbnDiv = document.createElement('div');
+            isbnDiv.textContent = details.isbn;
 
-                const priceDiv = document.createElement('div');
-                priceDiv.textContent = book.price;
+            const priceDiv = document.createElement('div');
+            priceDiv.textContent = details.price;
 
-                const descriptionDiv = document.createElement('div');
-                descriptionDiv.textContent = book.title;
+            const descriptionDiv = document.createElement('div');
+            descriptionDiv.textContent = details.description;
 
-                authorCont.appendChild(authorDiv);
-                isbnCont.appendChild(isbnDiv);
-                priceCont.appendChild(priceDiv);
-                descriptionCont.appendChild(descriptionDiv);
-
-                getOneBook(book);
-            });
+            authorCont.appendChild(authorDiv);
+            isbnCont.appendChild(isbnDiv);
+            priceCont.appendChild(priceDiv);
+            descriptionCont.appendChild(descriptionDiv);
         })
         .fail((request, status, error) =>
         {

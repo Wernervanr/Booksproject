@@ -11,19 +11,15 @@
 <div class="row">
     <div class="col-md-6">
         <div class="authorCont"><b>Author</b>
-            <div><?php echo $viewModel['book']['author_id']; ?></div>
         </div>
 
         <div class="isbnCont"><b>ISBN</b>
-            <div><?php echo $viewModel['book']['isbn']; ?></div>
         </div>
 
         <div class="priceCont"><b>Price</b>
-            <div>&euro; <?php echo $viewModel['book']['price']; ?></div>
         </div>
 
         <div class="descriptionCont"><b>Description</b>
-            <div><?php echo $viewModel['book']['description']; ?></div>
         </div>
     </div>
 
@@ -62,5 +58,6 @@
         </div>
     </div>
 
+<script>let bookId = <?php echo $viewModel['book']['id']; ?>;</script>
 <script src="js/detail-listing.js"></script>
 <script src="js/delete-book.js"></script>
