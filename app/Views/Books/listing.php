@@ -12,7 +12,7 @@
                 <th class="d-none d-sm-table-cell">ISBN</th>
                 <th>Price</th>
                 <?php if($viewModel['profile']) { ?>
-                <th class="d-none d-sm-table-cell">Delete</th>
+                    <th class="d-none d-sm-table-cell">Delete</th>
                 <?php } ?>
             </tr>
         </thead>
@@ -29,3 +29,4 @@
 </div>
 
 <script src="js/listing.js"></script>
+<script src="js/delete-book.js"></script>
