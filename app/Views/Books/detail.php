@@ -4,8 +4,8 @@
 
 <div class="votes mb-2">
     <div class="vote-count" data-id="<?php echo $viewModel['book']['id'] ?>"><?php echo $viewModel['book']['votes'] ?></div>
-    <a class="up-vote" href="#"><i class="far fa-thumbs-up"></i></a>
-    <a class="down-vote" href="#"><i class="far fa-thumbs-down"></i></a>
+    <a class="up-vote" href=""><i class="far fa-thumbs-up"></i></a>
+    <a class="down-vote" href=""><i class="far fa-thumbs-down"></i></a>
 </div>
 
 <div class="row">
@@ -52,7 +52,6 @@
         <div class="p2 row">
             <button class="btn btn-info mr-1" onClick="window.location = '?route=edit&id=<?php echo $viewModel['book']['id'] ?>'">Edit book</button>
             <form id="deleteBtn">
-                <input type="hidden" id="id" name="id" value="<?php echo $viewModel['book']['id'] ?>"/>
                 <button class="btn btn-info" type="submit">Delete</button>
             </form>
         </div>

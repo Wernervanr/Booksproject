@@ -91,7 +91,7 @@ const appendSuccessMessage = (message, elementSelector) => {
 
 function upVote(id){
     $.ajax({
-        url: $.get(env.api + '?route=votes&id=' + id),
+        url: env.api + "?route=votes&id=" + id,
         type: "POST"
     }).done(function( data ) {
         if (data) {
@@ -104,7 +104,7 @@ function upVote(id){
 
 function downVote(id){
     $.ajax({
-        url: $.get(env.api + '?route=votes&id=' + id),
+        url: env.api + "?route=votes&id=" + id,
         type: "DELETE"
     }).done(function( data ) {
         if (data) {
@@ -117,7 +117,7 @@ function downVote(id){
 
 function getVotes(id){
     $.ajax({
-        url: $.get(env.api + '?route=votes&id=' + id),
+        url: env.api + "?route=votes&id=" + id,
         type: "GET"
     }).done(function( data ) {
         if (data) {

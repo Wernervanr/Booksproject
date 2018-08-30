@@ -5,8 +5,6 @@ $(document).ready(() => {
 
             let details = JSON.parse(data);
 
-            console.log(details);
-
             const authorCont = document.querySelector('.authorCont');
             const isbnCont = document.querySelector('.isbnCont');
             const priceCont = document.querySelector('.priceCont');
@@ -14,12 +12,15 @@ $(document).ready(() => {
 
             const authorDiv = document.createElement('div');
             authorDiv.textContent = details.author_id;
+            authorDiv.setAttribute('class', 'mb-2');
 
             const isbnDiv = document.createElement('div');
             isbnDiv.textContent = details.isbn;
+            isbnDiv.setAttribute('class', 'mb-2');
 
             const priceDiv = document.createElement('div');
             priceDiv.textContent = details.price;
+            priceDiv.setAttribute('class', 'mb-2');
 
             const descriptionDiv = document.createElement('div');
             descriptionDiv.textContent = details.description;
