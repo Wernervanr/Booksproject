@@ -94,3 +94,7 @@ button {
 .description-wrapper textarea {
     height: 400px;
 }
+
+.noDisplay {
+    display: none;
+}

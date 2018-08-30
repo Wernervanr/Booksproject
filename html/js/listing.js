@@ -91,7 +91,14 @@ $(document).ready(() => {
                 const tableRow = document.createElement('tr');
 
                 tableRow.onclick = () => {
-                    window.location = '?route=show&id=' + book.id;
+                    // Bij onclick moet de index container een class meekrijgen met display=none en de detailcontainer de class gewijzigd van display:
+                    // none naar wel laten zien
+
+                const listing = document.querySelector('.bookList');
+                const detail = document.querySelector('.detailBook');
+
+                listing.setAttribute('class', 'd-none');
+                detail.removeAttribute('class', 'd-none');
                 };
 
                 const titleCol = document.createElement('td');
