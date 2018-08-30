@@ -108,13 +108,29 @@ $(document).ready(() => {
                 const priceCol = document.createElement('td');
                 priceCol.textContent = '€ ' + book.price;
 
+                const deleteCol = document.createElement('td');
+                deleteCol.setAttribute('class','d-none d-sm-table-cell');
+
+                const delForm = document.createElement('form');
+                delForm.setAttribute('id', 'deleteBtn');
+
+                const delBtn = document.createElement('button');
+                delBtn.setAttribute('class', 'btn btn-info');
+                delBtn.setAttribute('type', 'submit');
+                delBtn.textContent = 'Delete';
+
+                delForm.appendChild(delBtn);
+                deleteCol.appendChild(delForm);
+
                 tableRow.appendChild(titleCol);
                 tableRow.appendChild(authorCol);
                 tableRow.appendChild(isbnCol);
                 tableRow.appendChild(priceCol);
+                tableRow.appendChild(deleteCol);
 
                 table.appendChild(tableRow);
             });
+
         })
         .fail((request, status, error) =>
         {
