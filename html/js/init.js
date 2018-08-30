@@ -8,6 +8,7 @@ const createBook = (book) => {
     return $.post(env.api + '?route=books', JSON.stringify(book));
 };
 
+
 // 28 augustus
 const updateBook = (bookId, book) => {
     return $.post(env.api + '?route=update&id=' + bookId, JSON.stringify(book));
@@ -21,8 +22,6 @@ const getOneBook = (bookId) => {
     return $.get(env.api + '?route=book&id=' + bookId);
 };
 // end 28 augustus
-
-
 
 // 28 augustus
 const fieldValidation = (event) => {
@@ -67,11 +66,6 @@ const getErrorMessageForElement = (element) => {
     }
 };
 // end 28 augustus
-
-
-
-
-
 
 
 // DOM helper functions

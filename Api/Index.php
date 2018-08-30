@@ -26,9 +26,6 @@ $method = $_SERVER['REQUEST_METHOD'];
         $bookController = new BookController();
         $bookController->createBook();
 
-
-
-
 // 28 augustus
     } else if ($route === 'update' && $method === 'POST') {
         $bookController = new BookController();
@@ -43,11 +40,6 @@ $method = $_SERVER['REQUEST_METHOD'];
         $bookController->getOneBook();
 
 // end 28 augustus
-
-
-
-
-
 
     } else if ($route === 'votes') {
         $bookVoteController = new BookVoteController();

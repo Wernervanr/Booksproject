@@ -17,8 +17,6 @@ class BookController extends BaseController
         $this->renderJson(200, $books);
     }
 
-
-
     //29 augustus
 
     public function getOneBook() {
@@ -33,9 +31,6 @@ class BookController extends BaseController
     }
 
     // end 29 augustus
-
-
-
 
     public function createBook() {
         $bookModel = new Book();

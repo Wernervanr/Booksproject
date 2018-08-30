@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateBook(bookId, book)
                 .done((data, text) => {
-                    appendSuccessMessage('Book succesfully editted!', '.message-container');
                     window.location = '?route=show&id=' + bookId;
                 })
                 .fail((request,status, error) => {

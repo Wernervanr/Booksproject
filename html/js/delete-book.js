@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Eventlistener aanmaken dat wanneer op de delete knop gedrukt wordt, de delete functie in de bookController geactiveerd wordt.
     form.addEventListener('submit', () => {
-
         alert('Are you sure you want to delete this book?');
-
         deleteBook(bookId);
     });
 });

@@ -1,54 +1,72 @@
-<div>
-    <h1><?php echo $viewModel['pageTitle'] ?></h1>
-    <h2 class="subtitle mt-2"><?php echo $viewModel['book']['title'] ?></h2>
-</div>
-
-<div class="votes mb-2">
-    <div class="vote-count" data-id="<?php echo $viewModel['book']['id'] ?>"><?php echo $viewModel['book']['votes'] ?></div>
-    <a class="up-vote" href=""><i class="far fa-thumbs-up"></i></a>
-    <a class="down-vote" href=""><i class="far fa-thumbs-down"></i></a>
+<div class="row">
+    <div class="col-12">
+        <h1><?php echo $viewModel['pageTitle'] ?></h1>
+        <h2 class="subtitle mt-2"><?php echo $viewModel['book']['title'] ?></h2>
+    </div>
 </div>
 
 <div class="row">
     <div class="col-md-6">
-        <div class="authorCont"><b>Author ID</b>
+        <div class="col1 votes mb-2">
+            <b>Likes</b>
+            <div class="vote-count" data-id="<?php echo $viewModel['book']['id'] ?>">
+                <a class="up-vote" href=""><i class="far fa-thumbs-up"></i></a>
+                <?php echo $viewModel['book']['votes'] ?> people like this book!
+                <a class="down-vote" href=""><i class="far fa-thumbs-down"></i></a>
+            </div>
         </div>
 
-        <div class="isbnCont"><b>ISBN</b>
+        <div class="authorCont">
+            <b>Author ID</b>
+            <!--Javascript generated content-->
         </div>
 
-        <div class="priceCont"><b>Price</b>
+        <div class="isbnCont">
+            <b>ISBN</b>
+            <!--Javascript generated content-->
         </div>
 
-        <div class="descriptionCont"><b>Description</b>
+        <div class="priceCont">
+            <b>Price</b>
+            <!--Javascript generated content-->
+        </div>
+
+        <div class="descriptionCont">
+            <b>Description</b>
+            <!--Javascript generated content-->
         </div>
     </div>
+
     <div class="col-md-6">
+        <?php if ($viewModel['profile']) { ?>
+            <form action="?route=upload-image&id=<?php echo $viewModel['book']['id'] ?>" enctype="multipart/form-data" method="post">
+                <div class="mb-1"><b>Select image file to upload</b></div>
+                <div class="mb-2"><input type="file" name="imageFile" id="imageFile" accept="image/*"/></div>
+                <div class="mb-2"><input class="btn btn-info" type="submit" value="Upload" name="submit" /></div>
+            </form>
+        <?php } ?>
 
         <?php if ($viewModel['imagePath']) { ?>
             <img class="mb-4" src="<?php echo $viewModel['imagePath']; ?>" width="100%" />
         <?php } ?>
-
-        <?php if ($viewModel['profile']) { ?>
-            <form action="?route=upload-image&id=<?php echo $viewModel['book']['id'] ?>" enctype="multipart/form-data" method="post">
-                <p><b>Select image file to upload</b></p>
-                <p><input type="file" name="imageFile" id="imageFile" accept="image/*"/></p>
-                <p><input class="btn btn-info" type="submit" value="Upload" name="submit" /></p>
-            </form>
-        <?php } ?>
     </div>
 </div>
 
-<div class="d-flex">
+<hr>
+
+<div class="mt-2 d-flex">
     <div class="p2 mr-auto">
         <button class="btn btn-info" onClick="window.location = 'index.php'">Back</button>
     </div>
-    <div class="p2 row">
-        <button class="btn btn-info mr-1" onClick="window.location = '?route=edit&id=<?php echo $viewModel['book']['id'] ?>'">Edit book</button>
-        <form id="deleteBtn">
-            <button class="btn btn-info" type="submit">Delete</button>
-        </form>
-    </div>
+
+    <?php if ($viewModel['profile']) { ?>
+        <div class="p2 row mr-1">
+            <button class="btn btn-info mr-1" onClick="window.location = '?route=edit&id=<?php echo $viewModel['book']['id'] ?>'">Edit book</button>
+            <form id="deleteBtn">
+                <button class="btn btn-info" type="submit">Delete</button>
+            </form>
+        </div>
+    <?php } ?>
 </div>
 
 <script>let bookId = <?php echo $viewModel['book']['id']; ?>;</script>

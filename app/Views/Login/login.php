@@ -19,6 +19,6 @@
 
     <br clear="all" />
 
-    <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Login</button>
+    <button type="submit" class="btn btn-info"><i class="fa fa-check"></i> Login</button>
 
 </form>

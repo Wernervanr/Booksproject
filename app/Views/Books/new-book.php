@@ -38,6 +38,8 @@
         </div>
     </div>
 
+    <hr>
+
     <div class="col">
         <div class="row justify-content-between">
             <div>
@@ -49,8 +51,6 @@
         </div>
     </div>
 </form>
-
-    <hr>
 
 <div class="message-container"></div>
 
