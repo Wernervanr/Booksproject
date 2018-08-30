@@ -24,6 +24,8 @@ $(document).ready(() => {
 
             const descriptionDiv = document.createElement('div');
             descriptionDiv.textContent = details.description;
+            descriptionDiv.setAttribute('class', 'mb-3');
+
 
             authorCont.appendChild(authorDiv);
             isbnCont.appendChild(isbnDiv);
