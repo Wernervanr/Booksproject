@@ -1,39 +1,39 @@
 $(document).ready(() => {
 
-    const getBooksXml = () => {
-        const request = new XMLHttpRequest();
-        request.onreadystatechange = () => {
-            if (request.readyState === 4) {
-                if (request.status >= 200 && request.status < 300) {
-                    let response = JSON.parse(request.response);
-                    console.log(response);
-                } else {
-                    console.log(request);
-                }
-            }
-        };
-        request.open('GET',env.api + '?route=books');
-        request.send();
-    };
-
-    const getBooksFetch = () => {
-        fetch(env.api + '?route=books', {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-                //'X-XSRF-TOKEN': getCookieValue('XSRF-TOKEN')
-            }
-        }).then(response => {
-            if (response.ok) {
-                response.json().then(data => {
-                    console.log(data);
-                });
-            }
-            else {
-                console.log(response);
-            }
-        });
-    };
+    // const getBooksXml = () => {
+    //     const request = new XMLHttpRequest();
+    //     request.onreadystatechange = () => {
+    //         if (request.readyState === 4) {
+    //             if (request.status >= 200 && request.status < 300) {
+    //                 let response = JSON.parse(request.response);
+    //                 console.log(response);
+    //             } else {
+    //                 console.log(request);
+    //             }
+    //         }
+    //     };
+    //     request.open('GET',env.api + '?route=books');
+    //     request.send();
+    // };
+    //
+    // const getBooksFetch = () => {
+    //     fetch(env.api + '?route=books', {
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'Accept': 'application/json'
+    //             //'X-XSRF-TOKEN': getCookieValue('XSRF-TOKEN')
+    //         }
+    //     }).then(response => {
+    //         if (response.ok) {
+    //             response.json().then(data => {
+    //                 console.log(data);
+    //             });
+    //         }
+    //         else {
+    //             console.log(response);
+    //         }
+    //     });
+    // };
 
 
 
