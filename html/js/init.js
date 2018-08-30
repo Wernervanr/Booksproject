@@ -91,7 +91,7 @@ const appendSuccessMessage = (message, elementSelector) => {
 
 function upVote(id){
     $.ajax({
-        url: "http://localhost:8080/booksoop/api/?route=votes&id=" + id,
+        url: $.get(env.api + '?route=votes&id=' + id),
         type: "POST"
     }).done(function( data ) {
         if (data) {
@@ -104,7 +104,7 @@ function upVote(id){
 
 function downVote(id){
     $.ajax({
-        url: "http://localhost:8080/booksoop/api/?route=votes&id=" + id,
+        url: $.get(env.api + '?route=votes&id=' + id),
         type: "DELETE"
     }).done(function( data ) {
         if (data) {
@@ -117,7 +117,7 @@ function downVote(id){
 
 function getVotes(id){
     $.ajax({
-        url: "http://localhost:8080/booksoop/api/?route=votes&id=" + id,
+        url: $.get(env.api + '?route=votes&id=' + id),
         type: "GET"
     }).done(function( data ) {
         if (data) {
@@ -131,7 +131,7 @@ function getVotes(id){
 $( document ).ready(function() {
     voteElement = $(".votes");
     if (voteElement){
-        bookId = $(voteElement).find(".vote-count").data("id");
+        let bookId = $(voteElement).find(".vote-count").data("id");
         if (bookId>0){
             setInterval("getVotes(" + bookId + ")", 1000);
             $(voteElement).find(".up-vote").click(function (){

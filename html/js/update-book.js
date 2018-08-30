@@ -30,9 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateBook(bookId, book)
                 .done((data, text) => {
-                    form.reset();
                     appendSuccessMessage('Book succesfully editted!', '.message-container');
-                    window.location = '?route=show&id=' + JSON.parse(data);
+                    window.location = '?route=show&id=' + bookId;
                 })
                 .fail((request,status, error) => {
                     console.log(request);
