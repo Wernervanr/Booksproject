@@ -3,7 +3,7 @@
     </div>
 </div>
 
-<footer class="footer">
+<footer class="footer pb-4 pt-4">
     &copy Copyright The Bookstore
 </footer>
 

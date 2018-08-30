@@ -1,7 +1,7 @@
 <div class="row">
-    <div class="col-12">
+    <div class="titleCont col-12">
         <h1><?php echo $viewModel['pageTitle'] ?></h1>
-        <h2 class="subtitle mt-2"><?php echo $viewModel['book']['title'] ?></h2>
+        <!--Javascript generated content (h2)-->
     </div>
 </div>
 
@@ -18,22 +18,22 @@
 
         <div class="authorCont">
             <b>Author ID</b>
-            <!--Javascript generated content-->
+            <!--Javascript generated content (div)-->
         </div>
 
         <div class="isbnCont">
             <b>ISBN</b>
-            <!--Javascript generated content-->
+            <!--Javascript generated content (div)-->
         </div>
 
         <div class="priceCont">
             <b>Price</b>
-            <!--Javascript generated content-->
+            <!--Javascript generated content (div)-->
         </div>
 
         <div class="descriptionCont">
             <b>Description</b>
-            <!--Javascript generated content-->
+            <!--Javascript generated content (div)-->
         </div>
     </div>
 

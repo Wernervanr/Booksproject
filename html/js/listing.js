@@ -106,7 +106,7 @@ $(document).ready(() => {
                 isbnCol.setAttribute('class','d-none d-sm-table-cell');
 
                 const priceCol = document.createElement('td');
-                priceCol.textContent = book.price;
+                priceCol.textContent = '€ ' + book.price;
 
                 tableRow.appendChild(titleCol);
                 tableRow.appendChild(authorCol);
