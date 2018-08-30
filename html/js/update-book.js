@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 description: form.description.value,
             };
 
-            updateBook(book)
+            updateBook(bookId, book)
                 .done((data, text) => {
                     form.reset();
                     appendSuccessMessage('Book succesfully editted!', '.message-container');

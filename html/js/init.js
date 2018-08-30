@@ -9,8 +9,8 @@ const createBook = (book) => {
 };
 
 // 28 augustus
-const updateBook = (book) => {
-    return $.post(env.api + '?route=update', JSON.stringify(book));
+const updateBook = (bookId, book) => {
+    return $.post(env.api + '?route=update&id=' + bookId, JSON.stringify(book));
 };
 
 const deleteBook = (bookId) => {
