@@ -10,7 +10,7 @@
 
 <div class="row">
     <div class="col-md-6">
-        <div class="authorCont"><b>Author</b>
+        <div class="authorCont"><b>Author ID</b>
         </div>
 
         <div class="isbnCont"><b>ISBN</b>

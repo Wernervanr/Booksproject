@@ -7,7 +7,7 @@
     <thead class="thead-dark"
         <tr>
             <th>Title</th>
-            <th class="d-none d-sm-table-cell">Author</th>
+            <th class="d-none d-sm-table-cell">Author ID</th>
             <th class="d-none d-sm-table-cell">ISBN</th>
             <th>Price</th>
         </tr>

@@ -8,12 +8,12 @@
     </div>
 
     <div class="form-row">
-        <label for="author">Author</label>
+        <label for="author">Author ID</label>
         <input type="text" id="author" name="author" class="form-control" value="<?php echo $viewModel['book']['author_id'] ?>" min="1" required/>
     </div>
 
     <div class="form-row">
-        <label for="category">Category</label>
+        <label for="category">Category ID</label>
         <input type="text" id="category" name="category" class="form-control" value="<?php echo $viewModel['book']['category_id'] ?>" min="1" required/>
     </div>
 
