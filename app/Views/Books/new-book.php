@@ -11,12 +11,12 @@
             </div>
 
             <div class="form-group">
-                <label for="author_id">Author</label>
+                <label for="author_id">Author ID</label>
                 <input type="number" id="author_id" name="author_id" class="form-control" min="1" required/>
             </div>
 
             <div class="form-group">
-                <label for="category_id">Category</label>
+                <label for="category_id">Category ID</label>
                 <input type="number" id="category_id" name="category_id" class="form-control" min="1" required/>
             </div>
 
