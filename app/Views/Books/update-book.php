@@ -1,8 +1,11 @@
+<!--HEADING-->
+
 <div>
     <h1><?php echo $viewModel['pageTitle'] ?></h1>
     <h2 class="subtitle mt-2"><?php echo $viewModel['book']['title'] ?></h2>
 </div>
 
+<!--CONTENT-->
 <div>
     <form novalidate id="updateBookForm">
         <div class="form-row">
@@ -37,6 +40,8 @@
         </div>
 
         <hr>
+
+<!--SAVE BUTTON-->
 
         <div class="form-submit">
             <input class="btn btn-info" type="submit" value="Save" />

@@ -1,6 +1,8 @@
+<!--HEADING-->
 
     <h1><?php echo $viewModel['pageTitle'] ?></h1>
 
+<!--CONTENT-->
 <form novalidate id="createBookForm">
     <div class="row">
         <div class="col-md">
@@ -39,6 +41,8 @@
     </div>
 
     <hr>
+
+<!--BUTTONS-->
 
     <div class="col">
         <div class="row justify-content-between">

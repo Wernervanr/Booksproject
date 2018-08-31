@@ -1,6 +1,11 @@
+<!--LISTING HEADING-->
+
 <div class="listingHeading">
     <h1 class="col display-1 text-muted"><?php echo $viewModel['pageTitle'] ?></h1>
+    <!--Javascript generated welcometext content        -->
 </div>
+
+<!--LISTING CONTENT-->
 
 <div class="col">
     <table class="table">
@@ -19,6 +24,8 @@
         <!--Javascript generated table content        -->
 
     </table>
+
+<!--LISTING NEW BOOK BUTTON-->
 
     <?php if($viewModel['profile']) { ?>
         <div class="row justify-content-end">

@@ -1,9 +1,13 @@
+<!--DETAIL HEADING-->
+
 <div class="row">
     <div class="titleCont col-12">
         <h1><?php echo $viewModel['pageTitle'] ?></h1>
         <!--Javascript generated content (h2)-->
     </div>
 </div>
+
+<!--DETAIL CONTENT-->
 
 <div class="row">
     <div class="col-md-6">
@@ -54,6 +58,7 @@
 
 <hr>
 
+<!--BUTTONS-->
 <div class="mt-2 d-flex">
     <div class="p2 mr-auto">
         <button class="btn btn-info" onClick="window.location = 'index.php'">Back</button>
