@@ -113,8 +113,29 @@ $(document).ready(() => {
                 tableRow.appendChild(isbnCol);
                 tableRow.appendChild(priceCol);
 
-                table.appendChild(tableRow);
+                if (profile === 'logged in') {
+                    const deleteCol = document.createElement('td');
+                    deleteCol.setAttribute('class', 'd-none d-sm-table-cell');
+
+                    const delForm = document.createElement('form');
+                    delForm.setAttribute('id', 'deleteBtn');
+
+                    const delBtn = document.createElement('button');
+                    delBtn.setAttribute('class', 'btn btn-info');
+                    delBtn.setAttribute('type', 'submit');
+                    delBtn.textContent = 'Delete';
+
+                    delForm.appendChild(delBtn);
+                    deleteCol.appendChild(delForm);
+
+                    tableRow.appendChild(deleteCol);
+
+                    table.appendChild(tableRow);
+                } else {
+                    table.appendChild(tableRow);
+                }
             });
+
         })
         .fail((request, status, error) =>
         {

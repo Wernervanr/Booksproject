@@ -1,6 +1,6 @@
 <div>
-    <h1 class="display-1 text-muted"><?php echo $viewModel['pageTitle'] ?></h1>
-    <p>Hi, welcome to the "read only" book catalog. Click our books to see their details!</p>
+    <h1 class="col display-1 text-muted"><?php echo $viewModel['pageTitle'] ?></h1>
+    <p class="col">Hi, welcome to the "read only" book catalog. Click our books to see their details!</p>
 </div>
 
 <div class="col">
@@ -11,6 +11,9 @@
                 <th class="d-none d-sm-table-cell">Author ID</th>
                 <th class="d-none d-sm-table-cell">ISBN</th>
                 <th>Price</th>
+                <?php if($viewModel['profile']) { ?>
+                    <th class="d-none d-sm-table-cell">Delete</th>
+                <?php } ?>
             </tr>
         </thead>
 
@@ -25,4 +28,13 @@
     <?php } ?>
 </div>
 
+<?php if ($viewModel['profile']) { ?>
+    <script>let profile = 'logged in';</script>
+<?php } else {?>
+    <script>let profile = null;</script>
+<?php } ?>
+
+
+
 <script src="js/listing.js"></script>
+<script src="js/delete-book.js"></script>
