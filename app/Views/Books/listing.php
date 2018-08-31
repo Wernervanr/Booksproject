@@ -34,7 +34,4 @@
     <script>let profile = null;</script>
 <?php } ?>
 
-
-
 <script src="js/listing.js"></script>
-<script src="js/delete-book.js"></script>

@@ -131,11 +131,18 @@ $(document).ready(() => {
                     tableRow.appendChild(deleteCol);
 
                     table.appendChild(tableRow);
+
+                    const form = document.getElementById('deleteBtn');
+                    const bookId = book.id;
+
+                    tableRow.addEventListener('submit', () => {
+                        alert('Are you sure you want to delete this book?');
+                        deleteBook(bookId);
+                    });
                 } else {
                     table.appendChild(tableRow);
                 }
             });
-
         })
         .fail((request, status, error) =>
         {
