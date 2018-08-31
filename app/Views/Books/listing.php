@@ -1,6 +1,5 @@
-<div>
+<div class="listingHeading">
     <h1 class="col display-1 text-muted"><?php echo $viewModel['pageTitle'] ?></h1>
-    <p class="col">Hi, welcome to the "read only" book catalog. Click our books to see their details!</p>
 </div>
 
 <div class="col">

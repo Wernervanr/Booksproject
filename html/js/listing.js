@@ -75,6 +75,25 @@ $(document).ready(() => {
     //         console.log(request);
     //     });
 
+
+
+    // CONDITIONELE WELKOMTEKST
+
+    const listingHeading = document.querySelector('.listingHeading');
+
+    const headingText = document.createElement('p');
+
+    if (profile === 'logged in') {
+        headingText.textContent = 'Hi! Welcome to the editting part of the book catalog. Click to see details and edit them!';
+    } else {
+        headingText.textContent = 'Hi! Welcome to the "read only" book catalog. Click our books to see their details!';
+    }
+
+    headingText.setAttribute('class', 'col');
+    listingHeading.appendChild(headingText);
+
+    // GET BOOKS
+
     getBooks()
         .done((data, text) => {
 
@@ -130,12 +149,12 @@ $(document).ready(() => {
 
                     // DELETE KNOP EVENTLISTENER
                     const bookId = book.id;
+
                     tableRow.addEventListener('submit', () => {
                         confirmDelete = confirm('Are you sure you want to delete this book?');
+
                         if (confirmDelete === true) {
                             deleteBook(bookId);
-                        } else {
-                            window.location = 'index.php';
                         }
                     });
 
