@@ -52,6 +52,4 @@
     </div>
 </form>
 
-<div class="message-container"></div>
-
 <script src="js/new-book.js"></script>

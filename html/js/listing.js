@@ -1,45 +1,40 @@
 $(document).ready(() => {
+    //
+    // const getBooksXml = () => {
+    //     const request = new XMLHttpRequest();
+    //     request.onreadystatechange = () => {
+    //         if (request.readyState === 4) {
+    //             if (request.status >= 200 && request.status < 300) {
+    //                 let response = JSON.parse(request.response);
+    //                 console.log(response);
+    //             } else {
+    //                 console.log(request);
+    //             }
+    //         }
+    //     };
+    //     request.open('GET',env.api + '?route=books');
+    //     request.send();
+    // };
+    //
+    // const getBooksFetch = () => {
+    //     fetch(env.api + '?route=books', {
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //             'Accept': 'application/json'
+    //             //'X-XSRF-TOKEN': getCookieValue('XSRF-TOKEN')
+    //         }
+    //     }).then(response => {
+    //         if (response.ok) {
+    //             response.json().then(data => {
+    //                 console.log(data);
+    //             });
+    //         }
+    //         else {
+    //             console.log(response);
+    //         }
+    //     });
+    // };
 
-    const getBooksXml = () => {
-        const request = new XMLHttpRequest();
-        request.onreadystatechange = () => {
-            if (request.readyState === 4) {
-                if (request.status >= 200 && request.status < 300) {
-                    let response = JSON.parse(request.response);
-                    console.log(response);
-                } else {
-                    console.log(request);
-                }
-            }
-        };
-        request.open('GET',env.api + '?route=books');
-        request.send();
-    };
-
-    const getBooksFetch = () => {
-        fetch(env.api + '?route=books', {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-                //'X-XSRF-TOKEN': getCookieValue('XSRF-TOKEN')
-            }
-        }).then(response => {
-            if (response.ok) {
-                response.json().then(data => {
-                    console.log(data);
-                });
-            }
-            else {
-                console.log(response);
-            }
-        });
-    };
-
-
-
-
-
-    // NEW opdracht
 
     // Table erbij halen
     // For loop over alle books heen
@@ -113,6 +108,7 @@ $(document).ready(() => {
                 tableRow.appendChild(isbnCol);
                 tableRow.appendChild(priceCol);
 
+                // DELETEKNOP ALLEEN BIJ LOGIN ZICHTBAAR
                 if (profile === 'logged in') {
                     const deleteCol = document.createElement('td');
                     deleteCol.setAttribute('class', 'd-none d-sm-table-cell');
@@ -132,13 +128,17 @@ $(document).ready(() => {
 
                     table.appendChild(tableRow);
 
-                    const form = document.getElementById('deleteBtn');
+                    // DELETE KNOP EVENTLISTENER
                     const bookId = book.id;
-
                     tableRow.addEventListener('submit', () => {
-                        alert('Are you sure you want to delete this book?');
-                        deleteBook(bookId);
+                        confirmDelete = confirm('Are you sure you want to delete this book?');
+                        if (confirmDelete === true) {
+                            deleteBook(bookId);
+                        } else {
+                            window.location = 'index.php';
+                        }
                     });
+
                 } else {
                     table.appendChild(tableRow);
                 }
