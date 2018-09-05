@@ -41,3 +41,6 @@
 <?php } ?>
 
 <script src="js/listing.js"></script>
+
+<!--Profile wijzigen naar isLoggedIn = 'true' of 'false'.-->
+<!--Voortkomende wijzigingen in listing.js doorvoeren.-->
