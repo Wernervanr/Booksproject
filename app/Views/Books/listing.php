@@ -42,5 +42,6 @@
 
 <script src="js/listing.js"></script>
 
+LET OP :
 <!--Profile wijzigen naar isLoggedIn = 'true' of 'false'.-->
 <!--Voortkomende wijzigingen in listing.js doorvoeren.-->
