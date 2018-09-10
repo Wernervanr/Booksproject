@@ -8,7 +8,7 @@ h1 {
   font-size: 2.5em;
   font-family: Helvetica;
   font-weight: bold;
-  color: #03553e;
+  color: #ed1d24;
 }
 
 .subtitle {
@@ -84,7 +84,6 @@ button {
 }
 
 .footer {
-  margin-top: 50px;
   font-size: 0.75em;
   color: #555555;
   border-top: solid 1px #555555;
@@ -99,14 +98,15 @@ button {
   color: green;
 }
 
-table tr:hover {
+table .listing:hover {
   cursor: pointer;
-  background: #03553e;
-  color: #ffffff;
+  color: #ed1d24;
+  border: 0px 1px solid #ed1d24;
+  font-style: italic;
 }
 
-.bg-yellow {
-  background-color: #ffae42;
+.bg-comic-red {
+  background-color: #ed1d24;
 }
 
 #createBookForm input:required:invalid, #createBookForm textarea:required:invalid {
@@ -140,34 +140,50 @@ table tr:hover {
   width: 100%;
 }
 
-.blue {
-  background: #3E89BE;
+.slick-dots {
+  bottom: 20px;
 }
 
-.orange {
-  background: #F8835A;
-}
-
-.green {
-  background: #5ECE7F;
-}
-
-.yellow {
-  background: #FFD365;
+.slick-dots li button:before {
+  font-size: 16px;
 }
 
 .comic {
-  font-family: "Comic Sans MS";
-  color: #ED1D24;
+  color: #ed1d24;
 }
 
 .welcometext {
-  border: 1px solid black;
+  border: 1px solid #ed1d24;
   padding: 100px 20px;
 }
 
 .bg-comic {
-  background: url("img/comic.jpg");
+  background: url("../img/comicOpacity.jpg");
+}
+
+.btn-comic {
+  background: #ed1d24;
+  border-color: #ed1d24;
+  color: white;
+}
+
+.btn-comic:hover {
+  background: white;
+  color: #ed1d24;
+}
+
+.thead-comic-red {
+  border: 1px solid #ed1d24;
+  color: #ed1d24;
+}
+
+.listingheader {
+  border: 1px solid #ed1d24;
+  padding: 10px 0px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: url("../img/listingheader.jpg");
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

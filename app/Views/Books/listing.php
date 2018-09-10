@@ -4,10 +4,10 @@
     <h1 class="col display-3 text-center comic">BEST COMIC BOOK STORE</h1>
 </div>
 
-<div class="row mb-4">
+<div class="row mb-4 ml-2 mr-2">
     <div class="col-md-3 card mb-2">
         <p class="text-center mt-2"><b>Newly added:</b></p>
-            <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+            <img class="card-img-top" src="" alt="Card image cap">
             <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
@@ -19,8 +19,8 @@
 
     <div class="col-md-3 card mb-2">
         <p class="text-center mt-2"><b>Comic of the month:</b></p>
-        <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
-        <div class="card-body bg-comic">
+        <img class="card-img-top" src="" alt="Card image cap">
+        <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
     </div>
@@ -29,8 +29,9 @@
 <!--LISTING CONTENT-->
 
 <div class="col">
+    <div class="listingheader text-center">Our Comics</div>
     <table class="table">
-        <thead class="thead-dark">
+        <thead class="thead-comic-red">
         <tr>
             <th>Title</th>
             <th class="d-none d-sm-table-cell">Author ID</th>
@@ -47,14 +48,14 @@
     </table>
 
     <template id="tableRowTemplate">
-        <tr>
+        <tr class="listing">
             <td class="title"></td>
             <td class="author_id d-none d-sm-table-cell"></td>
             <td class="isbn d-none d-sm-table-cell"></td>
             <td class="price">&euro; </td>
             <?php if($viewModel['profile']) { ?>
                 <td class="delete">
-                    <button class="btn btn-info btn-delete">Delete</button>
+                    <button class="btn btn-comic btn-delete">Delete</button>
                 </td>
             <?php } ?>
         </tr>
@@ -65,7 +66,7 @@
 
     <?php if($viewModel['profile']) { ?>
         <div class="row justify-content-end">
-            <button type="button" class="btn btn-info" onclick="window.location='?route=create'">New Book</button>
+            <button type="button" class="btn btn-comic" onclick="window.location='?route=create'">New Book</button>
         </div>
     <?php } ?>
 </div>

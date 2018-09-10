@@ -3,9 +3,11 @@
     </div>
 </div>
 
-<footer class="footer pb-4 pt-4">
+<footer class="footer pb-3 pt-3 bg-white">
     &copy Copyright The Bookstore
 </footer>
+
+</div>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -16,7 +18,7 @@
             $('.slides').slick({
                 fade: true,
                 autoplay: true,
-                autoplaySpeed: 2000,
+                autoplaySpeed: 4000,
                 arrows: false,
                 dots: true
             });

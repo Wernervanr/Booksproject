@@ -16,9 +16,10 @@
     <link href="css/main.css" rel="stylesheet" />
 </head>
 
-<body class="bg-comic">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-yellow">
-        <a class="navbar-brand" href="?route=index">Book catalog</a>
+<body>
+<div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-comic-red">
+        <a class="navbar-brand" href="?route=index">Comicbook Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -53,32 +54,32 @@
     </nav>
 
     <div class="slides">
-        <div class="slide blue">
+        <div class="slide">
             <div class="">
-                <img src="img/18.jpg" alt="" />
+                <img src="img/slide1.jpg" alt="" />
             </div>
         </div><!--/Slide 1-->
 
         <div class="slide orange">
             <div class="">
-                <img src="" alt="" />
+                <img src="img/slide2.jpg" alt="" />
             </div>
         </div><!--/Slide 2-->
 
         <div class="slide green">
             <div class="">
-                <img src="" alt="" />
+                <img src="img/slide3.jpg" alt="" />
             </div>
         </div><!--/Slide 3-->
 
         <div class="slide yellow">
             <div class="">
-                <img src="" alt="" />
+                <img src="img/slide4.jpg" alt="" />
             </div>
         </div><!--/Slide 4-->
     </div>
 
-<div class="container bg-white">
+<div class="container bg-white pb-4">
     <div class="row">
         <div class="col">
 

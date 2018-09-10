@@ -47,10 +47,10 @@
     <div class="col">
         <div class="row justify-content-between">
             <div>
-                <button type="button" class="btn btn-info" onClick="window.location = 'index.php'">Back</button>
+                <button type="button" class="btn btn-comic" onClick="window.location = 'index.php'">Back</button>
             </div>
             <div>
-                <button type="submit" class="saveBtn btn btn-info" value="Save">Save</button>
+                <button type="submit" class="saveBtn btn btn-comic" value="Save">Save</button>
             </div>
         </div>
     </div>

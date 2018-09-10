@@ -99,7 +99,7 @@ $(document).ready(() => {
     const listingHeading = document.querySelector('.listingHeading');
 
     // CONDITIONELE WELKOMTEKST
-    const headingText = document.createElement('div');
+    const headingText = document.createElement('article');
 
     if (profile === 'logged in') {
         headingText.textContent = 'Hi! Welcome to the editting part of the book catalog. Click to see details and edit them!';
@@ -107,7 +107,7 @@ $(document).ready(() => {
         headingText.textContent = 'Hi! Welcome to the "read only" book catalog. Click our books to see their details!';
     }
 
-    headingText.setAttribute('class', 'col welcometext text-center');
+    headingText.setAttribute('class', 'welcometext text-center');
     listingHeading.appendChild(headingText);
 
 });
