@@ -4,7 +4,6 @@ body {
   margin: 0;
   font-family: sans-serif;
   font-size: 12pt;
-  background: url('img/comic.jpg');
 }
 
 h1 {
@@ -177,6 +176,9 @@ table {
   padding: 100px 20px;
 }
 
+.bg-comic {
+  background: url('img/comic.jpg');
+}
 
 
 
