@@ -7,16 +7,17 @@
     <title><?php echo $viewModel['pageTitle'] ?></title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <link href="css/main.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/environment-settings.js"></script>
     <script src="js/init.js"></script>
+    <link rel="stylesheet" href="js/slick/slick.css">
+    <link rel="stylesheet" href="js/slick/slick-theme.css">
+    <link href="css/main.css" rel="stylesheet" />
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-green mb-2">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-yellow mb-2">
         <a class="navbar-brand" href="?route=index">Book catalog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -50,6 +51,52 @@
             </ul>
         </div>
     </nav>
+
+    <div class="slides">
+        <div class="slide blue">
+            <div class="grid-half">
+                <h2>DailyFeed</h2>
+                <p>Your number one podcast app</p>
+                <a href="#" class="button">Check it Out</a>
+            </div>
+            <div class="grid-half">
+                <img src="img/slide-dailyFeed.png" alt="" />
+            </div>
+        </div><!--/Slide 1-->
+
+        <div class="slide orange">
+            <div class="grid-half">
+                <h2>ChitChat</h2>
+                <p>The worldest easiest to use cross device chat app</p>
+                <a href="#" class="button">Check it Out</a>
+            </div>
+            <div class="grid-half">
+                <img src="img/slide-chitChat.png" alt="" />
+            </div>
+        </div><!--/Slide 2-->
+
+        <div class="slide green">
+            <div class="grid-half">
+                <h2>MixTape</h2>
+                <p>An app to search, create and share mixtapes</p>
+                <a href="#" class="button">Check it Out</a>
+            </div>
+            <div class="grid-half">
+                <img src="img/slide-mixTape.png" alt="" />
+            </div>
+        </div><!--/Slide 3-->
+
+        <div class="slide yellow">
+            <div class="grid-half">
+                <h2>KITT</h2>
+                <p>Turn your car into KITT from Knight Rider</p>
+                <a href="#" class="button">Check it Out</a>
+            </div>
+            <div class="grid-half">
+                <img src="img/slide-kitt.png" alt="" />
+            </div>
+        </div><!--/Slide 4-->
+    </div>
 
 <div class="container">
     <div class="row">
