@@ -7,10 +7,7 @@
         <div class="col-xs-12 col-md-4">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" class="form-control" />
-            </div>
-
-            <div class="form-group">
+                <input type="text" name="username" id="username" class="form-control mb-2" />
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" class="form-control" />
             </div>
@@ -19,6 +16,6 @@
 
     <br clear="all" />
 
-    <button type="submit" class="btn btn-info"><i class="fa fa-check"></i> Login</button>
+    <button type="submit" class="btn btn-comic">Login</button>
 
 </form>

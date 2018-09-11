@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="titleCont col-12">
-        <h1><?php echo $viewModel['pageTitle'] ?></h1>
+        <h1>Comic <?php echo $viewModel['pageTitle'] ?></h1>
         <!--Javascript generated content (h2)-->
     </div>
 </div>
@@ -46,7 +46,7 @@
             <form action="?route=upload-image&id=<?php echo $viewModel['book']['id'] ?>" enctype="multipart/form-data" method="post">
                 <div class="mb-1"><b>Select image file to upload</b></div>
                 <div class="mb-2"><input type="file" name="imageFile" id="imageFile" accept="image/*"/></div>
-                <div class="mb-2"><input class="btn btn-info" type="submit" value="Upload" name="submit" /></div>
+                <div class="mb-2"><input class="btn btn-comic" type="submit" value="Upload" name="submit" /></div>
             </form>
         <?php } ?>
 
@@ -61,14 +61,14 @@
 <!--BUTTONS-->
 <div class="mt-2 d-flex">
     <div class="p2 mr-auto">
-        <button class="btn btn-info" onClick="window.location = 'index.php'">Back</button>
+        <button class="btn btn-comic" onClick="window.location = 'index.php'">Back</button>
     </div>
 
     <?php if ($viewModel['profile']) { ?>
         <div class="p2 row mr-1">
-            <button class="btn btn-info mr-1" onClick="window.location = '?route=edit&id=<?php echo $viewModel['book']['id'] ?>'">Edit book</button>
+            <button class="btn btn-comic mr-1" onClick="window.location = '?route=edit&id=<?php echo $viewModel['book']['id'] ?>'">Edit book</button>
             <form id="deleteBtn">
-                <button class="btn btn-info" type="submit">Delete</button>
+                <button class="btn btn-comic" type="submit">Delete</button>
             </form>
         </div>
     <?php } ?>

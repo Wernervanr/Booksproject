@@ -10,7 +10,7 @@ h1 {
   font-size: 2.5em;
   font-family: Helvetica;
   font-weight: bold;
-  color: $bc_green;
+  color: $comic_red;
 }
 
 .subtitle {
@@ -86,7 +86,6 @@ button {
 }
 
 .footer {
-  margin-top: 50px;
   font-size: 0.75em;
   color: #555555;
   border-top: solid 1px #555555;
@@ -104,19 +103,19 @@ button {
 }
 
 table {
-  tr {
+  .listing {
     &:hover {
       cursor: pointer;
-      background: $bc_green;
-      color: #ffffff;
+      color: $comic-red;
+      border: 0px 1px solid $comic-red;
+      font-style: italic;
     }
   }
 }
 
-.bg-green {
-  background-color: #03553e;
+.bg-comic-red {
+  background-color: $comic_red;
 }
-
 
 #createBookForm {
   input, textarea {
@@ -138,5 +137,68 @@ table {
   font-size: .8rem;
   color: red;
 }
+
+
+
+/*Slides*/
+.slides {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto 40px;
+}
+.slide {
+  width: 100%;
+  height: 100%;
+}
+.slide img {
+  width: 100%;
+}
+.slick-dots {
+  bottom: 20px;
+}
+
+.slick-dots li button:before {
+  font-size: 16px;
+}
+
+.comic {
+  color: $comic_red;
+
+}
+
+.welcometext {
+  border: 1px solid $comic-red;
+  padding: 100px 20px;
+}
+
+.bg-comic {
+  background: url('../img/comicOpacity.jpg');
+}
+
+.btn-comic {
+  background: $comic_red;
+  border-color: $comic-red;
+  color: white;
+}
+
+.btn-comic:hover{
+  background: white;
+  color: $comic-red;
+}
+
+.thead-comic-red {
+  border: 1px solid $comic_red;
+  color: $comic-red;
+}
+
+.listingheader {
+  border: 1px solid $comic-red;
+  padding: 10px 0px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: url('../img/listingheader.jpg');
+  color: white;
+}
+
 
 

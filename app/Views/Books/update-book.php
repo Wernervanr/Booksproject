@@ -44,7 +44,7 @@
 <!--SAVE BUTTON-->
 
         <div class="form-submit">
-            <input class="btn btn-info" type="submit" value="Save" />
+            <input class="btn btn-comic" type="submit" value="Save" />
         </div>
     </form>
 </div>

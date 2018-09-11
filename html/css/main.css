@@ -8,7 +8,7 @@ h1 {
   font-size: 2.5em;
   font-family: Helvetica;
   font-weight: bold;
-  color: #03553e;
+  color: #ed1d24;
 }
 
 .subtitle {
@@ -84,7 +84,6 @@ button {
 }
 
 .footer {
-  margin-top: 50px;
   font-size: 0.75em;
   color: #555555;
   border-top: solid 1px #555555;
@@ -99,14 +98,15 @@ button {
   color: green;
 }
 
-table tr:hover {
+table .listing:hover {
   cursor: pointer;
-  background: #03553e;
-  color: #ffffff;
+  color: #ed1d24;
+  border: 0px 1px solid #ed1d24;
+  font-style: italic;
 }
 
-.bg-green {
-  background-color: #03553e;
+.bg-comic-red {
+  background-color: #ed1d24;
 }
 
 #createBookForm input:required:invalid, #createBookForm textarea:required:invalid {
@@ -122,6 +122,68 @@ table tr:hover {
 .error-message {
   font-size: 0.8rem;
   color: red;
+}
+
+/*Slides*/
+.slides {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto 40px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+}
+
+.slick-dots {
+  bottom: 20px;
+}
+
+.slick-dots li button:before {
+  font-size: 16px;
+}
+
+.comic {
+  color: #ed1d24;
+}
+
+.welcometext {
+  border: 1px solid #ed1d24;
+  padding: 100px 20px;
+}
+
+.bg-comic {
+  background: url("../img/comicOpacity.jpg");
+}
+
+.btn-comic {
+  background: #ed1d24;
+  border-color: #ed1d24;
+  color: white;
+}
+
+.btn-comic:hover {
+  background: white;
+  color: #ed1d24;
+}
+
+.thead-comic-red {
+  border: 1px solid #ed1d24;
+  color: #ed1d24;
+}
+
+.listingheader {
+  border: 1px solid #ed1d24;
+  padding: 10px 0px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: url("../img/listingheader.jpg");
+  color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

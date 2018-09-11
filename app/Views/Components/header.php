@@ -7,17 +7,19 @@
     <title><?php echo $viewModel['pageTitle'] ?></title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <link href="css/main.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/environment-settings.js"></script>
     <script src="js/init.js"></script>
+    <link rel="stylesheet" href="js/slick/slick.css">
+    <link rel="stylesheet" href="js/slick/slick-theme.css">
+    <link href="css/main.css" rel="stylesheet" />
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-green mb-2">
-        <a class="navbar-brand" href="?route=index">Book catalog</a>
+<div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-comic-red">
+        <a class="navbar-brand" href="?route=index">Comicbook Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -51,7 +53,33 @@
         </div>
     </nav>
 
-<div class="container">
+    <div class="slides">
+        <div class="slide">
+            <div class="">
+                <img src="img/slide1.jpg" alt="" />
+            </div>
+        </div><!--/Slide 1-->
+
+        <div class="slide orange">
+            <div class="">
+                <img src="img/slide2.jpg" alt="" />
+            </div>
+        </div><!--/Slide 2-->
+
+        <div class="slide green">
+            <div class="">
+                <img src="img/slide3.jpg" alt="" />
+            </div>
+        </div><!--/Slide 3-->
+
+        <div class="slide yellow">
+            <div class="">
+                <img src="img/slide4.jpg" alt="" />
+            </div>
+        </div><!--/Slide 4-->
+    </div>
+
+<div class="container bg-white pb-4">
     <div class="row">
         <div class="col">
 

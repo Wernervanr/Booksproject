@@ -1,4 +1,25 @@
 $(document).ready(() => {
+
+    const table = document.querySelector('.table');
+
+    getBooks()
+        .done((data, text) => {
+
+            let books = JSON.parse(data);
+
+            const bookTableRows = createBookTableRows('#tableRowTemplate',books);
+
+            bookTableRows.map((bookTableRow) => {
+                table.appendChild(bookTableRow);
+            });
+        })
+        .fail((request, status, error) =>
+        {
+            console.log(request);
+        });
+
+
+
     //
     // const getBooksXml = () => {
     //     const request = new XMLHttpRequest();
@@ -75,13 +96,10 @@ $(document).ready(() => {
     //         console.log(request);
     //     });
 
-
-
-    // CONDITIONELE WELKOMTEKST
-
     const listingHeading = document.querySelector('.listingHeading');
 
-    const headingText = document.createElement('p');
+    // CONDITIONELE WELKOMTEKST
+    const headingText = document.createElement('article');
 
     if (profile === 'logged in') {
         headingText.textContent = 'Hi! Welcome to the editting part of the book catalog. Click to see details and edit them!';
@@ -89,82 +107,7 @@ $(document).ready(() => {
         headingText.textContent = 'Hi! Welcome to the "read only" book catalog. Click our books to see their details!';
     }
 
-    headingText.setAttribute('class', 'col');
+    headingText.setAttribute('class', 'welcometext text-center');
     listingHeading.appendChild(headingText);
 
-    // GET BOOKS
-
-    getBooks()
-        .done((data, text) => {
-
-            let books = JSON.parse(data);
-
-            const table = document.querySelector('.table');
-
-            books.map(function(book) {
-                const tableRow = document.createElement('tr');
-
-                tableRow.onclick = () => {
-                    window.location = '?route=show&id=' + book.id;
-                };
-
-                const titleCol = document.createElement('td');
-                titleCol.textContent = book.title;
-
-                const authorCol = document.createElement('td');
-                authorCol.textContent = book.author_id;
-                authorCol.setAttribute('class','d-none d-sm-table-cell');
-
-                const isbnCol = document.createElement('td');
-                isbnCol.textContent = book.isbn;
-                isbnCol.setAttribute('class','d-none d-sm-table-cell');
-
-                const priceCol = document.createElement('td');
-                priceCol.textContent = '€ ' + book.price;
-
-                tableRow.appendChild(titleCol);
-                tableRow.appendChild(authorCol);
-                tableRow.appendChild(isbnCol);
-                tableRow.appendChild(priceCol);
-
-                // DELETEKNOP ALLEEN BIJ LOGIN ZICHTBAAR
-                if (profile === 'logged in') {
-                    const deleteCol = document.createElement('td');
-                    deleteCol.setAttribute('class', 'd-none d-sm-table-cell');
-
-                    const delForm = document.createElement('form');
-                    delForm.setAttribute('id', 'deleteBtn');
-
-                    const delBtn = document.createElement('button');
-                    delBtn.setAttribute('class', 'btn btn-info');
-                    delBtn.setAttribute('type', 'submit');
-                    delBtn.textContent = 'Delete';
-
-                    delForm.appendChild(delBtn);
-                    deleteCol.appendChild(delForm);
-
-                    tableRow.appendChild(deleteCol);
-
-                    table.appendChild(tableRow);
-
-                    // DELETE KNOP EVENTLISTENER
-                    const bookId = book.id;
-
-                    tableRow.addEventListener('submit', () => {
-                        confirmDelete = confirm('Are you sure you want to delete this book?');
-
-                        if (confirmDelete === true) {
-                            deleteBook(bookId);
-                        }
-                    });
-
-                } else {
-                    table.appendChild(tableRow);
-                }
-            });
-        })
-        .fail((request, status, error) =>
-        {
-            console.log(request);
-        });
 });
