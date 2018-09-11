@@ -39,6 +39,10 @@ $method = $_SERVER['REQUEST_METHOD'];
         $bookController = new BookController();
         $bookController->getOneBook();
 
+    } else if ($route === 'lastbook' $method ==='GET') {
+        $bookController = new BookController();
+        $bookController->getLastBook();
+
 // end 28 augustus
 
     } else if ($route === 'votes') {

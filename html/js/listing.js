@@ -12,9 +12,16 @@ $(document).ready(() => {
             bookTableRows.map((bookTableRow) => {
                 table.appendChild(bookTableRow);
             });
+        })
+        .fail((request, status, error) =>
+        {
+            console.log(request);
+        });
 
-            let lastItem = books[books.length -1];
-            console.log(lastItem);
+    getLastBook()
+        .done((data, text) => {
+
+            let book = JSON.parse(data);
 
             const newlyAdded = document.querySelector('.newlyAdded');
 
@@ -24,14 +31,13 @@ $(document).ready(() => {
             const infoParagraph = document.createElement('p');
             infoParagraph.setAttribute('class', 'card-text');
             infoParagraph.innerHTML =
-                '<b>' + lastItem.title + '</b>' + '<br>' +
-                'Priced at only € ' + lastItem.price + '<br>' +
-                'Added ' + lastItem.created_at + '<br>' + '<br>' +
+                '<b>' + book.title + '</b>' + '<br>' +
+                'Priced at only € ' + book.price + '<br>' +
+                'Added ' + book.created_at + '<br>' + '<br>' +
                 'Click to see details';
 
             infoDiv.appendChild(infoParagraph);
             newlyAdded.appendChild(infoDiv);
-
         })
         .fail((request, status, error) =>
         {

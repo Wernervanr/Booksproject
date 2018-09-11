@@ -30,6 +30,14 @@ class BookController extends BaseController
         $this->renderJson(200, $book);
     }
 
+    public function getLastBook() {
+        $bookModel = new Book();
+
+        $book = $bookModel->last();
+
+        $this->renderJson(200, $book);
+    }
+
     // end 29 augustus
 
     public function createBook() {
