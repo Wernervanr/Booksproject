@@ -38,6 +38,14 @@ class BookController extends BaseController
         $this->renderJson(200, $book);
     }
 
+    public function getMostPopulairBook() {
+        $bookModel = new Book();
+
+        $book = $bookModel->MostPopulair();
+
+        $this->renderJson(200, $book);
+    }
+
     // end 29 augustus
 
     public function createBook() {

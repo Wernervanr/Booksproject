@@ -44,6 +44,32 @@ $(document).ready(() => {
             console.log(request);
         });
 
+    getMostPopulair()
+        .done((data, text) => {
+
+            let book = JSON.parse(data);
+
+            const mostPopulair = document.querySelector('.mostPopulair');
+
+            const infoDiv = document.createElement('div');
+            infoDiv.setAttribute('class', 'card-body');
+
+            const infoParagraph = document.createElement('p');
+            infoParagraph.setAttribute('class', 'card-text');
+            infoParagraph.innerHTML =
+                '<b>' + book.title + '</b>' + '<br>' +
+                'Priced at only € ' + book.price + '<br>' +
+                'Added ' + book.created_at + '<br>' + '<br>' +
+                'Click to see details';
+
+            infoDiv.appendChild(infoParagraph);
+            mostPopulair.appendChild(infoDiv);
+        })
+        .fail((request, status, error) =>
+        {
+            console.log(request);
+        });
+
 
 
     //

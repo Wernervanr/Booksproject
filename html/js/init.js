@@ -25,6 +25,10 @@ const getLastBook = () => {
     return $.get(env.api + '?route=lastbook')
 };
 
+const getMostPopulair = () => {
+    return $.get(env.api + '?route=mostpopulair')
+};
+
 // end 28 augustus
 
 // 28 augustus

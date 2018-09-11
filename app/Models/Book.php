@@ -27,6 +27,11 @@ class Book extends Database
        return $this->getOne("SELECT * FROM {$this->table_name} ORDER BY {$this->table_name}.id DESC LIMIT 1;");
     }
 
+    public function MostPopulair()
+    {
+        return $this->getOne("SELECT * FROM {$this->table_name} ORDER BY {$this->table_name}.votes DESC LIMIT 1;");
+    }
+
     public function save($columns = [], $id = null)
     {
         if (!empty($id)){
