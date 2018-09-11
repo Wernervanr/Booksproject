@@ -24,7 +24,7 @@ class Book extends Database
 
     public function last()
     {
-       return $this->getLast("SELECT * FROM {$this->table_name} ORDER BY {$this->table_name}.id DESC LIMIT 1;");
+       return $this->getOne("SELECT * FROM {$this->table_name} ORDER BY {$this->table_name}.id DESC LIMIT 1;");
     }
 
     public function save($columns = [], $id = null)

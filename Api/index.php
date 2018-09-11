@@ -39,7 +39,7 @@ $method = $_SERVER['REQUEST_METHOD'];
         $bookController = new BookController();
         $bookController->getOneBook();
 
-    } else if ($route === 'lastbook' $method ==='GET') {
+    } else if ($route === 'lastbook' && $method ==='GET') {
         $bookController = new BookController();
         $bookController->getLastBook();
 

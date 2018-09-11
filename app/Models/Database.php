@@ -52,15 +52,6 @@ class Database {
         return $response;
     }
 
-    public function getLast($query, $params = []) {
-        $result = $this->conn->prepare($query);
-        $ret = $result->execute($params);
-        $result->setFetchMode(\PDO::FETCH_ASSOC);
-        $response = $result->fetch();
-
-        return $response;
-    }
-
     public function getAll($query, $params = []) {
         $result = $this->conn->prepare($query);
         $ret = $result->execute($params);
