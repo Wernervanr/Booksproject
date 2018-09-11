@@ -18,7 +18,7 @@
     </div>
 
     <div class="col-md-3 card mb-2">
-        <p class="text-center mt-2"><b>Comic of the month:</b></p>
+        <p class="text-center mt-2"><b>Most popular comic book:</b></p>
         <img class="card-img-top" src="" alt="Card image cap">
         <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
