@@ -12,6 +12,26 @@ $(document).ready(() => {
             bookTableRows.map((bookTableRow) => {
                 table.appendChild(bookTableRow);
             });
+
+            let lastItem = books[books.length -1];
+            console.log(lastItem);
+
+            const newlyAdded = document.querySelector('.newlyAdded');
+
+            const infoDiv = document.createElement('div');
+            infoDiv.setAttribute('class', 'card-body');
+
+            const infoParagraph = document.createElement('p');
+            infoParagraph.setAttribute('class', 'card-text');
+            infoParagraph.innerHTML =
+                '<b>' + lastItem.title + '</b>' + '<br>' +
+                'Priced at only € ' + lastItem.price + '<br>' +
+                'Added ' + lastItem.created_at + '<br>' + '<br>' +
+                'Click to see details';
+
+            infoDiv.appendChild(infoParagraph);
+            newlyAdded.appendChild(infoDiv);
+
         })
         .fail((request, status, error) =>
         {
@@ -102,9 +122,9 @@ $(document).ready(() => {
     const headingText = document.createElement('article');
 
     if (profile === 'logged in') {
-        headingText.textContent = 'Hi! Welcome to the editting part of the book catalog. Click to see details and edit them!';
+        headingText.textContent = 'Hi! Welcome to the editting section of the Comics catalog. Select a comic in the listing below to see details and edit them!';
     } else {
-        headingText.textContent = 'Hi! Welcome to the "read only" book catalog. Click our books to see their details!';
+        headingText.textContent = 'Hi! Welcome to the Comics catalog. Select a comic in the listing below to see their details!';
     }
 
     headingText.setAttribute('class', 'welcometext text-center');

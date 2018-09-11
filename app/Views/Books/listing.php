@@ -5,12 +5,9 @@
 </div>
 
 <div class="row mb-4 ml-2 mr-2">
-    <div class="col-md-3 card mb-2">
+    <div class="newlyAdded col-md-3 card mb-2">
         <p class="text-center mt-2"><b>Newly added:</b></p>
-            <img class="card-img-top" src="" alt="Card image cap">
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
+        <img class="card-img-top" src="" alt="Card image cap">
     </div>
 
     <div class="listingHeading col-md-6 mb-2">
