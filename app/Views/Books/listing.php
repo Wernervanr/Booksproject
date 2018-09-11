@@ -7,7 +7,7 @@
 <div class="row mb-4 ml-2 mr-2">
     <div class="newlyAdded col-md-3 card mb-2">
         <p class="text-center mt-2"><b>Newly added:</b></p>
-        <img class="card-img-top" src="" alt="Card image cap">
+        <img class="newlyAddedImage card-img-top" alt="Cover of newly added comic">
     </div>
 
     <div class="listingHeading col-md-6 mb-2">
@@ -16,7 +16,7 @@
 
     <div class="mostPopulair col-md-3 card mb-2">
         <p class="text-center mt-2"><b>Most popular comic book:</b></p>
-        <img class="card-img-top" src="" alt="Card image cap">
+        <img class="mostPopulairImage card-img-top" src="" alt="Cover of most populair comic">
     </div>
 </div>
 
@@ -27,6 +27,7 @@
     <table class="table">
         <thead class="thead-comic-red">
         <tr>
+            <th class="d-none d-sm-table-cell">Cover</th>
             <th class="text-center text-sm-left">Title</th>
             <th class="d-none d-sm-table-cell">Author ID</th>
             <th class="d-none d-sm-table-cell">ISBN</th>
@@ -43,6 +44,7 @@
 
     <template id="tableRowTemplate">
         <tr class="listing">
+            <td class="cover"> </td>
             <td class="title"></td>
             <td class="author_id d-none d-sm-table-cell"></td>
             <td class="isbn d-none d-sm-table-cell"></td>

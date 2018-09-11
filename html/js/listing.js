@@ -25,6 +25,9 @@ $(document).ready(() => {
 
             const newlyAdded = document.querySelector('.newlyAdded');
 
+            const newlyAddedImage = document.querySelector('.newlyAddedImage');
+            newlyAddedImage.setAttribute('src', 'img/' + book.id + '.jpg');
+
             const infoDiv = document.createElement('div');
             infoDiv.setAttribute('class', 'card-body');
 
@@ -50,6 +53,9 @@ $(document).ready(() => {
             let book = JSON.parse(data);
 
             const mostPopulair = document.querySelector('.mostPopulair');
+
+            const mostPopulairImage = document.querySelector('.mostPopulairImage');
+            mostPopulairImage.setAttribute('src', 'img/' + book.id + '.jpg');
 
             const infoDiv = document.createElement('div');
             infoDiv.setAttribute('class', 'card-body');
