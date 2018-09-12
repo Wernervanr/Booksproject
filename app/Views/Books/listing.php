@@ -20,9 +20,9 @@
             <table class="table">
                 <thead class="thead-comic-red">
                 <tr>
-                    <th class="text-center text-sm-left">Title</th>
-                    <th class="d-none d-sm-table-cell">Author ID</th>
-                    <th class="d-none d-sm-table-cell">ISBN</th>
+                    <th class="text-center text-sm-left">Comic Book Title</th>
+                    <th class="d-none d-sm-table-cell">Publisher</th>
+                    <th class="d-none d-sm-table-cell">Series No.</th>
                     <th class="d-none d-sm-table-cell">Price</th>
                     <?php if($viewModel['profile']) { ?>
                         <th class="text-center text-sm-left">Delete</th>

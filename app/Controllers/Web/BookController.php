@@ -20,7 +20,7 @@ class BookController extends BaseController
         $book = new Book();
 
         $viewModel = [
-            'pageTitle' => "Books",
+            'pageTitle' => "Comic Books",
             'books' => $book->all(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
@@ -41,7 +41,7 @@ class BookController extends BaseController
         }
 
         $viewModel = [
-            'pageTitle' => "Book",
+            'pageTitle' => "Comic Book",
             'book' => $book->one($id),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
@@ -58,7 +58,7 @@ class BookController extends BaseController
         $book = new Book();
 
         $viewModel = [
-            'pageTitle' => "Book",
+            'pageTitle' => "Comic Book",
             'book' => $book->one($id),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
@@ -72,7 +72,7 @@ class BookController extends BaseController
     {
 
         $viewModel = [
-            'pageTitle' => "Create a book",
+            'pageTitle' => "Add a comic book",
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()

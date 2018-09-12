@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="titleCont col-12">
-        <h1>Comic <?php echo $viewModel['pageTitle'] ?></h1>
+        <h1><?php echo $viewModel['pageTitle'] ?></h1>
         <!--Javascript generated content (h2)-->
     </div>
 </div>
@@ -21,12 +21,12 @@
         </div>
 
         <div class="authorCont">
-            <b>Author ID</b>
+            <b>Publisher</b>
             <!--Javascript generated content (div)-->
         </div>
 
         <div class="isbnCont">
-            <b>ISBN</b>
+            <b>Series No.</b>
             <!--Javascript generated content (div)-->
         </div>
 

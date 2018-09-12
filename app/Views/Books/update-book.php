@@ -24,8 +24,8 @@
         </div>
 
         <div class="form-row">
-            <label for="isbn">ISBN</label>
-            <input type="text" id="isbn" name="isbn" class="form-control" value="<?php echo $viewModel['book']['isbn'] ?>" pattern="^\d{10,13}$" required/>
+            <label for="isbn">Series No.</label>
+            <input type="text" id="isbn" name="isbn" class="form-control" value="<?php echo $viewModel['book']['isbn'] ?>" pattern="^\d{1,3}$" required/>
         </div>
 
         <div class="form-row">
