@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: sans-serif;
   font-size: 12pt;
+  font-weight: lighter;
 }
 
 h1 {
@@ -11,12 +12,16 @@ h1 {
   color: #ed1d24;
 }
 
+a {
+  color: black;
+}
+
 .subtitle {
   position: relative;
   top: -20px;
   font-size: 1.5em;
   font-weight: bold;
-  color: #777777;
+  color: #555555;
 }
 
 .book-listing {
@@ -153,8 +158,8 @@ table .listing:hover {
 }
 
 .welcometext {
-  border: 1px solid #ed1d24;
-  padding: 100px 20px;
+  padding: 30px 20px;
+  font-size: 1.1rem;
 }
 
 .bg-comic {
@@ -184,6 +189,12 @@ table .listing:hover {
   font-size: 1.5rem;
   background: url("../img/listingheader.jpg");
   color: white;
+}
+
+.tablediv {
+  height: 510px;
+  overflow: scroll;
+  border-bottom: 1px solid lightgrey;
 }
 
 /*# sourceMappingURL=main.css.map */

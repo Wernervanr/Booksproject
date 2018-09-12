@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="titleCont col-12">
-        <h1>Comic <?php echo $viewModel['pageTitle'] ?></h1>
+        <h1><?php echo $viewModel['pageTitle'] ?></h1>
         <!--Javascript generated content (h2)-->
     </div>
 </div>
@@ -21,12 +21,12 @@
         </div>
 
         <div class="authorCont">
-            <b>Author ID</b>
+            <b>Publisher</b>
             <!--Javascript generated content (div)-->
         </div>
 
         <div class="isbnCont">
-            <b>ISBN</b>
+            <b>Series No.</b>
             <!--Javascript generated content (div)-->
         </div>
 
@@ -51,7 +51,7 @@
         <?php } ?>
 
         <?php if ($viewModel['imagePath']) { ?>
-            <img class="mb-4" src="<?php echo $viewModel['imagePath']; ?>" width="100%" />
+            <img class="mb-4" src="<?php echo $viewModel['imagePath']; ?>" width="300px" />
         <?php } ?>
     </div>
 </div>
@@ -76,4 +76,8 @@
 
 <script>let bookId = <?php echo $viewModel['book']['id']; ?>;</script>
 <script src="js/detail-listing.js"></script>
-<script src="js/delete-book.js"></script>
+
+<?php if ($viewModel['profile']) { ?>
+    <script src="js/delete-book.js"></script>
+<?php } ?>
+

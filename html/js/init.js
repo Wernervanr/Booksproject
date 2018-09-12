@@ -8,7 +8,6 @@ const createBook = (book) => {
     return $.post(env.api + '?route=books', JSON.stringify(book));
 };
 
-
 // 28 augustus
 const updateBook = (bookId, book) => {
     return $.post(env.api + '?route=update&id=' + bookId, JSON.stringify(book));
@@ -21,6 +20,15 @@ const deleteBook = (bookId) => {
 const getOneBook = (bookId) => {
     return $.get(env.api + '?route=book&id=' + bookId);
 };
+
+const getLastBook = () => {
+    return $.get(env.api + '?route=lastbook')
+};
+
+const getMostPopulair = () => {
+    return $.get(env.api + '?route=mostpopulair')
+};
+
 // end 28 augustus
 
 // 28 augustus
@@ -60,9 +68,9 @@ const getErrorMessageForElement = (element) => {
     if (element.validity.customError) {
         return element.validationMessage;
     } else if (element.validity.valueMissing) {
-        return 'Dit veld is verplicht';
+        return 'This field is compulsary';
     } else {
-        return 'Dit veld is onjuist gevuld';
+        return 'This field was filled incorrectly';
     }
 };
 // end 28 augustus
