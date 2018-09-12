@@ -41,7 +41,8 @@
         </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="d-flex justify-content-center col-md-6">
+        <div>
         <?php if ($viewModel['profile']) { ?>
             <form action="?route=upload-image&id=<?php echo $viewModel['book']['id'] ?>" enctype="multipart/form-data" method="post">
                 <div class="mb-1"><b>Select image file to upload</b></div>
@@ -53,6 +54,7 @@
         <?php if ($viewModel['imagePath']) { ?>
             <img class="mb-4" src="<?php echo $viewModel['imagePath']; ?>" width="300px" />
         <?php } ?>
+        </div>
     </div>
 </div>
 
