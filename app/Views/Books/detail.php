@@ -10,7 +10,7 @@
 <!--DETAIL CONTENT-->
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="order-2 col-md-6 order-md-1">
         <div class="col1 votes mb-2">
             <b>Likes</b>
             <div class="vote-count" data-id="<?php echo $viewModel['book']['id'] ?>">
@@ -41,18 +41,18 @@
         </div>
     </div>
 
-    <div class="d-flex justify-content-center col-md-6">
+    <div class="order-1 d-flex justify-content-center col-md-6 order-md-2">
         <div>
+        <?php if ($viewModel['imagePath']) { ?>
+            <img class="mb-4" src="<?php echo $viewModel['imagePath']; ?>" width="300px" />
+        <?php } ?>
+
         <?php if ($viewModel['profile']) { ?>
             <form action="?route=upload-image&id=<?php echo $viewModel['book']['id'] ?>" enctype="multipart/form-data" method="post">
                 <div class="mb-1"><b>Select image file to upload</b></div>
-                <div class="mb-2"><input type="file" name="imageFile" id="imageFile" accept="image/*"/></div>
                 <div class="mb-2"><input class="btn btn-comic" type="submit" value="Upload" name="submit" /></div>
+                <div class="mb-2"><input type="file" name="imageFile" id="imageFile" accept="image/*"/></div>
             </form>
-        <?php } ?>
-
-        <?php if ($viewModel['imagePath']) { ?>
-            <img class="mb-4" src="<?php echo $viewModel['imagePath']; ?>" width="300px" />
         <?php } ?>
         </div>
     </div>

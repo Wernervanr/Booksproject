@@ -91,9 +91,9 @@ $(document).ready(() => {
     const headingText = document.createElement('div');
 
     if (profile === 'logged in') {
-        headingText.textContent = 'Hi! Welcome to the editting section of the Comics catalog. Select a comic in the listing below to see details and edit them!';
+        headingText.textContent = 'Welcome to the editting section of the Comics catalog. Select a comic in the listing below to see details and edit them!';
     } else {
-        headingText.textContent = 'Hi! Welcome to the Comics catalog. Select a comic in the listing below to see their details!';
+        headingText.textContent = 'Welcome to the Comics catalog. Select a comic in the listing below to see their details!';
     }
 
     headingText.setAttribute('class', 'welcometext text-center');
