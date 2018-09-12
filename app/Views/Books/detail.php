@@ -51,7 +51,7 @@
         <?php } ?>
 
         <?php if ($viewModel['imagePath']) { ?>
-            <img class="mb-4" src="<?php echo $viewModel['imagePath']; ?>" width="100%" />
+            <img class="mb-4" src="<?php echo $viewModel['imagePath']; ?>" width="300px" />
         <?php } ?>
     </div>
 </div>
@@ -76,4 +76,8 @@
 
 <script>let bookId = <?php echo $viewModel['book']['id']; ?>;</script>
 <script src="js/detail-listing.js"></script>
-<script src="js/delete-book.js"></script>
+
+<?php if ($viewModel['profile']) { ?>
+    <script src="js/delete-book.js"></script>
+<?php } ?>
+

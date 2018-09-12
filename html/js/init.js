@@ -68,9 +68,9 @@ const getErrorMessageForElement = (element) => {
     if (element.validity.customError) {
         return element.validationMessage;
     } else if (element.validity.valueMissing) {
-        return 'Dit veld is verplicht';
+        return 'This field is compulsary';
     } else {
-        return 'Dit veld is onjuist gevuld';
+        return 'This field was filled incorrectly';
     }
 };
 // end 28 augustus

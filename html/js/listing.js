@@ -35,12 +35,16 @@ $(document).ready(() => {
             infoParagraph.setAttribute('class', 'card-text');
             infoParagraph.innerHTML =
                 '<b>' + book.title + '</b>' + '<br>' +
-                'Priced at only € ' + book.price + '<br>' +
-                'Added ' + book.created_at + '<br>' + '<br>' +
-                'Click to see details';
+                'Priced at only €' + book.price + '<br>' +
+                'Added on ' + book.created_at + '<br>' + '<br>' +
+                '<a href=""> Click to see details </a>';
 
             infoDiv.appendChild(infoParagraph);
             newlyAdded.appendChild(infoDiv);
+
+            newlyAdded.addEventListener('click', (event) => {
+                window.location = '?route=show&id=' + book.id;
+            });
         })
         .fail((request, status, error) =>
         {
@@ -64,12 +68,16 @@ $(document).ready(() => {
             infoParagraph.setAttribute('class', 'card-text');
             infoParagraph.innerHTML =
                 '<b>' + book.title + '</b>' + '<br>' +
-                'Priced at only € ' + book.price + '<br>' +
-                'Added ' + book.created_at + '<br>' + '<br>' +
-                'Click to see details';
+                'Priced at only €' + book.price + '<br>' +
+                'Added on ' + book.created_at + '<br>' + '<br>' +
+                '<a href=""> Click to see details </a>';
 
             infoDiv.appendChild(infoParagraph);
             mostPopulair.appendChild(infoDiv);
+
+            mostPopulair.addEventListener('click', (event) => {
+                window.location = '?route=show&id=' + book.id;
+            });
         })
         .fail((request, status, error) =>
         {
@@ -157,7 +165,7 @@ $(document).ready(() => {
     const listingHeading = document.querySelector('.listingHeading');
 
     // CONDITIONELE WELKOMTEKST
-    const headingText = document.createElement('article');
+    const headingText = document.createElement('div');
 
     if (profile === 'logged in') {
         headingText.textContent = 'Hi! Welcome to the editting section of the Comics catalog. Select a comic in the listing below to see details and edit them!';

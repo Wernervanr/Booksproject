@@ -14,13 +14,13 @@
         </div>
 
         <div class="form-row">
-            <label for="author">Author ID</label>
-            <input type="text" id="author" name="author" class="form-control" value="<?php echo $viewModel['book']['author_id'] ?>" min="1" required/>
+            <label for="author_id">Author ID</label>
+            <input type="number" id="author_id" name="author_id" class="form-control" value="<?php echo $viewModel['book']['author_id'] ?>" min="1" required/>
         </div>
 
         <div class="form-row">
-            <label for="category">Category ID</label>
-            <input type="text" id="category" name="category" class="form-control" value="<?php echo $viewModel['book']['category_id'] ?>" min="1" required/>
+            <label for="category_id">Category ID</label>
+            <input type="number" id="category_id" name="category_id" class="form-control" value="<?php echo $viewModel['book']['category_id'] ?>" min="1" required/>
         </div>
 
         <div class="form-row">
