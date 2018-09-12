@@ -13,8 +13,8 @@
             </div>
 
             <div class="form-group">
-                <label for="author_id">Author ID</label>
-                <input type="number" id="author_id" name="author_id" class="form-control" min="1" required/>
+                <label for="author_id">Publisher</label>
+                <input type="text" id="author_id" name="author_id" class="form-control" min="1" required/>
             </div>
 
             <div class="form-group">
