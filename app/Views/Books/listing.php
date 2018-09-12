@@ -9,7 +9,7 @@
 </div>
 
 <div class="row mb-4">
-    <div class="newlyAdded d-none d-md-block col-md-6 order-md-1 col-lg-2 order-lg-1 card mb-2">
+    <div class="newlyAdded d-none d-md-block col-md-6 order-md-1 col-lg-2 order-lg-1 card mb-3">
         <p class="text-center mt-2"><b>Newly added Comic Book:</b></p>
         <img class="newlyAddedImage card-img-top" alt="Cover of newly added comic">
     </div>
@@ -59,7 +59,7 @@
         <?php } ?>
     </div>
 
-    <div class="mostPopulair d-none d-md-block col-md-6 order-md-2 col-lg-2 order-lg-3 card mb-2">
+    <div class="mostPopulair d-none d-md-block col-md-6 order-md-2 col-lg-2 order-lg-3 card mb-3">
         <p class="text-center mt-2"><b>Most popular comic book:</b></p>
         <img class="mostPopulairImage card-img-top" src="" alt="Cover of most populair comic">
     </div>
