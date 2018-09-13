@@ -39,6 +39,22 @@
             <b>Description</b>
             <!--Javascript generated content (div)-->
         </div>
+
+        <!--BUTTONS-->
+        <div class="mt-2 d-flex">
+            <div class="p2 mr-auto">
+                <button class="btn btn-comic" onClick="window.location = 'index.php'">Back</button>
+            </div>
+
+            <?php if ($viewModel['profile']) { ?>
+                <div class="p2 row mr-1">
+                    <button class="btn btn-comic mr-1" onClick="window.location = '?route=edit&id=<?php echo $viewModel['book']['id'] ?>'">Edit book</button>
+                    <form id="deleteBtn">
+                        <button class="btn btn-comic" type="submit">Delete</button>
+                    </form>
+                </div>
+            <?php } ?>
+        </div>
     </div>
 
     <div class="order-1 d-flex justify-content-center col-md-6 order-md-2">
@@ -50,30 +66,12 @@
         <?php if ($viewModel['profile']) { ?>
             <form action="?route=upload-image&id=<?php echo $viewModel['book']['id'] ?>" enctype="multipart/form-data" method="post">
                 <div class="mb-1"><b>Select image file to upload</b></div>
-                <div class="mb-2"><input class="btn btn-comic" type="submit" value="Upload" name="submit" /></div>
                 <div class="mb-2"><input type="file" name="imageFile" id="imageFile" accept="image/*"/></div>
+                <div class="mb-2"><input class="btn btn-comic" type="submit" value="Upload" name="submit" /></div>
             </form>
         <?php } ?>
         </div>
     </div>
-</div>
-
-<hr>
-
-<!--BUTTONS-->
-<div class="mt-2 d-flex">
-    <div class="p2 mr-auto">
-        <button class="btn btn-comic" onClick="window.location = 'index.php'">Back</button>
-    </div>
-
-    <?php if ($viewModel['profile']) { ?>
-        <div class="p2 row mr-1">
-            <button class="btn btn-comic mr-1" onClick="window.location = '?route=edit&id=<?php echo $viewModel['book']['id'] ?>'">Edit book</button>
-            <form id="deleteBtn">
-                <button class="btn btn-comic" type="submit">Delete</button>
-            </form>
-        </div>
-    <?php } ?>
 </div>
 
 <script>let bookId = <?php echo $viewModel['book']['id']; ?>;</script>

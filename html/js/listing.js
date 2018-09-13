@@ -24,6 +24,7 @@ $(document).ready(() => {
             let book = JSON.parse(data);
 
             const newlyAdded = document.querySelector('.newlyAdded');
+            newlyAdded.style.cursor = "pointer";
 
             const newlyAddedImage = document.querySelector('.newlyAddedImage');
             newlyAddedImage.setAttribute('src', 'img/' + book.id + '.jpg');
@@ -37,7 +38,7 @@ $(document).ready(() => {
                 '<b>' + book.title + '</b>' + '<br>' +
                 'Priced at only €' + book.price + '<br>' +
                 'Added on ' + book.created_at + '<br>' + '<br>' +
-                '<a href=""> Click to see details </a>';
+                'Click to see details';
 
             infoDiv.appendChild(infoParagraph);
             newlyAdded.appendChild(infoDiv);
@@ -57,6 +58,7 @@ $(document).ready(() => {
             let book = JSON.parse(data);
 
             const mostPopulair = document.querySelector('.mostPopulair');
+            mostPopulair.style.cursor = "pointer";
 
             const mostPopulairImage = document.querySelector('.mostPopulairImage');
             mostPopulairImage.setAttribute('src', 'img/' + book.id + '.jpg');
@@ -70,7 +72,7 @@ $(document).ready(() => {
                 '<b>' + book.title + '</b>' + '<br>' +
                 'Priced at only €' + book.price + '<br>' +
                 'Added on ' + book.created_at + '<br>' + '<br>' +
-                '<a href=""> Click to see details </a>';
+                'Click to see details';
 
             infoDiv.appendChild(infoParagraph);
             mostPopulair.appendChild(infoDiv);
