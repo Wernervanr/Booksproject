@@ -24,10 +24,10 @@ $(document).ready(() => {
             let book = JSON.parse(data);
 
             const newlyAdded = document.querySelector('.newlyAdded');
-            newlyAdded.style.cursor = "pointer";
 
             const newlyAddedImage = document.querySelector('.newlyAddedImage');
             newlyAddedImage.setAttribute('src', 'img/' + book.id + '.jpg');
+            newlyAddedImage.style.cursor = "pointer";
 
             const infoDiv = document.createElement('div');
             infoDiv.setAttribute('class', 'card-body');
@@ -38,7 +38,7 @@ $(document).ready(() => {
                 '<b>' + book.title + '</b>' + '<br>' +
                 'Priced at only €' + book.price + '<br>' +
                 'Added on ' + book.created_at + '<br>' + '<br>' +
-                'Click to see details';
+                'Click image to see details';
 
             infoDiv.appendChild(infoParagraph);
             newlyAdded.appendChild(infoDiv);
@@ -58,10 +58,10 @@ $(document).ready(() => {
             let book = JSON.parse(data);
 
             const mostPopulair = document.querySelector('.mostPopulair');
-            mostPopulair.style.cursor = "pointer";
 
             const mostPopulairImage = document.querySelector('.mostPopulairImage');
             mostPopulairImage.setAttribute('src', 'img/' + book.id + '.jpg');
+            mostPopulairImage.style.cursor = "pointer";
 
             const infoDiv = document.createElement('div');
             infoDiv.setAttribute('class', 'card-body');
@@ -72,7 +72,7 @@ $(document).ready(() => {
                 '<b>' + book.title + '</b>' + '<br>' +
                 'Priced at only €' + book.price + '<br>' +
                 'Added on ' + book.created_at + '<br>' + '<br>' +
-                'Click to see details';
+                'Click image to see details';
 
             infoDiv.appendChild(infoParagraph);
             mostPopulair.appendChild(infoDiv);
@@ -93,34 +93,39 @@ $(document).ready(() => {
 
             const recommendedDiv = document.querySelector('.recommended');
 
-            const recommendedSlidesWrapper = document.createElement('div');
-            recommendedSlidesWrapper.setAttribute('class', 'slidesRecommended ');
+            const recommendedWrapper = document.createElement('div');
+            recommendedWrapper.setAttribute('class', 'Recommended bg-white');
 
-            recommendedDiv.appendChild(recommendedSlidesWrapper);
+            recommendedDiv.appendChild(recommendedWrapper);
 
             books.forEach(function (book) {
-                const recommendedSlide = document.createElement('div');
-                recommendedSlide.setAttribute('class', 'slide p-2');
+                const recommended = document.createElement('div');
+                recommended.setAttribute('class', 'slide p-2');
 
-                const recommendedSlideImageWrapper = document.createElement('div');
-                recommendedSlideImageWrapper.setAttribute('class', 'recommendedimage');
+                const recommendedImageWrapper = document.createElement('div');
+                recommendedImageWrapper.setAttribute('class', 'recommendedimage mx-auto d-block mb-2');
 
-                const recommendedSlideImage = document.createElement('img');
-                recommendedSlideImage.setAttribute('src', 'img/' + book.id + '.jpg');
+                const recommendedImage = document.createElement('img');
+                recommendedImage.setAttribute('class', 'px-2');
+                recommendedImage.setAttribute('src', 'img/' + book.id + '.jpg');
+                recommendedImage.style.cursor = "pointer";
 
-                const recommendedSlideTextContent = document.createElement('p');
-                // recommendedSlideTextContent.setAttribute('class', 'border');
+                const recommendedTextContent = document.createElement('p');
 
-                recommendedSlideTextContent.innerHTML =
+                recommendedTextContent.innerHTML =
                     '<b>' + book.title + '</b>' + '<br>' +
-                    '<b>' + 'Price:' + '</b> €' + book.price + '<br>' +
+                    '<b>' + 'Series No: ' + '</b>' + book.isbn + '<br>' +
                     '<b>' + 'Description:' + '</b>' + '<br>' + book.description;
 
-                recommendedSlideImageWrapper.appendChild(recommendedSlideImage);
+                recommendedImageWrapper.appendChild(recommendedImage);
 
-                recommendedSlide.appendChild(recommendedSlideImageWrapper);
-                recommendedSlide.appendChild(recommendedSlideTextContent);
-                recommendedSlidesWrapper.appendChild(recommendedSlide);
+                recommended.appendChild(recommendedImageWrapper);
+                recommended.appendChild(recommendedTextContent);
+                recommendedWrapper.appendChild(recommended);
+
+                recommended.addEventListener('click', (event) => {
+                    window.location = '?route=show&id=' + book.id;
+                });
             })
         });
 

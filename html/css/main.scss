@@ -219,7 +219,7 @@ table {
 }
 
 .recommendedimage {
-  width: 300px;
+  width: auto;
   align-content: center;
 }
 
@@ -227,6 +227,6 @@ table {
   .recommendedimage {
     width: 100px;
     float: left;
-    margin-right: 11px;
+    margin-right: 10px;
   }
 }
