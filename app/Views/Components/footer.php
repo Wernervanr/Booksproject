@@ -22,6 +22,13 @@
                 arrows: false,
                 dots: true
             });
+            $('.slidesRecommended').slick({
+                fade: true,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                arrows: false,
+                dots: true
+            });
         </script>
         </body>
 </html>

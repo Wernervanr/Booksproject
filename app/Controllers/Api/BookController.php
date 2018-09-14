@@ -46,6 +46,14 @@ class BookController extends BaseController
         $this->renderJson(200, $book);
     }
 
+    public function getRecommendedBooks() {
+        $bookModel = new Book();
+
+        $book = $bookModel->recommended();
+
+        $this->renderJson(200, $book);
+    }
+
     // end 29 augustus
 
     public function createBook() {

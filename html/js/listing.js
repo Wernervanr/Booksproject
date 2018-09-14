@@ -86,6 +86,47 @@ $(document).ready(() => {
             console.log(request);
         });
 
+    getRecommended()
+        .done((data, text) => {
+
+            let books = JSON.parse(data);
+
+            const recommendedDiv = document.querySelector('.recommended');
+
+            const recommendedSlidesWrapper = document.createElement('div');
+            recommendedSlidesWrapper.setAttribute('class', 'slidesRecommended ');
+
+            recommendedDiv.appendChild(recommendedSlidesWrapper);
+
+            books.forEach(function (book) {
+                const recommendedSlide = document.createElement('div');
+                recommendedSlide.setAttribute('class', 'slide p-2');
+
+                const recommendedSlideImageWrapper = document.createElement('div');
+                recommendedSlideImageWrapper.setAttribute('class', 'recommendedimage');
+
+                const recommendedSlideImage = document.createElement('img');
+                recommendedSlideImage.setAttribute('src', 'img/' + book.id + '.jpg');
+
+                const recommendedSlideTextContent = document.createElement('p');
+                // recommendedSlideTextContent.setAttribute('class', 'border');
+
+                recommendedSlideTextContent.innerHTML =
+                    '<b>' + book.title + '</b>' + '<br>' +
+                    '<b>' + 'Price:' + '</b> €' + book.price + '<br>' +
+                    '<b>' + 'Description:' + '</b>' + '<br>' + book.description;
+
+                recommendedSlideImageWrapper.appendChild(recommendedSlideImage);
+
+                recommendedSlide.appendChild(recommendedSlideImageWrapper);
+                recommendedSlide.appendChild(recommendedSlideTextContent);
+                recommendedSlidesWrapper.appendChild(recommendedSlide);
+            })
+        });
+
+
+
+
 
     // CONDITIONELE WELKOMTEKST
     const listingHeading = document.querySelector('.listingHeading');
