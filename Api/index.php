@@ -47,6 +47,10 @@ $method = $_SERVER['REQUEST_METHOD'];
         $bookController = new BookController();
         $bookController->getMostPopulairBook();
 
+    } else if ($route === 'recommended' && $method === 'GET') {
+        $bookController = new BookController();
+        $bookController->getRecommendedBooks();
+
 // end 28 augustus
 
     } else if ($route === 'votes') {

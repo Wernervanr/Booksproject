@@ -8,15 +8,15 @@
     <!--Javascript generated welcometext content        -->
 </div>
 
-<div class="row mb-4">
-    <div class="newlyAdded d-none d-md-block col-md-6 order-md-1 col-lg-2 order-lg-1 card mb-3">
+<div class="row mb-1">
+    <div class="newlyAdded d-none d-lg-block col-lg-2 order-lg-1 card mb-3">
         <p class="text-center mt-2"><b>Newly added Comic Book:</b></p>
         <img class="newlyAddedImage card-img-top" alt="Cover of newly added comic">
     </div>
 
     <div class="order-md-3 col-lg-8 order-lg-2 mb-2">
         <div class="listingheader text-center">Our Comics</div>
-        <div class="tablediv">
+        <div class="tablediv bg-white">
             <table class="table">
                 <thead class="thead-comic-red">
                 <tr>
@@ -59,10 +59,19 @@
         <?php } ?>
     </div>
 
-    <div class="mostPopulair d-none d-md-block col-md-6 order-md-2 col-lg-2 order-lg-3 card mb-3">
+    <div class="mostPopulair d-none d-lg-block col-lg-2 order-lg-3 card mb-3">
         <p class="text-center mt-2"><b>Most popular comic book:</b></p>
         <img class="mostPopulairImage card-img-top" src="" alt="Cover of most populair comic">
     </div>
+
+
+    <div class="recommended order-md-4" id="recommended">
+        <p class="mt-2 mx-1 rarestheader">See our recommended rarest comics below!</p>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center"">
+    <button type="button" class="btn btn-comic" onclick="window.location='?route=index#'">Back to top</button>
 </div>
 
 <!--LISTING CONTENT-->

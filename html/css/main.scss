@@ -210,3 +210,23 @@ table {
   overflow: scroll;
   border-bottom: 1px solid lightgrey;
 }
+
+.rarestheader {
+  text-align: center;
+  font-size: 1.4rem;
+  color: $comic_red;
+  font-weight: bold;
+}
+
+.recommendedimage {
+  width: auto;
+  align-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .recommendedimage {
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+  }
+}

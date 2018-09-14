@@ -29,6 +29,10 @@ const getMostPopulair = () => {
     return $.get(env.api + '?route=mostpopulair')
 };
 
+const getRecommended = () => {
+    return $.get(env.api + '?route=recommended')
+};
+
 // end 28 augustus
 
 // 28 augustus
