@@ -8,7 +8,6 @@ const createBook = (book) => {
     return $.post(env.api + '?route=books', JSON.stringify(book));
 };
 
-// 28 augustus
 const updateBook = (bookId, book) => {
     return $.post(env.api + '?route=update&id=' + bookId, JSON.stringify(book));
 };
@@ -33,9 +32,6 @@ const getRecommended = () => {
     return $.get(env.api + '?route=recommended')
 };
 
-// end 28 augustus
-
-// 28 augustus
 const fieldValidation = (event) => {
     const inputField = event.target;
 
@@ -77,8 +73,6 @@ const getErrorMessageForElement = (element) => {
         return 'This field was filled incorrectly';
     }
 };
-// end 28 augustus
-
 
 // DOM helper functions
 

@@ -135,10 +135,6 @@ $(document).ready(() => {
             })
         });
 
-
-
-
-
     // CONDITIONELE WELKOMTEKST
     const listingHeading = document.querySelector('.listingHeading');
 
