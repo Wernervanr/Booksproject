@@ -35,15 +35,15 @@ $(document).ready(() => {
             const infoParagraph = document.createElement('p');
             infoParagraph.setAttribute('class', 'card-text');
             infoParagraph.innerHTML =
-                '<b>' + book.title + '</b>' + '<br>' +
-                'Priced at only €' + book.price + '<br>' +
-                'Added on ' + book.created_at + '<br>' + '<br>' +
-                'Click image to see details';
+                `<b>${book.title}</b><br>
+                Priced at only €${book.price} <br>
+                Added on ${book.created_at} <br> <br>
+                Click image to see details`;
 
             infoDiv.appendChild(infoParagraph);
             newlyAdded.appendChild(infoDiv);
 
-            newlyAdded.addEventListener('click', (event) => {
+            newlyAddedImage.addEventListener('click', (event) => {
                 window.location = '?route=show&id=' + book.id;
             });
         })
@@ -77,7 +77,7 @@ $(document).ready(() => {
             infoDiv.appendChild(infoParagraph);
             mostPopulair.appendChild(infoDiv);
 
-            mostPopulair.addEventListener('click', (event) => {
+            mostPopulairImage.addEventListener('click', (event) => {
                 window.location = '?route=show&id=' + book.id;
             });
         })
@@ -123,7 +123,7 @@ $(document).ready(() => {
                 recommended.appendChild(recommendedTextContent);
                 recommendedWrapper.appendChild(recommended);
 
-                recommended.addEventListener('click', (event) => {
+                recommendedImage.addEventListener('click', (event) => {
                     window.location = '?route=show&id=' + book.id;
                 });
             })

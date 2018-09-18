@@ -100,12 +100,8 @@ class BookController extends BaseController
         exit;
     }
 
-    public static function destroy($id = 0)
-    {
 
-    }
-
-    public static function uploadImage($id) : void
+    public function uploadImage($id) : void
     {
         $imageFile = $_FILES['imageFile'] ?? null;
 
