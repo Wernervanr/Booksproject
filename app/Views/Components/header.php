@@ -59,25 +59,25 @@
     <div class="slides">
         <div class="slide">
             <div class="">
-                <img src="img/slide1.jpg" alt="" />
+                <img src="slides/slide1.jpg" alt="" />
             </div>
         </div><!--/Slide 1-->
 
         <div class="slide orange">
             <div class="">
-                <img src="img/slide2.jpg" alt="" />
+                <img src="slides/slide2.jpg" alt="" />
             </div>
         </div><!--/Slide 2-->
 
         <div class="slide green">
             <div class="">
-                <img src="img/slide3.jpg" alt="" />
+                <img src="slides/slide3.jpg" alt="" />
             </div>
         </div><!--/Slide 3-->
 
         <div class="slide yellow">
             <div class="">
-                <img src="img/slide4.jpg" alt="" />
+                <img src="slides/slide4.jpg" alt="" />
             </div>
         </div><!--/Slide 4-->
     </div>
