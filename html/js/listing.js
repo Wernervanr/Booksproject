@@ -111,12 +111,6 @@ $(document).ready(() => {
                 recommendedImage.style.cursor = "pointer";
 
                 const recommendedTextContent = document.createElement('p');
-
-                `<b>${book.title}</b><br>
-                Priced at only €${book.price} <br>
-                Added on ${book.created_at} <br> <br>
-                Click image to see details`;
-
                 recommendedTextContent.innerHTML =
                     `<b> ${book.title} </b><br>
                     <b>Series No: </b> ${book.isbn} <br>
