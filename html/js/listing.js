@@ -27,8 +27,6 @@ $(document).ready(() => {
 
             const newlyAddedImage = document.querySelector('.newlyAddedImage');
             const imageExist = 'img/' + book.id + '.jpg';
-            console.log(imageExist);
-
             $.get(imageExist)
                 .done(function() {
                     newlyAddedImage.setAttribute('src', 'img/' + book.id + '.jpg');
@@ -38,7 +36,6 @@ $(document).ready(() => {
                     newlyAddedImage.style.cursor = "pointer";
             });
 
-//            newlyAddedImage.setAttribute('src', 'img/' + book.id + '.jpg');
             const infoDiv = document.createElement('div');
             infoDiv.setAttribute('class', 'card-body');
 
