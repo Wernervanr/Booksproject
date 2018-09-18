@@ -81,26 +81,6 @@ class BookController extends BaseController
         $this->renderWebView('/Books/new-book', $viewModel);
     }
 
-    public function update($fields = [], $id = 0)
-    {
-        $book = new Book();
-        $id = $book->save($fields, $id);
-
-        $this->addMessage('Book succesfully updated');
-
-        header("location: ?route=show&id={$id}");
-        exit;
-    }
-
-    public function store($fields = [])
-    {
-        $book = new Book();
-        $id = $book->save($fields);
-        header("location: ?route=show&id={$id}");
-        exit;
-    }
-
-
     public function uploadImage($id) : void
     {
         $imageFile = $_FILES['imageFile'] ?? null;

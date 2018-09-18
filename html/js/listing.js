@@ -26,9 +26,19 @@ $(document).ready(() => {
             const newlyAdded = document.querySelector('.newlyAdded');
 
             const newlyAddedImage = document.querySelector('.newlyAddedImage');
-            newlyAddedImage.setAttribute('src', 'img/' + book.id + '.jpg');
-            newlyAddedImage.style.cursor = "pointer";
+            const imageExist = 'img/' + book.id + '.jpg';
+            console.log(imageExist);
 
+            $.get(imageExist)
+                .done(function() {
+                    newlyAddedImage.setAttribute('src', 'img/' + book.id + '.jpg');
+                    newlyAddedImage.style.cursor = "pointer";
+                }).fail(function() {
+                    newlyAddedImage.setAttribute('src', 'slides/unavailable.jpg');
+                    newlyAddedImage.style.cursor = "pointer";
+            });
+
+//            newlyAddedImage.setAttribute('src', 'img/' + book.id + '.jpg');
             const infoDiv = document.createElement('div');
             infoDiv.setAttribute('class', 'card-body');
 
