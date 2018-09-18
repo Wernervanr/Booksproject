@@ -69,10 +69,10 @@ $(document).ready(() => {
             const infoParagraph = document.createElement('p');
             infoParagraph.setAttribute('class', 'card-text');
             infoParagraph.innerHTML =
-                '<b>' + book.title + '</b>' + '<br>' +
-                'Priced at only €' + book.price + '<br>' +
-                'Added on ' + book.created_at + '<br>' + '<br>' +
-                'Click image to see details';
+                `<b>${book.title}</b><br>
+                Priced at only €${book.price} <br>
+                Added on ${book.created_at} <br> <br>
+                Click image to see details`;
 
             infoDiv.appendChild(infoParagraph);
             mostPopulair.appendChild(infoDiv);
@@ -112,10 +112,15 @@ $(document).ready(() => {
 
                 const recommendedTextContent = document.createElement('p');
 
+                `<b>${book.title}</b><br>
+                Priced at only €${book.price} <br>
+                Added on ${book.created_at} <br> <br>
+                Click image to see details`;
+
                 recommendedTextContent.innerHTML =
-                    '<b>' + book.title + '</b>' + '<br>' +
-                    '<b>' + 'Series No: ' + '</b>' + book.isbn + '<br>' +
-                    '<b>' + 'Description:' + '</b>' + '<br>' + book.description;
+                    `<b> ${book.title} </b><br>
+                    <b>Series No: </b> ${book.isbn} <br>
+                    <b>Description: </b><br> ${book.description}`;
 
                 recommendedImageWrapper.appendChild(recommendedImage);
 
