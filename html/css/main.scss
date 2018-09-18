@@ -177,7 +177,7 @@ table {
 }
 
 .bg-comic {
-  background: url('../img/comicOpacity.jpg');
+  background: url('../slides/comicOpacity.jpg');
 }
 
 .btn-comic {
@@ -201,7 +201,8 @@ table {
   padding: 10px 0px;
   font-weight: bold;
   font-size: 1.5rem;
-  background: url('../img/listingheader.jpg');
+  background: url('../slides/listingheader.jpg');
+  background-size: 100%;
   color: white;
 }
 
@@ -228,5 +229,6 @@ table {
     width: 100px;
     float: left;
     margin-right: 10px;
+
   }
 }

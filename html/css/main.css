@@ -163,7 +163,7 @@ table .listing:hover {
 }
 
 .bg-comic {
-  background: url("../img/comicOpacity.jpg");
+  background: url("../slides/comicOpacity.jpg");
 }
 
 .btn-comic {
@@ -187,7 +187,8 @@ table .listing:hover {
   padding: 10px 0px;
   font-weight: bold;
   font-size: 1.5rem;
-  background: url("../img/listingheader.jpg");
+  background: url("../slides/listingheader.jpg");
+  background-size: 100%;
   color: white;
 }
 
