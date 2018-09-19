@@ -7,7 +7,7 @@ Amongst the table, it shows the most populair comic book based on votes, and the
 There is a login function, which will allow adding, editting and deleting of the comic books.
 
 ## Basic instructions
-The app is build with php7, javascript, html and it's fair share of dependencies. Below is my attempt to make installation this easy for you. How sweet :)
+The app is build with php7, javascript, html and it's fair share of dependencies. Below is my attempt to make installation this easy for you.
 
  ### Dependencies
 
@@ -27,7 +27,7 @@ The app is build with php7, javascript, html and it's fair share of dependencies
  
  **Environment-settings-example.js**
  
- Open the environment-settings-example.js and replace the dummy data with the filepath to /Booksproject/api/.
+ Open the environment-settings-example.js and replace the dummy data with the filepath to /Booksproject/api/. Remove the '-example' part of the filename.
  
  **Authentication.php**
  

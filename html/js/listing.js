@@ -30,11 +30,10 @@ $(document).ready(() => {
             $.get(imageExist)
                 .done(function() {
                     newlyAddedImage.setAttribute('src', 'img/' + book.id + '.jpg');
-                    newlyAddedImage.style.cursor = "pointer";
                 }).fail(function() {
                     newlyAddedImage.setAttribute('src', 'slides/unavailable.jpg');
-                    newlyAddedImage.style.cursor = "pointer";
             });
+            newlyAddedImage.style.cursor = "pointer";
 
             const infoDiv = document.createElement('div');
             infoDiv.setAttribute('class', 'card-body');
