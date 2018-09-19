@@ -9,6 +9,15 @@ There is a login function, which will allow adding, editting and deleting of the
 ## Basic instructions
 The app is build with php7, javascript, html and it's fair share of dependencies. Below is my attempt to make installation this easy for you.
 
+ ### Steps
+ 
+ - Download and install this repository.
+ - Run composer install (Click the link under 'composer.json' at 'Dependencies' to see instructions if you don't have composer installed yet).
+ - Create a database and populate with the SQL script provided in the sql directory at the folder 'SQLScripts'.
+ - Copy .env.example to .env and replace dummydata with your own details.
+ - Copy environment-settings-example.js to environment-settings.js and replace dummydata with your own details.
+ - Check the infrastructure/Authentication.php file for the username and password to login.
+
  ### Dependencies
 
  **Composer.json**
@@ -18,20 +27,6 @@ The app is build with php7, javascript, html and it's fair share of dependencies
  **Sass**
  
  Go to [this](https://sass-lang.com/) website for instruction on how to install Sass.
- 
- ### Example files
- 
- **.Env.example**
- 
- Somewhere at the bottom of the directory, you see a .env.example file. See the dummy data - replace this with your own. Do not forget to remove the <> tags around the dummy data. Remove the '.example' part of the filename.
- 
- **Environment-settings-example.js**
- 
- Open the environment-settings-example.js and replace the dummy data with the filepath to /Booksproject/api/. Remove the '-example' part of the filename.
- 
- **Authentication.php**
- 
- Open the authentication.php file and replace the information in the login function with your own.
  
  ## SQL Base file
  
