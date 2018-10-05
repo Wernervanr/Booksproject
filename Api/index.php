@@ -18,48 +18,46 @@ $route = $_GET['route'] ?? 'index';
 $id = $_GET['id'] ?? null;
 $method = $_SERVER['REQUEST_METHOD'];
 
-    if ($route === 'books' && $method === 'GET') {
-        $bookController = new BookController();
-        $bookController->getBooks();
+if ($route === 'books' && $method === 'GET') {
+    $bookController = new BookController();
+    $bookController->getBooks();
 
-    } else if ($route === 'books' && $method === 'POST') {
-        $bookController = new BookController();
-        $bookController->createBook();
+} else if ($route === 'books' && $method === 'POST') {
+    $bookController = new BookController();
+    $bookController->createBook();
 
-// 28 augustus
-    } else if ($route === 'update' && $method === 'POST') {
-        $bookController = new BookController();
-        $bookController->updateBook();
+} else if ($route === 'update' && $method === 'POST') {
+    $bookController = new BookController();
+    $bookController->updateBook();
 
-    } else if ($route === 'delete' && $method === 'POST') {
-        $bookController = new BookController();
-        $bookController->deleteBook();
+} else if ($route === 'delete' && $method === 'POST') {
+    $bookController = new BookController();
+    $bookController->deleteBook();
 
-    } else if ($route === 'book' && $method === 'GET') {
-        $bookController = new BookController();
-        $bookController->getOneBook();
+} else if ($route === 'book' && $method === 'GET') {
+    $bookController = new BookController();
+    $bookController->getOneBook();
 
-    } else if ($route === 'lastbook' && $method ==='GET') {
-        $bookController = new BookController();
-        $bookController->getLastBook();
+} else if ($route === 'lastbook' && $method ==='GET') {
+    $bookController = new BookController();
+    $bookController->getLastBook();
 
-    } else if ($route ==='mostpopulair' && $method === 'GET') {
-        $bookController = new BookController();
-        $bookController->getMostPopulairBook();
+} else if ($route ==='mostpopulair' && $method === 'GET') {
+    $bookController = new BookController();
+    $bookController->getMostPopulairBook();
 
-    } else if ($route === 'recommended' && $method === 'GET') {
-        $bookController = new BookController();
-        $bookController->getRecommendedBooks();
+} else if ($route === 'recommended' && $method === 'GET') {
+    $bookController = new BookController();
+    $bookController->getRecommendedBooks();
 
-// end 28 augustus
 
-    } else if ($route === 'votes') {
-        $bookVoteController = new BookVoteController();
-        if ($method === 'GET') {
-            $bookVoteController->show($id);
-        } else if ($method === 'POST') {
-            $bookVoteController->store($id);
-        } else if ($method === 'DELETE') {
-            $bookVoteController->destroy($id);
-        }
+} else if ($route === 'votes') {
+    $bookVoteController = new BookVoteController();
+    if ($method === 'GET') {
+        $bookVoteController->show($id);
+    } else if ($method === 'POST') {
+        $bookVoteController->upvote($id);
+    } else if ($method === 'DELETE') {
+        $bookVoteController->downvote($id);
     }
+}

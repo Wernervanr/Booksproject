@@ -96,7 +96,7 @@ function upVote(id){
     }).done(function( data ) {
         if (data) {
             response = $.parseJSON(data);
-            votes = response.votes;
+            votes = response;
             $(".vote-count").html(votes);
         }
     });
@@ -109,7 +109,7 @@ function downVote(id){
     }).done(function( data ) {
         if (data) {
             response = $.parseJSON(data);
-            votes = response.votes;
+            votes = response;
             $(".vote-count").html(votes);
         }
     });
@@ -122,7 +122,7 @@ function getVotes(id){
     }).done(function( data ) {
         if (data) {
             response = $.parseJSON(data);
-            votes = response.votes;
+            votes = response;
             $(".vote-count").html(votes);
         }
     });
@@ -133,7 +133,7 @@ $( document ).ready(function() {
     if (voteElement){
         let bookId = $(voteElement).find(".vote-count").data("id");
         if (bookId>0){
-            setInterval("getVotes(" + bookId + ")", 1000);
+            // setInterval("getVotes(" + bookId + ")", 1000);
             $(voteElement).find(".up-vote").click(function (){
                 upVote(bookId);
             });

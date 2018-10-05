@@ -76,33 +76,27 @@ class Book extends Database
         return $id;
     }
 
-    public function delete($id = null)
+    public function delete($id)
     {
-        if (!empty($id)) {
-            $return = $this->execute("DELETE FROM {$this->table_name} WHERE {$this->primary_key} = :id", ['id' => $id]);
-        }
-        return true;
+        $this->execute("DELETE FROM {$this->table_name} WHERE {$this->primary_key} = :id", ['id' => $id]);
     }
 
-    public function upVote($id = null)
+    public function upVote($id)
     {
-        if (!empty($id)) {
-            $return = $this->execute("
-            UPDATE {$this->table_name} SET `votes` = `votes` + 1
-            WHERE {$this->primary_key} = :id
-            ", ['id' => $id]);
-        }
-        return true;
+        $query = "UPDATE
+                    {$this->table_name}
+                  SET
+                   `votes` = `votes` + 1
+                  WHERE
+                   {$this->primary_key} = :id";
+        $this->execute($query, ['id' => $id]);
     }
 
-    public function downVote($id = null)
+    public function downVote($id)
     {
-        if (!empty($id)) {
-            $return = $this->execute("
-            UPDATE {$this->table_name} SET `votes` = `votes` - 1
-            WHERE {$this->primary_key} = :id
-            ", ['id' => $id]);
-        }
-        return true;
+        $this->execute("
+        UPDATE {$this->table_name} SET `votes` = `votes` - 1
+        WHERE {$this->primary_key} = :id
+        ", ['id' => $id]);
     }
 }

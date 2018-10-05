@@ -15,73 +15,36 @@ class BookVoteController extends BaseController
         $book = $book->one($id);
 
         if ($book) {
-            $response = [
-                'status_code' => 200,
-                'status_message' => '',
-                'total' => 1,
-                'votes' => $book['votes'],
-            ];
+            $this->renderJson(200, $book['votes']);
         } else {
-            $response = [
-                'status_code' => 404,
-                'status_message' => 'Book ' . $id . ' not found',
-                'total' => 0,
-                'votes' => null,
-            ];
+            $this->renderJson(404);
         }
-
-        $this->renderJson($response);
     }
 
-    public function store($id = 0)
+    public function upvote($id = 0)
     {
         $book = new Book();
         $foundBook = $book->one($id);
 
         if ($foundBook) {
             $book->upVote($id);
-            $foundBook = $book->one($id);
-            $response = [
-                'status_code' => 200,
-                'status_message' => '',
-                'total' => 1,
-                'votes' => $foundBook['votes'],
-            ];
+            $this->renderJson(200, $foundBook['votes'] +1 );
         } else {
-            $response = [
-                'status_code' => 404,
-                'status_message' => 'Book ' . $id . ' not found',
-                'total' => 0,
-                'votes' => null,
-            ];
+            $this->renderJson(404);
         }
-
-        $this->renderJson($response);
     }
 
-    public function destroy($id = 0)
+    public function downvote($id = 0)
     {
-            $book = new Book();
-            $foundBook = $book->one($id);
+        $book = new Book();
+        $foundBook = $book->one($id);
 
-            if ($foundBook) {
-                $book->downVote($id);
-                $foundBook = $book->one($id);
-                $response = [
-                    'status_code' => 200,
-                    'status_message' => '',
-                    'total' => 1,
-                    'votes' => $foundBook['votes'],
-                ];
-            } else {
-                $response = [
-                    'status_code' => 404,
-                    'status_message' => 'Book ' . $id . ' not found',
-                    'total' => 0,
-                    'votes' => null,
-                ];
-            }
+        if ($foundBook) {
+            $book->downVote($id);
+            $this->renderJson(200, $foundBook['votes'] -1 );
 
-            $this->renderJson($response);
+        } else {
+            $this->renderJson(404);
+        }
     }
 }

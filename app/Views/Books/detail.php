@@ -13,10 +13,10 @@
     <div class="order-2 col-md-6 order-md-1">
         <div class="col1 votes mb-2">
             <b>Likes</b>
-            <div class="vote-count" data-id="<?php echo $viewModel['book']['id'] ?>">
-                <a class="up-vote" href=""><i class="far fa-thumbs-up"></i></a>
-                <?php echo $viewModel['book']['votes'] ?> people like this book!
-                <a class="down-vote" href=""><i class="far fa-thumbs-down"></i></a>
+            <div>
+                <span class="up-vote"><i class="far fa-thumbs-up"></i></span>
+                <span class="vote-count" data-id="<?php echo $viewModel['book']['id'] ?>"><?php echo $viewModel['book']['votes'] ?></span> people like this book!
+                <span class="down-vote"><i class="far fa-thumbs-down"></i></span>
             </div>
         </div>
 
