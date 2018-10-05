@@ -27,7 +27,9 @@ class BookController extends BaseController
             'profile' => Authentication::getProfile()
         ];
 
-        $this->renderWebView('/Books/listing', $viewModel);
+        // HOMEPAGE MOET INDEX ZIJN, ALLEEN TER TEST NU HOMEPAGE
+
+        $this->renderWebView('/Books/homepage', $viewModel);
     }
 
     public function show($id = 0)
