@@ -7,7 +7,7 @@ const createBookTableRows = (templateSelector,books) => {
 
         const bookTableRow = rowTemplate.content.cloneNode(true).querySelector('tr');
 
-        ['title','author_id','isbn','price'].map((columnSelector) => {
+        ['title','publisher','series_no','price'].map((columnSelector) => {
             const col = bookTableRow.querySelector('.' + columnSelector);
             if (col) {
                 col.textContent += book[columnSelector];

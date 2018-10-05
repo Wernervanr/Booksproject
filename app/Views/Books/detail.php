@@ -20,12 +20,12 @@
             </div>
         </div>
 
-        <div class="authorCont">
+        <div class="publisherCont">
             <b>Publisher</b>
             <!--Javascript generated content (div)-->
         </div>
 
-        <div class="isbnCont">
+        <div class="seriesNoCont">
             <b>Series No.</b>
             <!--Javascript generated content (div)-->
         </div>

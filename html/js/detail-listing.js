@@ -5,19 +5,19 @@ $(document).ready(() => {
 
             let details = JSON.parse(data);
 
-            const authorCont = document.querySelector('.authorCont');
-            const isbnCont = document.querySelector('.isbnCont');
+            const publisherCont = document.querySelector('.publisherCont');
+            const seriesNoCont = document.querySelector('.seriesNoCont');
             const priceCont = document.querySelector('.priceCont');
             const descriptionCont = document.querySelector('.descriptionCont');
             const titleCont = document.querySelector('.titleCont');
 
-            const authorDiv = document.createElement('div');
-            authorDiv.textContent = details.author_id;
-            authorDiv.setAttribute('class', 'mb-2');
+            const publisherDiv = document.createElement('div');
+            publisherDiv.textContent = details.publisher;
+            publisherDiv.setAttribute('class', 'mb-2');
 
-            const isbnDiv = document.createElement('div');
-            isbnDiv.textContent = details.isbn;
-            isbnDiv.setAttribute('class', 'mb-2');
+            const seriesNoDiv = document.createElement('div');
+            seriesNoDiv.textContent = details.series_no;
+            seriesNoDiv.setAttribute('class', 'mb-2');
 
             const priceDiv = document.createElement('div');
             priceDiv.textContent = '€ ' + details.price;
@@ -32,8 +32,8 @@ $(document).ready(() => {
             titleDiv.setAttribute('class', 'subtitle mt-2');
 
             titleCont.appendChild(titleDiv);
-            authorCont.appendChild(authorDiv);
-            isbnCont.appendChild(isbnDiv);
+            publisherCont.appendChild(publisherDiv);
+            seriesNoCont.appendChild(seriesNoDiv);
             priceCont.appendChild(priceDiv);
             descriptionCont.appendChild(descriptionDiv);
         })

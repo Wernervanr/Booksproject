@@ -119,7 +119,7 @@ $(document).ready(() => {
                 const recommendedTextContent = document.createElement('p');
                 recommendedTextContent.innerHTML =
                     `<b> ${book.title} </b><br>
-                    <b>Series No: </b> ${book.isbn} <br>
+                    <b>Series No: </b> ${book.series_no} <br>
                     <b>Description: </b><br> ${book.description}`;
 
                 recommendedImageWrapper.appendChild(recommendedImage);

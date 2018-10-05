@@ -38,8 +38,8 @@
         <template id="tableRowTemplate">
             <tr class="listing">
                 <td class="title"></td>
-                <td class="author_id d-none d-sm-table-cell"></td>
-                <td class="isbn d-none d-sm-table-cell"></td>
+                <td class="publisher d-none d-sm-table-cell"></td>
+                <td class="series_no d-none d-sm-table-cell"></td>
                 <td class="price d-none d-sm-table-cell">&euro; </td>
                 <?php if($viewModel['profile']) { ?>
                     <td class="delete">
