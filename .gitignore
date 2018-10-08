@@ -4,3 +4,4 @@ vendor
 environment-settings.js
 log/
 html/images/*
+html/css/main.css
