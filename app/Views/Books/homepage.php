@@ -48,7 +48,7 @@
     <div class="mt-4" id="events">
         <p class="mt-3 mx-1 sectionheader">Cosplay inspiration</p>
 
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleControls" class="carousel slide mt-4" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="slides/blackpanther.jpg" alt="Black Panther">
@@ -139,7 +139,21 @@
     <div class="pt-2">
         <p class="mt-2 mx-1 contactheader">Contact</p>
     </div>
-    <p>Contact section</p>
+
+    <div class="d-flex justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <form novalidate id="contactForm">
+                <div class="col-md">
+                        <input type="text" id="name" name="name" class="form-control mb-1" placeholder="What is your name?" required/>
+                        <input type="text" id="email" name="email" class="form-control mb-1" placeholder="What is your email?" required/>
+                        <textarea id="comment" name="comment" class="form-control mb-2" placeholder="What's on your mind?" required></textarea>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="saveBtn btn btn-comic" value="Send">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 <?php if ($viewModel['profile']) { ?>
