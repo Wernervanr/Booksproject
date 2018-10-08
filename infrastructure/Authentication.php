@@ -15,11 +15,11 @@ class Authentication extends BaseController
 {
     public static function login(string $username, string $password) : bool
     {
-        if ($username === 'werner' && $password ==='werner') {
+        if ($username === 'admin' && $password ==='admin') {
             $_SESSION['profile'] = array(
                 'userId' => 1,
-                'userName' => 'werner',
-                'userFullName' => 'Werner van Randeraat'
+                'userName' => 'Admin',
+                'userFullName' => 'Admin'
             );
             return true;
         }

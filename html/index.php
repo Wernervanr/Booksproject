@@ -42,6 +42,10 @@ if ($route == "index") {
     $bookController = new BookController();
     $bookController->index();
 
+} else if ($route == "listing" && $method == "GET") {
+    $bookController = new BookController();
+    $bookController->listing();
+
 } else if ($route == "show" && $method == "GET") {
     $bookController = new BookController();
     $bookController->show($id);
