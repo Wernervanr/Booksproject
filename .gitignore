@@ -3,4 +3,4 @@ vendor
 .env
 environment-settings.js
 log/
-html/images/*
+html/img/*
