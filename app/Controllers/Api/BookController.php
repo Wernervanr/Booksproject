@@ -17,8 +17,6 @@ class BookController extends BaseController
         $this->renderJson(200, $books);
     }
 
-    //29 augustus
-
     public function getOneBook() {
 
         $id = $_GET['id'] ?? null;
@@ -54,8 +52,6 @@ class BookController extends BaseController
         $this->renderJson(200, $book);
     }
 
-    // end 29 augustus
-
     public function createBook() {
         $bookModel = new Book();
 
@@ -63,9 +59,8 @@ class BookController extends BaseController
 
         $fields = [
             'title' => $book->title,
-            'author_id' => $book->author_id,
-            'category_id' => $book->category_id,
-            'isbn' => $book->isbn,
+            'publisher' => $book->publisher,
+            'series_no' => $book->series_no,
             'description' => $book->description,
             'price' => $book->price
         ];
@@ -76,8 +71,6 @@ class BookController extends BaseController
 
     }
 
-// 28 augustus
-
     public function updateBook() {
         $id = $_GET['id'] ?? null;
 
@@ -87,9 +80,8 @@ class BookController extends BaseController
 
         $fields = [
             'title' => $book->title,
-            'author_id' => $book->author_id,
-            'category_id' => $book->category_id,
-            'isbn' => $book->isbn,
+            'publisher' => $book->publisher,
+            'series_no' => $book->series_no,
             'description' => $book->description,
             'price' => $book->price,
         ];
@@ -106,7 +98,4 @@ class BookController extends BaseController
 
         $bookModel->delete($id);
     }
-
-// end 28 augustus
-
 }

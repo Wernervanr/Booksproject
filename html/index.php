@@ -13,24 +13,19 @@ session_start();
 $dotenv = new Dotenv(__DIR__ . '/../');
 $dotenv->load();
 
+
 function handleExceptions(Throwable $oException)
 {
     LogManager::log('alert','Unhandled exception: ' . $oException->getMessage() . ' - ' . $oException->getTraceAsString());
 }
 set_exception_handler('handleExceptions');
 
+
 function handleErrors($iErrorNumber, $sError, $sErrorFile, $iErrorLine)
 {
     throw new ErrorException($sError, $iErrorNumber, 0, $sErrorFile, $iErrorLine);
 }
 set_error_handler('handleErrors');
-
-//use App\Models\Book;
-//
-//$book = new Book();
-//var_dump($book->delete(9)
-//
-//);
 
 
 function view($view, $viewModel){
@@ -46,6 +41,10 @@ $method = $_SERVER['REQUEST_METHOD'];
 if ($route == "index") {
     $bookController = new BookController();
     $bookController->index();
+
+} else if ($route == "listing" && $method == "GET") {
+    $bookController = new BookController();
+    $bookController->listing();
 
 } else if ($route == "show" && $method == "GET") {
     $bookController = new BookController();
@@ -75,8 +74,3 @@ if ($route == "index") {
     $loginController = new LoginController();
     $loginController->logout();
 }
-
-//echo '<br /><br />';
-//echo '<pre>';
-//print_r($_SESSION);
-//echo '<pre>';

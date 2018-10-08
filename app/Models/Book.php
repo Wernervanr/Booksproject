@@ -7,7 +7,7 @@ class Book extends Database
 {
     private $table_name = "books";
     private $primary_key = "id";
-    private $fillable_columns = ['category_id', 'author_id', 'title', 'description', 'price', 'created_at', 'updated_at', 'isbn'];
+    private $fillable_columns = ['publisher', 'title', 'description', 'price', 'created_at', 'updated_at', 'series_no'];
 
     public $sort_columns = [];
     public $sort_directions = [];
@@ -45,13 +45,12 @@ class Book extends Database
             $columns['updated_at'] = date("Y-m-d H:i:s");
             $this->execute("
                 UPDATE {$this->table_name} SET
-                    category_id = :category_id,
-                    author_id = :author_id,
+                    publisher = :publisher,
                     title = :title,
                     description = :description,
                     price = :price,
                     updated_at = :updated_at,
-                    isbn = :isbn
+                    series_no = :isbn
                 WHERE {$this->primary_key} = :id
                 ", $columns);
         }
@@ -60,15 +59,14 @@ class Book extends Database
             //insert
             $columns['created_at'] = date("Y-m-d H:i:s");
             $return = $this->execute("    
-            INSERT INTO {$this->table_name} (category_id, author_id, title, description, price, created_at, isbn)
+            INSERT INTO {$this->table_name} (publisher, title, description, price, created_at, series_no)
             VALUES (
-                    :category_id,
-                    :author_id,
+                    :publisher,
                     :title,
                     :description,
                     :price,
                     :created_at,
-                    :isbn
+                    :series_no
             )
             ", $columns);
             $id = $return->lastInsertId();

@@ -16,7 +16,22 @@ class BookController extends BaseController
 
     public function index()
     {
+        $book = new Book();
 
+        $viewModel = [
+            'pageTitle' => "Comic Books",
+            'errors' => $this->getErrors(),
+            'messages' => $this->getMessages(),
+            'profile' => Authentication::getProfile()
+        ];
+
+        // HOMEPAGE MOET listing ZIJN, ALLEEN TER TEST NU HOMEPAGE
+
+        $this->renderWebView('/Books/homepage', $viewModel);
+    }
+
+    public function listing()
+    {
         $book = new Book();
 
         $viewModel = [

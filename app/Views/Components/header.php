@@ -30,10 +30,14 @@
                     <a class="nav-link" href="?route=index">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="?route=index#recommended">Recommended <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="?route=listing">Catalog <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="?route=index#contact">Contact <span class="sr-only">(current)</span></a>
+                </li>
                 <?php if ($viewModel['profile']) { ?>
 
                     <li class="nav-item dropdown">

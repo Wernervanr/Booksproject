@@ -13,18 +13,13 @@
             </div>
 
             <div class="form-group">
-                <label for="author_id">Publisher</label>
-                <input type="text" id="author_id" name="author_id" class="form-control" min="1" required/>
+                <label for="publisher">Publisher</label>
+                <input type="text" id="publisher" name="publisher" class="form-control" min="1" required/>
             </div>
 
             <div class="form-group">
-                <label for="category_id">Category ID</label>
-                <input type="number" id="category_id" name="category_id" class="form-control" min="1" required/>
-            </div>
-
-            <div class="form-group">
-                <label for="isbn">Series No.</label>
-                <input type="text" id="isbn" name="isbn" class="form-control" pattern="^\d{1,3}$" required/>
+                <label for="series_no">Series No.</label>
+                <input type="text" id="series_no" name="series_no" class="form-control" pattern="^\d{1,3}$" required/>
             </div>
 
             <div class="form-group">

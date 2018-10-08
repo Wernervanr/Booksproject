@@ -211,10 +211,17 @@ table {
   border-bottom: 1px solid lightgrey;
 }
 
-.rarestheader {
+.sectionheader {
   text-align: center;
   font-size: 1.4rem;
   color: $comic_red;
+  font-weight: bold;
+}
+
+.contactheader {
+  text-align: center;
+  font-size: 1.4rem;
+  color: white;
   font-weight: bold;
 }
 
@@ -237,4 +244,43 @@ table {
     width: 100%;
     margin-top: 5px;
   }
+}
+
+.ironman {
+  background-image: url("../slides/ironman.jpg");
+}
+
+.superman {
+  background-image: url("../slides/superman.jpg");
+}
+
+.thor {
+  background-image: url("../slides/thor.jpg");
+}
+
+.parallax {
+  min-height: 250px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media screen and (min-width: 768px) {
+    min-height: 325px;
+  }
+  @media screen and (min-width: 1200px) {
+    min-height: 400px;
+  }
+}
+
+.contact {
+  background-color: lightgrey;
+  color: white;
+  height: 300px;
+}
+
+.trailer {
+  width: 560px;
+  height: 315px;
 }
