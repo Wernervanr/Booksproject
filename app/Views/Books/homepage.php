@@ -1,9 +1,9 @@
             <div>
-                <h1 class="display-3 text-center comic mb-4">BEST COMIC BOOK CATALOG</h1>
+                <h1 class="display-4 text-center comic mb-4">BEST COMIC BOOK CATALOG</h1>
             </div>
 
             <div class="row mb-4">
-                <div class="newlyAdded order-2 order-sm-2 col-sm-6 col-lg-2 order-lg-1 card">
+                <div class="d-none d-sm-block newlyAdded order-2 order-sm-2 col-sm-6 col-lg-2 order-lg-1 card">
                     <p class="text-center mt-2"><b>Newly added Comic Book:</b></p>
                     <img class="newlyAddedImage card-img-top" alt="Cover of newly added comic">
                 </div>
@@ -19,7 +19,7 @@
                     Click on 'catalog' to scroll through a collection of epic comics, or browse through the site to find inspiration for cosplay, recommended
                     'must-have' comic books and trailers for upcoming superhero movies.</p>
                     <p>Want to contact me? Lit up the bat-signal, or simply fill the contact form at the bottom of the website.</p>
-                    <img class="my-3" width="100%" src="slides/batsignal.png" alt="Bat signal">
+                    <img class="d-none d-lg-block my-3" width="100%" src="slides/batsignal.png" alt="Bat signal">
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
 
 <div class="ironman parallax"></div>
 
-<div class="container pb-4">
+<div class="container">
     <div class="row">
         <div class="col">
             <div class="recommended order-md-4 mt-4" id="recommended">
@@ -38,15 +38,16 @@
             </div>
         </div>
     </div>
+    <hr class="d-none d-xl-block">
 </div>
 
 <!--Cosplay inspiration section.-->
 
-<div class="superman parallax"></div>
+<div class="d-xl-none superman parallax"></div>
 
-<div class="container">
-    <div class="mt-4" id="events">
-        <p class="mt-3 mx-1 sectionheader">Cosplay inspiration</p>
+<div class="container mt-4">
+    <div id="events">
+        <p class="sectionheader">Cosplay inspiration</p>
 
         <div id="carouselExampleControls" class="carousel slide mt-4" data-ride="carousel">
             <div class="carousel-inner">
@@ -108,23 +109,23 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <p class="text-center mt-3">Credit to the cosplayers of Comic Con, San Diego, 2018.</p>
-        <hr>
+        <p class="text-center mt-3">All credits go to the cosplayers of Comic Con, San Diego, 2018.</p>
     </div>
 </div>
 
 <!--New movie trailers section.-->
+<div class="d-none d-xl-block superman parallax"></div>
 
-<div class="container mb-4 pb-4 d-none d-xl-block">
+<div class="container mb-4 pb-4 d-none d-xl-block mt-4">
     <div class="row">
         <div class="col" id="newmovies">
             <p class="mx-1 sectionheader">Upcoming new movies</p>
-            <div class="d-flex mt-4">
+            <div class="d-xl-flex mt-4">
                 <div class="d-block">
                     <iframe class="trailer mr-1" src="https://www.youtube.com/embed/xLCn88bfW1o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
                 <div  class="d-block">
-                <iframe class="trailer" src="https://www.youtube.com/embed/Z1BCujX3pw8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe class="trailer" src="https://www.youtube.com/embed/Z1BCujX3pw8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -132,8 +133,6 @@
 </div>
 
 <!--Contact section.-->
-
-<div class="thor parallax"></div>
 
 <div class="contact" id="contact">
     <div class="pt-2">

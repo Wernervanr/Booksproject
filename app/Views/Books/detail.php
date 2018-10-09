@@ -43,7 +43,7 @@
         <!--BUTTONS-->
         <div class="mt-2 d-flex">
             <div class="p2 mr-auto">
-                <button class="btn btn-comic" onClick="window.location = 'index.php'">Back</button>
+                <button class="btn btn-comic" onClick="window.location = 'index.php?route=listing'">Back</button>
             </div>
 
             <?php if ($viewModel['profile']) { ?>
