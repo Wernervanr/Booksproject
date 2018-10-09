@@ -36,7 +36,6 @@ class BookController extends BaseController
 
         $viewModel = [
             'pageTitle' => "Comic Books",
-            'books' => $book->all(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()

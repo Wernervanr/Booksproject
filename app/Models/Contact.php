@@ -9,7 +9,7 @@ class Contact extends Database
 
     public function all()
     {
-        return $this->getAll("SELECT * FROM {$this->table_name};");
+        return $this->getAll("SELECT * FROM {$this->table_name} ORDER BY {$this->table_name}.id DESC;");
     }
 
     public function one($id = null)

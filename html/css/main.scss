@@ -289,3 +289,22 @@ table {
   width: 560px;
   height: 315px;
 }
+
+.inboxDivSmall {
+  height: 725px;
+  overflow: scroll;
+}
+
+.inboxContent:hover {
+  color: $comic_red;
+}
+
+.inboxDivLarge {
+  height: 725px;
+  overflow: scroll;
+}
+
+.suggestionsHeader {
+  color: $comic_red;
+}
+
