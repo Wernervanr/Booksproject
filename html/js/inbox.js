@@ -3,8 +3,13 @@ $(document).ready(() => {
     const inboxDivSmall = document.querySelector('.inboxDivSmall');
     const inboxDivLarge = document.querySelector('.inboxDivLarge');
 
+    const smallScreenDiv = document.createElement('div');
+    smallScreenDiv.setAttribute('class', 'd-lg-none');
+
     getSuggestions()
         .done((data, text) => {
+
+            // Display all suggestions in short, being just the name, date, and subject.
 
             let suggestions = JSON.parse(data);
 
@@ -34,9 +39,30 @@ $(document).ready(() => {
                 inboxDivSmall.appendChild(inboxDivSmallContent);
                 inboxDivSmall.appendChild(hrBreak);
 
+                // Upon click, the e-mail address and the message content will show.
+
                 inboxDivSmallContent.addEventListener('click', (event) => {
 
+                    // On Small Screen
 
+                    let emailSmall = document.createElement('div');
+                    emailSmall.setAttribute('class', 'col-12');
+                    emailSmall.textContent = suggestion.email;
+
+                    let messageSmall = document.createElement('div');
+                    messageSmall.setAttribute('class', 'col-12 mt-2');
+                    messageSmall.textContent = suggestion.message_content;
+
+                    while (smallScreenDiv.hasChildNodes()) {
+                        smallScreenDiv.removeChild(smallScreenDiv.lastChild);
+                    }
+
+                    smallScreenDiv.appendChild(emailSmall);
+                    smallScreenDiv.appendChild(messageSmall);
+
+                    inboxDivSmallContent.appendChild(smallScreenDiv);
+
+                    // On Large Screen
 
                     while (inboxDivLarge.hasChildNodes()) {
                         inboxDivLarge.removeChild(inboxDivLarge.firstChild);
@@ -72,9 +98,6 @@ $(document).ready(() => {
                     inboxDivLargeContent.appendChild(messageLarge);
 
                     inboxDivLarge.appendChild(inboxDivLargeContent);
-
-
-
                 });
 
             });
