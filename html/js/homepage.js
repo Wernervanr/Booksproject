@@ -115,4 +115,45 @@ $(document).ready(() => {
                 });
             })
         });
+
+    // Contact
+
+    const form = document.getElementById('contactForm');
+    const inputFields = form.querySelectorAll('input, textarea');
+
+    form.addEventListener('submit', (event) => {
+
+        for (let i = 0; i < inputFields.length; i++) {
+            if (!inputFields[i].checkValidity()) {
+                addErrorMessageForElement(inputFields[i]);
+            } else {
+                clearErrorMessageForElement(inputFields[i]);
+            }
+        }
+
+        event.preventDefault();
+
+        if (form.checkValidity()) {
+
+            const suggestion = {
+                fullname: form.fullname.value,
+                email: form.email.value,
+                subject: form.subject.value,
+                message_content: form.message_content.value
+            };
+
+            createSuggestion(suggestion)
+                .done((data, text) => {
+                    form.reset();
+                    appendSuccessMessage('Your suggestion has been sent!', '.message-container');
+                })
+                .fail((request,status, error) => {
+                    console.log(request);
+                });
+        }
+    });
+
+    for (let i = 0; i < inputFields.length; i++) {
+        inputFields[i].addEventListener('blur', fieldValidation);
+    }
 });
