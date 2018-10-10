@@ -1,4 +1,4 @@
-<div class="titleCont col-12 d-flex justify-content-center mb-3">
+<div class="titleCont col-12 d-flex justify-content-center mb-4">
     <h1><?php echo $viewModel['pageTitle'] ?></h1>
 </div>
 

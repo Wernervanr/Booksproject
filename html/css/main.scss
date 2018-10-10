@@ -168,7 +168,6 @@ table {
 
 .comic {
   color: $comic_red;
-
 }
 
 .welcometext {
@@ -290,18 +289,14 @@ table {
   height: 315px;
 }
 
-.inboxDivSmall {
+.inboxDivSmall,
+.inboxDivLarge {
   max-height: 725px;
   overflow: scroll;
 }
 
 .inboxContent:hover {
   color: $comic_red;
-}
-
-.inboxDivLarge {
-  max-height: 725px;
-  overflow: scroll;
 }
 
 .suggestionsHeader {
