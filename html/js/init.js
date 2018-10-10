@@ -32,6 +32,26 @@ const getRecommended = () => {
     return $.get(env.api + '?route=recommended')
 };
 
+
+
+// contact
+
+const getSuggestions = () => {
+    return $.get(env.api + '?route=suggestions')
+};
+
+const createSuggestion = (suggestion) => {
+    return $.post(env.api + '?route=suggestions', JSON.stringify(suggestion));
+};
+
+const deleteSuggestion = (suggestionId) => {
+    return $.post(env.api + '?route=deletesuggestion&id=' + suggestionId);
+};
+
+// end contact
+
+
+
 const fieldValidation = (event) => {
     const inputField = event.target;
 
@@ -77,7 +97,7 @@ const getErrorMessageForElement = (element) => {
 // DOM helper functions
 
 const appendSuccessMessage = (message, elementSelector) => {
-    const successAlert = $(`<div class="alert alert-success alert-dismissible fade show" role="alert">
+    const successAlert = $(`<div class="alert contactmessage alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>

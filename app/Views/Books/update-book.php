@@ -44,7 +44,5 @@
     </form>
 </div>
 
-<!-- 28 augustus-->
 <script>let bookId = <?php echo $viewModel['book']['id']; ?>;</script>
 <script src="js/update-book.js"></script>
-<!--end 28 augustus-->

@@ -83,12 +83,12 @@ class BookController extends BaseController
             'publisher' => $book->publisher,
             'series_no' => $book->series_no,
             'description' => $book->description,
-            'price' => $book->price,
+            'price' => $book->price
         ];
 
-        $bookModel->save($fields, $id);
+        $bookId = $bookModel->save($fields, $id);
 
-        $this->renderJson(201);
+        $this->renderJson(201, $bookId);
     }
 
     public function deleteBook() {

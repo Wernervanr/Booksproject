@@ -4,7 +4,7 @@
 </div>
 
 <footer class="footer pb-3 pt-3 bg-white">
-    &copy Copyright The Comic Bookstore
+    &copy Copyright The Comicbook Catalog
 </footer>
 
 </div>

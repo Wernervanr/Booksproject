@@ -2,17 +2,12 @@
 
 namespace App\Models;
 
-
 class Book extends Database
 {
     private $table_name = "books";
     private $primary_key = "id";
-    private $fillable_columns = ['publisher', 'title', 'description', 'price', 'created_at', 'updated_at', 'series_no'];
 
-    public $sort_columns = [];
-    public $sort_directions = [];
-
-    public function all($where = [], $group_by = [], $order_by = [], $start_row = 0, $limit = 1)
+    public function all()
     {
         return $this->getAll("SELECT * FROM {$this->table_name};");
     }

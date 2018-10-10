@@ -143,9 +143,12 @@
         <div class="col-md-6 col-lg-4">
             <form novalidate id="contactForm">
                 <div class="col-md">
-                        <input type="text" id="name" name="name" class="form-control mb-1" placeholder="What is your name?" required/>
+                    <div class="message-container"></div>
+
+                    <input type="text" id="fullname" name="fullname" class="form-control mb-1" placeholder="What is your name?" required/>
                         <input type="text" id="email" name="email" class="form-control mb-1" placeholder="What is your email?" required/>
-                        <textarea id="comment" name="comment" class="form-control mb-2" placeholder="What's on your mind?" required></textarea>
+                        <input type="text" id="subject" name="subject" class="form-control mb-1" placeholder="What is the subject?" required/>
+                        <textarea id="message_content" name="message_content" class="form-control mb-2" placeholder="What's on your mind?" required></textarea>
                 </div>
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="saveBtn btn btn-comic" value="Send">Send</button>

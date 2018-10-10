@@ -280,7 +280,37 @@ table {
   padding-bottom: 25px;
 }
 
+.contactmessage {
+  background-color: $comic_red;
+  color: white;
+}
+
 .trailer {
   width: 560px;
   height: 315px;
 }
+
+.inboxDivSmall {
+  max-height: 725px;
+  overflow: scroll;
+}
+
+.inboxContent:hover {
+  color: $comic_red;
+}
+
+.inboxDivLarge {
+  max-height: 725px;
+  overflow: scroll;
+}
+
+.suggestionsHeader {
+  color: $comic_red;
+}
+
+.inboxDeleteButton {
+  font-size: 10px;
+  border-radius: 10%;
+}
+
+
