@@ -62,10 +62,6 @@ if ($route === 'books' && $method === 'GET') {
     $contactController = new ContactController();
     $contactController->createSuggestion();
 
-} else if ($route === 'suggestion' && $method === 'GET') {
-    $contactController = new ContactController();
-    $contactController->getOneSuggestion();
-
 } else if ($route === 'deletesuggestion' && $method === 'POST') {
     $contactController = new ContactController();
     $contactController->deleteSuggestion();

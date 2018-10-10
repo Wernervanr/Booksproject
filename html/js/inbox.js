@@ -14,9 +14,23 @@ $(document).ready(() => {
             let suggestions = JSON.parse(data);
 
             suggestions.forEach(function(suggestion) {
+
+                // Determine if the suggestion has been read.
+
+                let isRead = localStorage.getItem('isRead' + suggestion.id);
+
+                // Container div for suggestions in short.
+
                 let inboxDivSmallContent = document.createElement('div');
                 inboxDivSmallContent.setAttribute('class', 'row inboxContent border-bottom py-3');
                 inboxDivSmallContent.style.cursor = "pointer";
+
+                    // Has the suggestion been read? Then adds the readSuggestion class for grey color.
+                if (isRead) {
+                    inboxDivSmallContent.classList.toggle('readSuggestion');
+                }
+
+                    // Filling of the inboxDivSmallContent with the actual data.
 
                 let fullName = document.createElement('div');
                 fullName.setAttribute('class', 'col-7 font-weight-bold');
@@ -48,11 +62,13 @@ $(document).ready(() => {
 
                 inboxDivSmall.appendChild(inboxDivSmallContent);
 
+            // End display all suggestions in short.
+
                 // Upon click, either the e-mail address and the message content will show, or message will be deleted.
 
                 inboxDivSmallContent.addEventListener('click', (event) => {
 
-                    // If the target clicked is the delete button
+                    // If the target clicked is the delete button.
 
                     if (event.target.classList.contains('inboxDeleteButton')) {
                         event.stopPropagation();
@@ -61,16 +77,22 @@ $(document).ready(() => {
                                 .done((data) => {
                                     inboxDivSmallContent.parentNode.removeChild(inboxDivSmallContent);
                                     inboxDivLarge.removeChild(inboxDivLarge.firstChild);
+                                    localStorage.removeItem('isRead' + suggestion.id);
                                 })
                                 .fail((request, status, error) => {
                                     window.alert('Unfortunately an error occurred during the deletion of this book');
                                 })
                         }
+
+                    // If the target clicked is the suggestion itself.
+
                     } else {
 
-                        // If the target clicked is the suggestion
+                        // Mark the suggestion as being read when clicked upon.
 
-                        // Display on Small Screen
+                        localStorage.setItem('isRead' + suggestion.id, true);
+
+                        // Display on Small Screen.
                         while (smallScreenDiv.hasChildNodes()) {
                             smallScreenDiv.removeChild(smallScreenDiv.lastChild);
                         }
@@ -88,7 +110,7 @@ $(document).ready(() => {
 
                         inboxDivSmallContent.insertBefore(smallScreenDiv, inboxDivSmallContent.lastChild);
 
-                        // Display on Large Screen
+                        // Display on Large Screen.
                         while (inboxDivLarge.hasChildNodes()) {
                             inboxDivLarge.removeChild(inboxDivLarge.firstChild);
                         }
