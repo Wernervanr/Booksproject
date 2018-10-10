@@ -17,17 +17,6 @@ class ContactController extends BaseController
         $this->renderJson(200, $suggestions);
     }
 
-    public function getOneSuggestion() {
-
-        $id = $_GET['id'] ?? null;
-
-        $suggestionModel = new Contact();
-
-        $suggestion = $suggestionModel->one($id);
-
-        $this->renderJson(200, $suggestion);
-    }
-
     public function createSuggestion() {
         $suggestionModel = new Contact();
 

@@ -44,10 +44,6 @@ const createSuggestion = (suggestion) => {
     return $.post(env.api + '?route=suggestions', JSON.stringify(suggestion));
 };
 
-const getOneSuggestions = (suggestionId) => {
-    return $.get(env.api + '?route=suggestion&id=' + suggestionId);
-};
-
 const deleteSuggestion = (suggestionId) => {
     return $.post(env.api + '?route=deletesuggestion&id=' + suggestionId);
 };

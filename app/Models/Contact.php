@@ -12,11 +12,6 @@ class Contact extends Database
         return $this->getAll("SELECT * FROM {$this->table_name} ORDER BY {$this->table_name}.id DESC;");
     }
 
-    public function one($id = null)
-    {
-        return $this->getOne("SELECT * FROM {$this->table_name} WHERE {$this->primary_key} = :id;", ['id' => $id]);
-    }
-
     public function save($columns = [], $id = null)
     {
         $columns['created_at'] = date("Y-m-d H:i:s");
