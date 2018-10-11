@@ -2,7 +2,7 @@
 
 use App\Controllers\Web\BookController;
 use App\Controllers\Web\LoginController;
-use App\Controllers\Web\ContactController;
+use App\Controllers\Web\SuggestionController;
 use Dotenv\Dotenv;
 use Infrastructure\LogManager;
 
@@ -76,6 +76,6 @@ if ($route == "index") {
     $loginController->logout();
 
 }  else if ($route == 'inbox') {
-    $contactController = new ContactController();
-    $contactController->listing();
+    $suggestionController = new SuggestionController();
+    $suggestionController->listing();
 }

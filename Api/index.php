@@ -2,7 +2,7 @@
 
 use App\Controllers\Api\BookController;
 use App\Controllers\Api\BookVoteController;
-use App\Controllers\Api\ContactController;
+use App\Controllers\Api\SuggestionController;
 use Dotenv\Dotenv;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -55,16 +55,16 @@ if ($route === 'books' && $method === 'GET') {
     // contact
 
 } else if ($route === 'suggestions' && $method === 'GET') {
-    $contactController = new ContactController();
-    $contactController->getSuggestions();
+    $suggestionController = new SuggestionController();
+    $suggestionController->getSuggestions();
 
 } else if ($route === 'suggestions' && $method === 'POST') {
-    $contactController = new ContactController();
-    $contactController->createSuggestion();
+    $suggestionController = new SuggestionController();
+    $suggestionController->createSuggestion();
 
 } else if ($route === 'deletesuggestion' && $method === 'POST') {
-    $contactController = new ContactController();
-    $contactController->deleteSuggestion();
+    $suggestionController = new SuggestionController();
+    $suggestionController->deleteSuggestion();
 
     // end contact
 

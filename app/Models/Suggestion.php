@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Contact extends Database
+class Suggestion extends Database
 {
     private $table_name = "contact";
     private $primary_key = "id";

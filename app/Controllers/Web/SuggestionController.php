@@ -5,7 +5,7 @@ namespace App\Controllers\Web;
 use App\Controllers\BaseController;
 use Infrastructure\Authentication;
 
-class ContactController extends BaseController
+class SuggestionController extends BaseController
 {
     public function listing()
     {
