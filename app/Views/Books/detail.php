@@ -75,9 +75,9 @@
 </div>
 
 <script>let bookId = <?php echo $viewModel['book']['id']; ?>;</script>
-<script src="js/detail-listing.js"></script>
+<script src="js/books/detail-listing.js"></script>
 
 <?php if ($viewModel['profile']) { ?>
-    <script src="js/delete-book.js"></script>
+    <script src="js/books/delete-book.js"></script>
 <?php } ?>
 

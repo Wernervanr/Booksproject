@@ -57,5 +57,5 @@
     <script>let profile = null;</script>
 <?php } ?>
 
-<script src="js/book-table-row.js"></script>
-<script src="js/listing.js"></script>
+<script src="js/books/book-table-row.js"></script>
+<script src="js/books/listing.js"></script>

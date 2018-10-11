@@ -39,5 +39,4 @@ class SuggestionController extends BaseController
 
         $suggestionModel->delete($id);
     }
-
 }

@@ -17,5 +17,4 @@
     <br clear="all" />
 
     <button type="submit" class="btn btn-comic">Login</button>
-
 </form>
