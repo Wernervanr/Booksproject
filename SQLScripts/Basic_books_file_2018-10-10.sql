@@ -28,16 +28,16 @@ DROP TABLE IF EXISTS `books`;
 
 CREATE TABLE `books` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `publisher` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `publisher` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `description` longtext,
   `price` decimal(6,2) DEFAULT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
-  `series_no` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `series_no` varchar(255) DEFAULT NULL,
   `votes` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `books` WRITE;
 /*!40000 ALTER TABLE `books` DISABLE KEYS */;
@@ -71,13 +71,13 @@ DROP TABLE IF EXISTS `contact`;
 
 CREATE TABLE `contact` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `fullname` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `subject` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `fullname` varchar(50),
+  `email` varchar(255),
+  `subject` varchar(255),
   `message_content` longtext,
   `created_at` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 LOCK TABLES `contact` WRITE;
 /*!40000 ALTER TABLE `contact` DISABLE KEYS */;

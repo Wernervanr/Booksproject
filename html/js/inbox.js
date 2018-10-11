@@ -26,6 +26,7 @@ $(document).ready(() => {
                 inboxDivSmallContent.style.cursor = "pointer";
 
                     // Has the suggestion been read? Then adds the readSuggestion class for grey color.
+
                 if (isRead) {
                     inboxDivSmallContent.classList.toggle('readSuggestion');
                 }
@@ -91,6 +92,7 @@ $(document).ready(() => {
                         // Mark the suggestion as being read when clicked upon.
 
                         localStorage.setItem('isRead' + suggestion.id, true);
+                        inboxDivSmallContent.classList.toggle('readSuggestion');
 
                         // Display on Small Screen.
                         while (smallScreenDiv.hasChildNodes()) {
