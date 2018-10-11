@@ -40,6 +40,10 @@ const getSuggestions = () => {
     return $.get(env.api + '?route=suggestions')
 };
 
+const getOneSuggestion = (suggestionId) => {
+    return $.get(env.api + '?route=suggestion&id=' + suggestionId);
+};
+
 const createSuggestion = (suggestion) => {
     return $.post(env.api + '?route=suggestions', JSON.stringify(suggestion));
 };

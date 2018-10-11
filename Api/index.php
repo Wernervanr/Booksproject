@@ -58,6 +58,10 @@ if ($route === 'books' && $method === 'GET') {
     $suggestionController = new SuggestionController();
     $suggestionController->getSuggestions();
 
+} else if ($route === 'suggestion' && $method === 'GET') {
+    $suggestionController = new SuggestionController();
+    $suggestionController->getOneSuggestion();
+
 } else if ($route === 'suggestions' && $method === 'POST') {
     $suggestionController = new SuggestionController();
     $suggestionController->createSuggestion();

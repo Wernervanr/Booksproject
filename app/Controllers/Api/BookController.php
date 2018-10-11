@@ -68,7 +68,6 @@ class BookController extends BaseController
         $bookId = $bookModel->save($fields);
 
         $this->renderJson(201, $bookId);
-
     }
 
     public function updateBook() {

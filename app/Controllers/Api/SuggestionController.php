@@ -17,6 +17,17 @@ class SuggestionController extends BaseController
         $this->renderJson(200, $suggestions);
     }
 
+    public function getOneSuggestion() {
+
+        $id = $_GET['id'] ?? null;
+
+        $suggestionModel = new Suggestion();
+
+        $suggestion = $suggestionModel->one($id);
+
+        $this->renderJson(200, $suggestion);
+    }
+
     public function createSuggestion() {
         $suggestionModel = new Suggestion();
 
@@ -30,6 +41,8 @@ class SuggestionController extends BaseController
         ];
 
         $suggestionModel->save($fields);
+
+        $this->renderJson(201);
     }
 
     public function deleteSuggestion() {

@@ -3,8 +3,8 @@
 </div>
 
 <div class="row border">
-    <div class="d-none d-lg-block col-lg-8 border-left">
-        <div class="row mt-3  suggestionsHeader border-bottom">
+    <div class="col-12">
+        <div class="row mt-3 suggestionsHeader border-bottom">
             <div class="col-lg-12 font-weight-bold d-flex justify-content-center mb-3">
                 Full Suggestion
             </div>
