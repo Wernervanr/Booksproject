@@ -70,7 +70,8 @@ const removeAsRead = (data, dataItem) => {
 
 const determineIfRead = (dataId, dataDisplay, dataItem) => { // DATA = SUGGESTION
     let isRead = localStorage.getItem(dataItem + 'IsRead' + dataId);
-    if (isRead !== null) {
+    let alreadyMarkedAsRead = dataDisplay.classList.contains('read');
+    if (isRead !== null && alreadyMarkedAsRead === false) {
         dataDisplay.classList.toggle('read');
     }
 };
@@ -191,4 +192,5 @@ $( document ).ready(function() {
         }
     }
 });
+
 // -- END VOTES -- //

@@ -1,9 +1,7 @@
-const constructInbox = (data) => {
+const constructSuggestion = (data) => {
     let inboxDivSmallContent = document.createElement('div');
     inboxDivSmallContent.setAttribute('class', 'row inboxContent border-bottom py-3');
     inboxDivSmallContent.style.cursor = "pointer";
-
-    // Filling of the inboxDivSmallContent with the actual data.
 
     let fullName = document.createElement('div');
     fullName.setAttribute('class', 'col-7 font-weight-bold');
@@ -39,7 +37,6 @@ const deleteThisSuggestion = (suggestionDiv, suggestionId) => {
         deleteSuggestion(suggestionId)
             .done((data) => {
                 suggestionDiv.parentNode.removeChild(suggestionDiv);
-                inboxDivLarge.removeChild(inboxDivLarge.firstChild);
                 removeAsRead(suggestionId, 'suggestion');
             })
             .fail((request, status, error) => {

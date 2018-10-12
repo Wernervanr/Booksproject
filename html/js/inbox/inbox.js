@@ -6,12 +6,11 @@ $(document).ready(() => {
     getSuggestions()
         .done((data, text) => {
             // Display all suggestions in short, being just the name, date, and subject.
-
             let suggestions = JSON.parse(data);
 
             suggestions.forEach(function(suggestion) {
 
-                let constructedSuggestion = constructInbox(suggestion);
+                let constructedSuggestion = constructSuggestion(suggestion);
                 constructedSuggestion.addEventListener('click', (event) => {
 
                     // If the target clicked is the delete button.
@@ -23,8 +22,8 @@ $(document).ready(() => {
                     } else {
 
 
-
                         saveAsRead(suggestion.id, 'suggestion');
+                        determineIfRead(suggestion.id, constructedSuggestion, 'suggestion');
                     }
                 });
                 inboxDivSmall.appendChild(constructedSuggestion);
