@@ -16,7 +16,12 @@
             <!--Javascript generated content-->
         </div>
     </div>
-
+    <div id="myClickedSuggestion" class="clickedsuggestion">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
 </div>
 
 <script src="js/inbox/handlers.js"></script>

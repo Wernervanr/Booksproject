@@ -22,6 +22,8 @@ $(document).ready(() => {
                     } else {
 
 
+
+                        toggleSuggestion();
                         saveAsRead(suggestion.id, 'suggestion');
                         determineIfRead(suggestion.id, constructedSuggestion, 'suggestion');
                     }

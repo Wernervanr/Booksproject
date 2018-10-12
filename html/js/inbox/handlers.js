@@ -44,3 +44,9 @@ const deleteThisSuggestion = (suggestionDiv, suggestionId) => {
             })
     }
 };
+
+function toggleSuggestion() {
+    let fullSuggestion = document.getElementById("myClickedSuggestion");
+    fullSuggestion.classList.toggle('col-12');
+    fullSuggestion.classList.toggle('col-lg-8');
+}
