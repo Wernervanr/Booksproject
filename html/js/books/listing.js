@@ -31,5 +31,4 @@ $(document).ready(() => {
 
     headingText.setAttribute('class', 'welcometext text-center');
     listingHeading.appendChild(headingText);
-
 });

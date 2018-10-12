@@ -40,7 +40,6 @@
             </tr>
         </template>
 
-
         <!--LISTING NEW BOOK BUTTON-->
 
         <?php if($viewModel['profile']) { ?>

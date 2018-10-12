@@ -47,5 +47,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for (let i = 0; i < inputFields.length; i++) {
         inputFields[i].addEventListener('blur', fieldValidation);
-    };
+    }
 });

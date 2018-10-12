@@ -99,6 +99,7 @@ button {
 table .listing:hover {
   cursor: pointer;
   color: #ed1d24;
+  border: 0px 1px solid #ed1d24;
   font-style: italic;
 }
 
@@ -285,7 +286,7 @@ table .listing:hover {
   border-radius: 10%;
 }
 
-.readSuggestion {
+.read {
   color: lightgrey;
 }
 

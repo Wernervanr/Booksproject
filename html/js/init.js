@@ -1,4 +1,6 @@
-// API calls
+// -- API CALLS -- //
+
+    // Comic Books
 
 const getBooks = () => {
     return $.get(env.api + '?route=books')
@@ -32,9 +34,7 @@ const getRecommended = () => {
     return $.get(env.api + '?route=recommended')
 };
 
-
-
-// contact
+    // Contact
 
 const getSuggestions = () => {
     return $.get(env.api + '?route=suggestions')
@@ -52,9 +52,33 @@ const deleteSuggestion = (suggestionId) => {
     return $.post(env.api + '?route=deletesuggestion&id=' + suggestionId);
 };
 
-// end contact
+    // End contact
+
+// -- END API CALLS -- //
 
 
+
+// -- MARK ITEMS AS READ -- //
+
+const saveAsRead = (data, dataItem) => { // DATA = SUGGESTION
+    localStorage.setItem(dataItem + 'IsRead' + data, true);
+};
+
+const removeAsRead = (data, dataItem) => {
+    localStorage.removeItem(dataItem + 'IsRead' + data);
+};
+
+const determineIfRead = (dataId, dataDisplay, dataItem) => { // DATA = SUGGESTION
+    let isRead = localStorage.getItem(dataItem + 'IsRead' + dataId);
+    if (isRead !== null) {
+        dataDisplay.classList.toggle('read');
+    }
+};
+
+// -- END MARK ITEMS AS READ -- //
+
+
+// -- FIELD VALIDATION, SUCCESS AND ERROR MESSAGE -- //
 
 const fieldValidation = (event) => {
     const inputField = event.target;
@@ -98,8 +122,6 @@ const getErrorMessageForElement = (element) => {
     }
 };
 
-// DOM helper functions
-
 const appendSuccessMessage = (message, elementSelector) => {
     const successAlert = $(`<div class="alert contactmessage alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -111,7 +133,9 @@ const appendSuccessMessage = (message, elementSelector) => {
     $(elementSelector).append(successAlert);
 };
 
-// VOTES
+// -- END FIELD VALIDATION, SUCCESS AND ERROR MESSAGE -- //
+
+// -- VOTES -- //
 
 function upVote(id){
     $.ajax({
@@ -167,3 +191,4 @@ $( document ).ready(function() {
         }
     }
 });
+// -- END VOTES -- //

@@ -1,18 +1,3 @@
-// SAVE AS READ / DETERMINE IF READ
-
-const saveAsRead = (data) => { // DATA = SUGGESTION
-    localStorage.setItem('isRead' + data, true);
-};
-
-const determineIfRead = (data) => { // DATA = SUGGESTION
-    let isRead = localStorage.getItem('isRead' + data);
-    if (isRead !== null) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
 const constructInbox = (data) => {
     let inboxDivSmallContent = document.createElement('div');
     inboxDivSmallContent.setAttribute('class', 'row inboxContent border-bottom py-3');
@@ -40,11 +25,6 @@ const constructInbox = (data) => {
     deleteBtn.innerText = 'Delete';
     deleteBtnDiv.appendChild(deleteBtn);
 
-    let isRead = determineIfRead(data.id);
-    if (isRead === true) {
-        inboxDivSmallContent.classList.toggle('readSuggestion');
-    }
-
     inboxDivSmallContent.append(deleteBtnDiv);
     inboxDivSmallContent.appendChild(fullName);
     inboxDivSmallContent.appendChild(date);
@@ -52,4 +32,18 @@ const constructInbox = (data) => {
     inboxDivSmallContent.append(deleteBtnDiv);
 
     return inboxDivSmallContent;
+};
+
+const deleteThisSuggestion = (suggestionDiv, suggestionId) => {
+    if (window.confirm('Are you sure you want to delete this suggestion?')) {
+        deleteSuggestion(suggestionId)
+            .done((data) => {
+                suggestionDiv.parentNode.removeChild(suggestionDiv);
+                inboxDivLarge.removeChild(inboxDivLarge.firstChild);
+                removeAsRead(suggestionId, 'suggestion');
+            })
+            .fail((request, status, error) => {
+                window.alert('Unfortunately an error occurred during the deletion of this book');
+            })
+    }
 };
