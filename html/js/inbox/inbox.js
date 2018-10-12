@@ -15,59 +15,14 @@ $(document).ready(() => {
 
             suggestions.forEach(function(suggestion) {
 
-                // Determine if the suggestion has been read.
-
-                let isRead = localStorage.getItem('isRead' + suggestion.id);
-
-                // Container div for suggestions in short.
-
-                let inboxDivSmallContent = document.createElement('div');
-                inboxDivSmallContent.setAttribute('class', 'row inboxContent border-bottom py-3');
-                inboxDivSmallContent.style.cursor = "pointer";
-
-                    // Has the suggestion been read? Then adds the readSuggestion class for grey color.
-
-                if (isRead) {
-                    inboxDivSmallContent.classList.toggle('readSuggestion');
-                }
-
-                    // Filling of the inboxDivSmallContent with the actual data.
-
-                let fullName = document.createElement('div');
-                fullName.setAttribute('class', 'col-7 font-weight-bold');
-                fullName.textContent = suggestion.fullname;
-
-                let date = document.createElement('div');
-                date.setAttribute('class', 'col-5 font-weight-bold');
-                date.textContent = suggestion.created_at;
-
-                let subject = document.createElement('div');
-                subject.setAttribute('class', 'col-12');
-                subject.textContent = suggestion.subject;
-
-                let deleteBtnDiv = document.createElement('div');
-                deleteBtnDiv.setAttribute('class', 'col-12 d-flex justify-content-start');
-
-                let deleteBtn = document.createElement('button');
-                deleteBtn.setAttribute('class', 'btn-comic inboxDeleteButton mt-1');
-                deleteBtn.setAttribute('type', 'submit');
-                deleteBtn.innerText = 'Delete';
-
-                deleteBtnDiv.appendChild(deleteBtn);
-
-                inboxDivSmallContent.append(deleteBtnDiv);
-                inboxDivSmallContent.appendChild(fullName);
-                inboxDivSmallContent.appendChild(date);
-                inboxDivSmallContent.appendChild(subject);
-                inboxDivSmallContent.append(deleteBtnDiv);
-
-                inboxDivSmall.appendChild(inboxDivSmallContent);
+                let constructedSuggestion = constructInbox(suggestion);
+                inboxDivSmall.appendChild(constructedSuggestion);
 
             // End display all suggestions in short.
 
                 // Upon click, either the e-mail address and the message content will show, or message will be deleted.
 
-                inboxDivSmallContent.addEventListener('click', (event) => {
+                constructedSuggestion.addEventListener('click', (event) => {
 
                     // If the target clicked is the delete button.
 
@@ -92,7 +47,7 @@ $(document).ready(() => {
                         // Mark the suggestion as being read when clicked upon.
 
                         localStorage.setItem('isRead' + suggestion.id, true);
-                        inboxDivSmallContent.classList.toggle('readSuggestion');
+                        constructedSuggestion.classList.toggle('readSuggestion');
 
                         // Display on Small Screen.
                         while (smallScreenDiv.hasChildNodes()) {

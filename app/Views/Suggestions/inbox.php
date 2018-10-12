@@ -29,4 +29,5 @@
     </div>
 </div>
 
+<script src="js/inbox/handlers.js"></script>
 <script src="js/inbox/inbox.js"></script>

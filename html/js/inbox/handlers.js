@@ -6,8 +6,10 @@ const saveAsRead = (data) => { // DATA = SUGGESTION
 
 const determineIfRead = (data) => { // DATA = SUGGESTION
     let isRead = localStorage.getItem('isRead' + data);
-    if (isRead) {
-        inboxDivSmallContent.classList.toggle('readSuggestion');
+    if (isRead !== null) {
+        return true;
+    } else {
+        return false;
     }
 };
 
@@ -37,6 +39,11 @@ const constructInbox = (data) => {
     deleteBtn.setAttribute('type', 'submit');
     deleteBtn.innerText = 'Delete';
     deleteBtnDiv.appendChild(deleteBtn);
+
+    let isRead = determineIfRead(data.id);
+    if (isRead === true) {
+        inboxDivSmallContent.classList.toggle('readSuggestion');
+    }
 
     inboxDivSmallContent.append(deleteBtnDiv);
     inboxDivSmallContent.appendChild(fullName);
