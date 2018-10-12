@@ -78,7 +78,6 @@ const determineIfRead = (dataId, dataDisplay, dataItem) => { // DATA = SUGGESTIO
 
 // -- END MARK ITEMS AS READ -- //
 
-
 // -- FIELD VALIDATION, SUCCESS AND ERROR MESSAGE -- //
 
 const fieldValidation = (event) => {

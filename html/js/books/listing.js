@@ -2,6 +2,8 @@ $(document).ready(() => {
 
     const table = document.querySelector('.table');
 
+    getConditionalListingText();
+
     getBooks()
         .done((data, text) => {
 
@@ -17,18 +19,4 @@ $(document).ready(() => {
         {
             console.log(request);
         });
-
-    // CONDITIONELE WELKOMTEKST
-    const listingHeading = document.querySelector('.listingHeading');
-
-    const headingText = document.createElement('div');
-
-    if (profile === 'logged in') {
-        headingText.textContent = 'Welcome to the editting section of the Comics catalog. Select a comic in the listing below to see details and edit them!';
-    } else {
-        headingText.textContent = 'Welcome to the Comics catalog. Select a comic in the listing below to see their details!';
-    }
-
-    headingText.setAttribute('class', 'welcometext text-center');
-    listingHeading.appendChild(headingText);
 });

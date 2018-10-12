@@ -5,37 +5,17 @@ $(document).ready(() => {
 
             let details = JSON.parse(data);
 
-            const publisherCont = document.querySelector('.publisherCont');
-            const seriesNoCont = document.querySelector('.seriesNoCont');
-            const priceCont = document.querySelector('.priceCont');
-            const descriptionCont = document.querySelector('.descriptionCont');
             const titleCont = document.querySelector('.titleCont');
+            const detailContainer = document.querySelector('.detailContainer');
 
-            const publisherDiv = document.createElement('div');
-            publisherDiv.textContent = details.publisher;
-            publisherDiv.setAttribute('class', 'mb-2');
-
-            const seriesNoDiv = document.createElement('div');
-            seriesNoDiv.textContent = details.series_no;
-            seriesNoDiv.setAttribute('class', 'mb-2');
-
-            const priceDiv = document.createElement('div');
-            priceDiv.textContent = '€ ' + details.price;
-            priceDiv.setAttribute('class', 'mb-2');
-
-            const descriptionDiv = document.createElement('div');
-            descriptionDiv.textContent = details.description;
-            descriptionDiv.setAttribute('class', 'mb-2');
-
-            const titleDiv = document.createElement('h2');
+            let titleDiv = document.createElement('h2');
             titleDiv.textContent = details.title;
             titleDiv.setAttribute('class', 'subtitle mt-2');
 
+            let constructedBook = constructBook(details);
+
             titleCont.appendChild(titleDiv);
-            publisherCont.appendChild(publisherDiv);
-            seriesNoCont.appendChild(seriesNoDiv);
-            priceCont.appendChild(priceDiv);
-            descriptionCont.appendChild(descriptionDiv);
+            detailContainer.appendChild(constructedBook);
         })
         .fail((request, status, error) =>
         {

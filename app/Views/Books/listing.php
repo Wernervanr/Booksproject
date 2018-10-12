@@ -40,8 +40,6 @@
             </tr>
         </template>
 
-        <!--LISTING NEW BOOK BUTTON-->
-
         <?php if($viewModel['profile']) { ?>
             <div class="row mt-2 ml-1">
                 <button type="button" class="btn btn-comic" onclick="window.location='?route=create'">New Book</button>
@@ -56,5 +54,5 @@
     <script>let profile = null;</script>
 <?php } ?>
 
-<script src="js/books/book-table-row.js"></script>
+<script src="js/books/handlers.js"></script>
 <script src="js/books/listing.js"></script>
