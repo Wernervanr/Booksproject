@@ -5,12 +5,12 @@
             <div class="row mb-4">
                 <div class="d-none d-sm-block newlyAdded order-2 order-sm-2 col-sm-6 col-lg-2 order-lg-1 card">
                     <p class="text-center mt-2"><b>Newly added Comic Book:</b></p>
-                    <img class="newlyAddedImage card-img-top" alt="Cover of newly added comic">
+                    <img id="newlyAddedImage" class="card-img-top" alt="Cover of newly added comic">
                 </div>
 
                 <div class="mostPopulair order-3 order-sm-3 col-sm-6 col-lg-2 order-lg-3 card">
                     <p class="text-center mt-2"><b>Most popular comic book:</b></p>
-                    <img class="mostPopulairImage card-img-top" src="" alt="Cover of most populair comic">
+                    <img id ="mostPopulairImage" class="card-img-top" src="" alt="Cover of most populair comic">
                 </div>
 
                 <div class="order-1 order-sm-1 order-md-1 col-lg-8 order-lg-2 mb-2 mt-3 text-center">
@@ -144,11 +144,10 @@
             <form novalidate id="contactForm">
                 <div class="col-md">
                     <div class="message-container"></div>
-
                     <input type="text" id="fullname" name="fullname" class="form-control mb-1" placeholder="What is your name?" required/>
-                        <input type="text" id="email" name="email" class="form-control mb-1" placeholder="What is your email?" required/>
-                        <input type="text" id="subject" name="subject" class="form-control mb-1" placeholder="What is the subject?" required/>
-                        <textarea id="message_content" name="message_content" class="form-control mb-2" placeholder="What's on your mind?" required></textarea>
+                    <input type="text" id="email" name="email" class="form-control mb-1" placeholder="What is your email?" required/>
+                    <input type="text" id="subject" name="subject" class="form-control mb-1" placeholder="What is the subject?" required/>
+                    <textarea id="message_content" name="message_content" class="form-control mb-2" placeholder="What's on your mind?" required></textarea>
                 </div>
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="saveBtn btn btn-comic" value="Send">Send</button>
@@ -164,4 +163,5 @@
     <script>let profile = null;</script>
 <?php } ?>
 
+<script src="js/books/handlers.js"></script>
 <script src="js/homepage.js"></script>

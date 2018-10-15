@@ -45,7 +45,7 @@ class Book extends Database
                     description = :description,
                     price = :price,
                     updated_at = :updated_at,
-                    series_no = :isbn
+                    series_no = :series_no
                 WHERE {$this->primary_key} = :id
                 ", $columns);
         }

@@ -11,32 +11,15 @@
 
 <div class="row">
     <div class="order-2 col-md-6 order-md-1">
-        <div class="col1 votes mb-2">
-            <b>Likes</b>
-            <div>
-                <span class="up-vote"><i class="far fa-thumbs-up"></i></span>
-                <span class="vote-count" data-id="<?php echo $viewModel['book']['id'] ?>"><?php echo $viewModel['book']['votes'] ?></span> people like this book!
-                <span class="down-vote"><i class="far fa-thumbs-down"></i></span>
+        <div class="detailContainer">
+            <div class="col1 votes mb-2">
+                <b>Likes</b>
+                <div>
+                    <span class="up-vote"><i class="far fa-thumbs-up"></i></span>
+                    <span class="vote-count" data-id="<?php echo $viewModel['book']['id'] ?>"><?php echo $viewModel['book']['votes'] ?></span> people like this book!
+                    <span class="down-vote"><i class="far fa-thumbs-down"></i></span>
+                </div>
             </div>
-        </div>
-
-        <div class="publisherCont">
-            <b>Publisher</b>
-            <!--Javascript generated content (div)-->
-        </div>
-
-        <div class="seriesNoCont">
-            <b>Series No.</b>
-            <!--Javascript generated content (div)-->
-        </div>
-
-        <div class="priceCont">
-            <b>Price</b>
-            <!--Javascript generated content (div)-->
-        </div>
-
-        <div class="descriptionCont">
-            <b>Description</b>
             <!--Javascript generated content (div)-->
         </div>
 
@@ -75,9 +58,10 @@
 </div>
 
 <script>let bookId = <?php echo $viewModel['book']['id']; ?>;</script>
-<script src="js/detail-listing.js"></script>
+<script src="js/books/handlers.js"></script>
+<script src="js/books/detail-listing.js"></script>
 
 <?php if ($viewModel['profile']) { ?>
-    <script src="js/delete-book.js"></script>
+    <script src="js/books/delete-book.js"></script>
 <?php } ?>
 

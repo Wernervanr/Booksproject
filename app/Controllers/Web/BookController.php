@@ -16,8 +16,6 @@ class BookController extends BaseController
 
     public function index()
     {
-        $book = new Book();
-
         $viewModel = [
             'pageTitle' => "Comic Books",
             'errors' => $this->getErrors(),
@@ -32,8 +30,6 @@ class BookController extends BaseController
 
     public function listing()
     {
-        $book = new Book();
-
         $viewModel = [
             'pageTitle' => "Comic Books",
             'errors' => $this->getErrors(),
@@ -46,7 +42,6 @@ class BookController extends BaseController
 
     public function show($id = 0)
     {
-
         $book = new Book();
 
         $imagePath = '';
@@ -68,7 +63,6 @@ class BookController extends BaseController
 
     public function edit($id = 0)
     {
-
         $book = new Book();
 
         $viewModel = [
@@ -84,7 +78,6 @@ class BookController extends BaseController
 
     public function create()
     {
-
         $viewModel = [
             'pageTitle' => "Add a comic book",
             'errors' => $this->getErrors(),
@@ -112,6 +105,4 @@ class BookController extends BaseController
             header('Location: ?route=show&id=' . $id);
         }
     }
-
-
 }

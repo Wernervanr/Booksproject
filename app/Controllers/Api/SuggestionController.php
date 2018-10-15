@@ -3,22 +3,33 @@
 namespace App\Controllers\Api;
 
 use App\Controllers\BaseController;
-use App\Models\Contact;
+use App\Models\Suggestion;
 use Exception;
 
-class ContactController extends BaseController
+class SuggestionController extends BaseController
 {
     public function getSuggestions() {
 
-        $suggestionModel = new Contact();
+        $suggestionModel = new Suggestion();
 
         $suggestions = $suggestionModel->all();
 
         $this->renderJson(200, $suggestions);
     }
 
+    public function getOneSuggestion() {
+
+        $id = $_GET['id'] ?? null;
+
+        $suggestionModel = new Suggestion();
+
+        $suggestion = $suggestionModel->one($id);
+
+        $this->renderJson(200, $suggestion);
+    }
+
     public function createSuggestion() {
-        $suggestionModel = new Contact();
+        $suggestionModel = new Suggestion();
 
         $suggestion = json_decode(file_get_contents("php://input"));
 
@@ -30,12 +41,14 @@ class ContactController extends BaseController
         ];
 
         $suggestionModel->save($fields);
+
+        $this->renderJson(201);
     }
 
     public function deleteSuggestion() {
         $id = $_GET['id'] ?? null;
 
-        $suggestionModel = new Contact();
+        $suggestionModel = new Suggestion();
 
         $suggestionModel->delete($id);
     }

@@ -2,7 +2,7 @@
 
 use App\Controllers\Web\BookController;
 use App\Controllers\Web\LoginController;
-use App\Controllers\Web\ContactController;
+use App\Controllers\Web\SuggestionController;
 use Dotenv\Dotenv;
 use Infrastructure\LogManager;
 
@@ -28,16 +28,11 @@ function handleErrors($iErrorNumber, $sError, $sErrorFile, $iErrorLine)
 }
 set_error_handler('handleErrors');
 
-
-function view($view, $viewModel){
-    include __DIR__ . '/../app/Views/layout.php';
-}
-
 $route = $_GET['route']??"index";
 $id = $_GET['id']??null;
 $method = $_SERVER['REQUEST_METHOD'];
 
-
+// Books
 
 if ($route == "index") {
     $bookController = new BookController();
@@ -63,6 +58,8 @@ if ($route == "index") {
     $bookController = new BookController();
     $bookController->uploadImage($id);
 
+// Login
+
 } else if ($route == "login" && $method == 'GET') {
     $loginController = new LoginController();
     $loginController->show();
@@ -75,7 +72,13 @@ if ($route == "index") {
     $loginController = new LoginController();
     $loginController->logout();
 
-}  else if ($route == 'inbox') {
-    $contactController = new ContactController();
-    $contactController->listing();
+// Suggestions
+
+}  else if ($route == 'inbox' && $method == 'GET') {
+    $suggestionController = new SuggestionController();
+    $suggestionController->listing();
+
+}  else if ($route == 'show-suggestion' && $method == 'GET') {
+    $suggestionController = new SuggestionController();
+    $suggestionController->show($id);
 }

@@ -1,4 +1,6 @@
-// API calls
+// -- API CALLS -- //
+
+    // Comic Books
 
 const getBooks = () => {
     return $.get(env.api + '?route=books')
@@ -32,12 +34,14 @@ const getRecommended = () => {
     return $.get(env.api + '?route=recommended')
 };
 
-
-
-// contact
+    // Contact
 
 const getSuggestions = () => {
     return $.get(env.api + '?route=suggestions')
+};
+
+const getOneSuggestion = (suggestionId) => {
+    return $.get(env.api + '?route=suggestion&id=' + suggestionId);
 };
 
 const createSuggestion = (suggestion) => {
@@ -48,17 +52,49 @@ const deleteSuggestion = (suggestionId) => {
     return $.post(env.api + '?route=deletesuggestion&id=' + suggestionId);
 };
 
-// end contact
+    // End contact
 
+// -- END API CALLS -- //
 
+// -- MARK ITEMS AS READ -- //
 
-const fieldValidation = (event) => {
+const saveAsRead = (data, dataItem) => {
+    localStorage.setItem(dataItem + 'IsRead' + data, true);
+};
+
+const removeAsRead = (data, dataItem) => {
+    localStorage.removeItem(dataItem + 'IsRead' + data);
+};
+
+const determineIfRead = (dataId, dataDisplay, dataItem) => {
+    let isRead = localStorage.getItem(dataItem + 'IsRead' + dataId);
+    let alreadyMarkedAsRead = dataDisplay.classList.contains('read');
+    if (isRead !== null && alreadyMarkedAsRead === false) {
+        dataDisplay.classList.toggle('read');
+    }
+};
+
+// -- END MARK ITEMS AS READ -- //
+
+// -- FIELD VALIDATION, SUCCESS AND ERROR MESSAGE -- //
+
+const fieldValidationWhenBlur = (event) => {
     const inputField = event.target;
 
     if (!inputField.checkValidity()) {
         addErrorMessageForElement(inputField);
     } else {
         clearErrorMessageForElement(inputField);
+    }
+};
+
+const validateFieldsWhenSubmit = (inputFields) => {
+    for (let i = 0; i < inputFields.length; i++) {
+        if (!inputFields[i].checkValidity()) {
+            addErrorMessageForElement(inputFields[i]);
+        } else {
+            clearErrorMessageForElement(inputFields[i]);
+        }
     }
 };
 
@@ -94,8 +130,6 @@ const getErrorMessageForElement = (element) => {
     }
 };
 
-// DOM helper functions
-
 const appendSuccessMessage = (message, elementSelector) => {
     const successAlert = $(`<div class="alert contactmessage alert-dismissible fade show" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -107,7 +141,9 @@ const appendSuccessMessage = (message, elementSelector) => {
     $(elementSelector).append(successAlert);
 };
 
-// VOTES
+// -- END FIELD VALIDATION, SUCCESS AND ERROR MESSAGE -- //
+
+// -- VOTES -- //
 
 function upVote(id){
     $.ajax({
@@ -163,3 +199,5 @@ $( document ).ready(function() {
         }
     }
 });
+
+// -- END VOTES -- //
