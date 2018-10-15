@@ -77,8 +77,4 @@ if ($route == "index") {
 }  else if ($route == 'inbox' && $method == 'GET') {
     $suggestionController = new SuggestionController();
     $suggestionController->listing();
-
-}  else if ($route == 'show-suggestion' && $method == 'GET') {
-    $suggestionController = new SuggestionController();
-    $suggestionController->show($id);
 }

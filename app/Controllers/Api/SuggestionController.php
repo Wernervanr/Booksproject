@@ -17,17 +17,6 @@ class SuggestionController extends BaseController
         $this->renderJson(200, $suggestions);
     }
 
-    public function getOneSuggestion() {
-
-        $id = $_GET['id'] ?? null;
-
-        $suggestionModel = new Suggestion();
-
-        $suggestion = $suggestionModel->one($id);
-
-        $this->renderJson(200, $suggestion);
-    }
-
     public function createSuggestion() {
         $suggestionModel = new Suggestion();
 
