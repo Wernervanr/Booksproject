@@ -16,7 +16,10 @@ const constructCard = (book) => {
     return infoDiv;
 };
 
-const constructImage = (imageTag, book) => {
+const constructImage = (book) => {
+    const imageTag = document.createElement('img');
+    imageTag.setAttribute('class', 'card-img-top');
+    imageTag.setAttribute('alt', 'Comic Cover');
     imageTag.style.cursor = "pointer";
     imageTag.addEventListener('click', (event) => {
         window.location = '?route=show&id=' + book.id;
@@ -30,6 +33,8 @@ const constructImage = (imageTag, book) => {
         .fail(function() {
             imageTag.setAttribute('src', 'slides/unavailable.jpg');
         });
+
+    return imageTag;
 };
 
 const constructRecommended = (book) => {
@@ -60,6 +65,27 @@ const constructRecommended = (book) => {
     recommended.appendChild(recommendedTextContent);
 
     return recommended;
+};
+
+const submitSuggestion = (form) => {
+    if (form.checkValidity()) {
+
+        const suggestion = {
+            fullname: form.fullname.value,
+            email: form.email.value,
+            subject: form.subject.value,
+            message_content: form.message_content.value
+        };
+
+        createSuggestion(suggestion)
+            .done((data, text) => {
+                form.reset();
+                appendSuccessMessage('Your suggestion has been sent!', '.message-container');
+            })
+            .fail((request,status, error) => {
+                console.log(request);
+            });
+    }
 };
 
 // LISTING

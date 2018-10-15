@@ -5,12 +5,11 @@ $(document).ready(() => {
 
             let book = JSON.parse(data);
             let constructedNewlyAdded = constructCard(book);
+            let constructedImage = constructImage(book);
 
             const newlyAdded = document.querySelector('.newlyAdded');
+            newlyAdded.appendChild(constructedImage);
             newlyAdded.appendChild(constructedNewlyAdded);
-
-            const newlyAddedImage = document.querySelector('#newlyAddedImage');
-            let constructedImage = constructImage(newlyAddedImage, book);
         })
         .fail((request, status, error) =>
         {
@@ -22,12 +21,11 @@ $(document).ready(() => {
 
             let book = JSON.parse(data);
             let constructedMostPopulair = constructCard(book);
+            let constructedImage = constructImage(book);
 
             const mostPopulair = document.querySelector('.mostPopulair');
+            mostPopulair.appendChild(constructedImage);
             mostPopulair.appendChild(constructedMostPopulair);
-
-            const mostPopulairImage = document.querySelector('#mostPopulairImage');
-            let constructedImage = constructImage(mostPopulairImage, book);
         })
         .fail((request, status, error) =>
         {
@@ -49,6 +47,10 @@ $(document).ready(() => {
                 let constructedRecommended = constructRecommended(book);
                 recommendedWrapper.appendChild(constructedRecommended);
             })
+        })
+        .fail((request, status, error) =>
+        {
+            console.log(request);
         });
 
     // Contact
@@ -59,25 +61,7 @@ $(document).ready(() => {
     form.addEventListener('submit', (event) => {
         validateFieldsWhenSubmit(inputFields);
         event.preventDefault();
-
-        if (form.checkValidity()) {
-
-            const suggestion = {
-                fullname: form.fullname.value,
-                email: form.email.value,
-                subject: form.subject.value,
-                message_content: form.message_content.value
-            };
-
-            createSuggestion(suggestion)
-                .done((data, text) => {
-                    form.reset();
-                    appendSuccessMessage('Your suggestion has been sent!', '.message-container');
-                })
-                .fail((request,status, error) => {
-                    console.log(request);
-                });
-        }
+        submitSuggestion(form);
     });
 
     for (let i = 0; i < inputFields.length; i++) {

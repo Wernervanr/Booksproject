@@ -5,12 +5,10 @@
             <div class="row mb-4">
                 <div class="d-none d-sm-block newlyAdded order-2 order-sm-2 col-sm-6 col-lg-2 order-lg-1 card">
                     <p class="text-center mt-2"><b>Newly added Comic Book:</b></p>
-                    <img id="newlyAddedImage" class="card-img-top" alt="Cover of newly added comic">
                 </div>
 
                 <div class="mostPopulair order-3 order-sm-3 col-sm-6 col-lg-2 order-lg-3 card">
                     <p class="text-center mt-2"><b>Most popular comic book:</b></p>
-                    <img id ="mostPopulairImage" class="card-img-top" src="" alt="Cover of most populair comic">
                 </div>
 
                 <div class="order-1 order-sm-1 order-md-1 col-lg-8 order-lg-2 mb-2 mt-3 text-center">
