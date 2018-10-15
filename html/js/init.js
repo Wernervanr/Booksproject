@@ -56,11 +56,9 @@ const deleteSuggestion = (suggestionId) => {
 
 // -- END API CALLS -- //
 
-
-
 // -- MARK ITEMS AS READ -- //
 
-const saveAsRead = (data, dataItem) => { // DATA = SUGGESTION
+const saveAsRead = (data, dataItem) => {
     localStorage.setItem(dataItem + 'IsRead' + data, true);
 };
 
@@ -68,7 +66,7 @@ const removeAsRead = (data, dataItem) => {
     localStorage.removeItem(dataItem + 'IsRead' + data);
 };
 
-const determineIfRead = (dataId, dataDisplay, dataItem) => { // DATA = SUGGESTION
+const determineIfRead = (dataId, dataDisplay, dataItem) => {
     let isRead = localStorage.getItem(dataItem + 'IsRead' + dataId);
     let alreadyMarkedAsRead = dataDisplay.classList.contains('read');
     if (isRead !== null && alreadyMarkedAsRead === false) {
@@ -80,13 +78,23 @@ const determineIfRead = (dataId, dataDisplay, dataItem) => { // DATA = SUGGESTIO
 
 // -- FIELD VALIDATION, SUCCESS AND ERROR MESSAGE -- //
 
-const fieldValidation = (event) => {
+const fieldValidationWhenBlur = (event) => {
     const inputField = event.target;
 
     if (!inputField.checkValidity()) {
         addErrorMessageForElement(inputField);
     } else {
         clearErrorMessageForElement(inputField);
+    }
+};
+
+const validateFieldsWhenSubmit = (inputFields) => {
+    for (let i = 0; i < inputFields.length; i++) {
+        if (!inputFields[i].checkValidity()) {
+            addErrorMessageForElement(inputFields[i]);
+        } else {
+            clearErrorMessageForElement(inputFields[i]);
+        }
     }
 };
 

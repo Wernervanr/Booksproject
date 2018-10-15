@@ -1,19 +1,19 @@
-const constructSuggestion = (data) => {
-    let inboxDivSmallContent = document.createElement('div');
-    inboxDivSmallContent.setAttribute('class', 'row inboxContent border-bottom py-3');
-    inboxDivSmallContent.style.cursor = "pointer";
+const constructSuggestion = (suggestion) => {
+    let inboxDivContent = document.createElement('div');
+    inboxDivContent.setAttribute('class', 'row inboxContent border-bottom py-3');
+    inboxDivContent.style.cursor = "pointer";
 
         let fullName = document.createElement('div');
         fullName.setAttribute('class', 'col-7 font-weight-bold');
-        fullName.textContent = data.fullname;
+        fullName.textContent = suggestion.fullname;
 
         let date = document.createElement('div');
         date.setAttribute('class', 'col-5 font-weight-bold');
-        date.textContent = data.created_at;
+        date.textContent = suggestion.created_at;
 
         let subject = document.createElement('div');
         subject.setAttribute('class', 'col-12');
-        subject.textContent = data.subject;
+        subject.textContent = suggestion.subject;
 
         let deleteBtnDiv = document.createElement('div');
         deleteBtnDiv.setAttribute('class', 'col-12 d-flex justify-content-start');
@@ -23,13 +23,46 @@ const constructSuggestion = (data) => {
             deleteBtn.innerText = 'Delete';
         deleteBtnDiv.appendChild(deleteBtn);
 
-    inboxDivSmallContent.append(deleteBtnDiv);
-    inboxDivSmallContent.appendChild(fullName);
-    inboxDivSmallContent.appendChild(date);
-    inboxDivSmallContent.appendChild(subject);
-    inboxDivSmallContent.append(deleteBtnDiv);
+    inboxDivContent.appendChild(fullName);
+    inboxDivContent.appendChild(date);
+    inboxDivContent.appendChild(subject);
+    inboxDivContent.append(deleteBtnDiv);
 
-    return inboxDivSmallContent;
+    return inboxDivContent;
+};
+
+const constructFullSuggestion = (suggestion) => {
+
+    let fullSuggestion = document.createElement('div');
+    fullSuggestion.setAttribute('class', 'row pl-3 pb-2 pt-2');
+
+        let fullName = document.createElement('div');
+        fullName.setAttribute('class', 'col-8 font-weight-bold');
+        fullName.textContent = suggestion.fullname;
+
+        let date = document.createElement('div');
+        date.setAttribute('class', 'col-4 font-weight-bold');
+        date.textContent = suggestion.created_at;
+
+        let email = document.createElement('div');
+        email.setAttribute('class', 'col-lg-12 ');
+        email.textContent = 'E-mail: ' + suggestion.email;
+
+        let subject = document.createElement('div');
+        subject.setAttribute('class', 'col-lg-12 mb-2 ');
+        subject.textContent = 'Subject: ' + suggestion.subject;
+
+        let message = document.createElement('div');
+        message.setAttribute('class', 'col-lg-12');
+        message.textContent = suggestion.message_content;
+
+    fullSuggestion.appendChild(fullName);
+    fullSuggestion.appendChild(date);
+    fullSuggestion.appendChild(email);
+    fullSuggestion.appendChild(subject);
+    fullSuggestion.appendChild(message);
+
+    return fullSuggestion;
 };
 
 const deleteThisSuggestion = (suggestionDiv, suggestionId) => {
@@ -45,8 +78,13 @@ const deleteThisSuggestion = (suggestionDiv, suggestionId) => {
     }
 };
 
-function toggleSuggestion() {
+const removeChildNodes = (div) => {
+    while (div.hasChildNodes()) {
+        div.removeChild(div.firstChild);
+    }
+};
+
+function toggleFullSuggestion() {
     let fullSuggestion = document.getElementById("myClickedSuggestion");
-    fullSuggestion.classList.toggle('col-12');
-    fullSuggestion.classList.toggle('col-lg-8');
+    fullSuggestion.setAttribute('class', 'clickedsuggestion order-1 order-lg-2 mb-3 col-12 col-lg-8');
 }

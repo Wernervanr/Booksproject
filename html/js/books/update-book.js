@@ -6,15 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     form.addEventListener('submit', (event) => {
-
-        for (let i = 0; i < inputFields.length; i++) {
-            if (!inputFields[i].checkValidity()) {
-                addErrorMessageForElement(inputFields[i]);
-            } else {
-                clearErrorMessageForElement(inputFields[i]);
-            }
-        }
-
+        validateFieldsWhenSubmit(inputFields);
         event.preventDefault();
 
         if (form.checkValidity()) {
@@ -46,6 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     for (let i = 0; i < inputFields.length; i++) {
-        inputFields[i].addEventListener('blur', fieldValidation);
+        inputFields[i].addEventListener('blur', fieldValidationWhenBlur);
     }
 });
