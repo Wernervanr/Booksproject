@@ -3,7 +3,6 @@
 namespace App\Controllers\Web;
 
 use App\Controllers\BaseController;
-use App\Models\Suggestion;
 use Infrastructure\Authentication;
 
 class SuggestionController extends BaseController
