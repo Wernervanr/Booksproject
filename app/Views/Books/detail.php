@@ -62,6 +62,7 @@
 <script src="js/books/detail-listing.js"></script>
 
 <?php if ($viewModel['profile']) { ?>
-    <script src="js/books/delete-book.js"></script>
+    <script>let loggedIn = true;</script>
+<?php } else { ?>
+    <script>let loggedIn = false;</script>
 <?php } ?>
-
