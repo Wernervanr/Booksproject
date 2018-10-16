@@ -19,7 +19,7 @@ const constructCard = (book) => {
 const constructImage = (book) => {
     const imageTag = document.createElement('img');
     imageTag.setAttribute('class', 'card-img-top');
-    imageTag.setAttribute('alt', 'Comic Cover');
+    imageTag.setAttribute('alt', book.title + ' Cover');
     imageTag.style.cursor = "pointer";
     imageTag.addEventListener('click', (event) => {
         window.location = '?route=show&id=' + book.id;
@@ -158,3 +158,15 @@ const constructBook = (details) => {
 
     return allDetails;
 };
+
+const deleteThisBook = (bookId) => {
+
+};
+
+// deletebook hier. Ook nieuwe layout inbox maken (voorbeeld = gmail) //
+
+// CREATE BOOK
+
+
+// NEW BOOK
+

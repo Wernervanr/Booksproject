@@ -139,6 +139,16 @@ const appendSuccessMessage = (message, elementSelector) => {
 
 // -- END FIELD VALIDATION, SUCCESS AND ERROR MESSAGE -- //
 
+// -- REMOVE CHILD NODES -- //
+
+const removeChildNodes = (div) => {
+    while (div.hasChildNodes()) {
+        div.removeChild(div.firstChild);
+    }
+};
+
+// -- END REMOVE CHILD NODES -- //
+
 // -- VOTES -- //
 
 function upVote(id){

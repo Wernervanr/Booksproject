@@ -6,7 +6,7 @@ $(document).ready(() => {
             let suggestions = JSON.parse(data);
 
             suggestions.forEach(function(suggestion) {
-                let constructedSuggestion = constructSuggestion(suggestion);
+                const constructedSuggestion = constructSuggestion(suggestion);
 
                 const smallSuggestionDisplay = document.querySelector('.inboxDiv');
                 smallSuggestionDisplay.appendChild(constructedSuggestion);
@@ -21,13 +21,12 @@ $(document).ready(() => {
                     }
                     // If the target clicked is the suggestion itself.
                     else {
+                        const constructedFullSuggestion = constructFullSuggestion(suggestion);
                         const fullSuggestionDisplay = document.querySelector('.clickedsuggestion');
-                        removeChildNodes(fullSuggestionDisplay);
 
-                        let constructedFullSuggestion = constructFullSuggestion(suggestion);
-                        fullSuggestionDisplay.appendChild(constructedFullSuggestion);
+                        const renderedFullSuggestion = renderFullSuggestion(fullSuggestionDisplay);
+                        renderedFullSuggestion.appendChild(constructedFullSuggestion);
 
-                        toggleFullSuggestion();
                         saveAsRead(suggestion.id, 'suggestion');
                         determineIfRead(suggestion.id, constructedSuggestion, 'suggestion');
                     }

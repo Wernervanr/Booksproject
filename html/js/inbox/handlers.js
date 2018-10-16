@@ -78,13 +78,10 @@ const deleteThisSuggestion = (suggestionDiv, suggestionId) => {
     }
 };
 
-const removeChildNodes = (div) => {
-    while (div.hasChildNodes()) {
-        div.removeChild(div.firstChild);
-    }
-};
-
-function toggleFullSuggestion() {
-    let fullSuggestion = document.getElementById("myClickedSuggestion");
+function renderFullSuggestion(suggestionDisplay) {
+    const fullSuggestion = suggestionDisplay;
+    removeChildNodes(fullSuggestion);
     fullSuggestion.setAttribute('class', 'clickedsuggestion order-1 order-lg-2 mb-3 col-12 col-lg-8');
+
+    return fullSuggestion;
 }
