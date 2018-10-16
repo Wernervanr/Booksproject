@@ -2,7 +2,7 @@
     <h1><?php echo $viewModel['pageTitle'] ?></h1>
 </div>
 
-<div class="row inboxView">
+<div class="row">
     <div class="col-lg-4 border order-2 order-lg-1">
         <div class="inboxDiv px-4">
             <!--Javascript generated content-->

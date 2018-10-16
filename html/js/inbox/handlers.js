@@ -65,14 +65,6 @@ const constructFullSuggestion = (suggestion) => {
     return fullSuggestion;
 };
 
-function renderFullSuggestion(suggestionDisplay) {
-    const fullSuggestion = suggestionDisplay;
-    removeChildNodes(fullSuggestion);
-    fullSuggestion.setAttribute('class', 'clickedsuggestion order-1 order-lg-2 mb-3 col-12 col-lg-8');
-
-    return fullSuggestion;
-}
-
 const deleteThisSuggestion = (suggestionDiv, suggestionId) => {
     if (window.confirm('Are you sure you want to delete this suggestion?')) {
         deleteSuggestion(suggestionId)
