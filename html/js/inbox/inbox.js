@@ -21,11 +21,13 @@ $(document).ready(() => {
                     }
                     // If the target clicked is the suggestion itself.
                     else {
+                        removeChildNodes(inbox);
+
                         const constructedSuggestion = constructFullSuggestion(suggestion);
 
                         const suggestionDisplay = document.querySelector('.clickedsuggestion');
                             removeChildNodes(suggestionDisplay);
-                        suggestionDisplay.setAttribute('class', 'clickedsuggestion order-1 order-lg-2 mb-3 col-12 col-lg-8');
+                        suggestionDisplay.setAttribute('class', 'clickedsuggestion order-1 mb-3 col-12');
                         suggestionDisplay.appendChild(constructedSuggestion);
 
                         saveAsRead(suggestion.id, 'suggestion');

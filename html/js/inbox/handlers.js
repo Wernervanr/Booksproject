@@ -1,32 +1,29 @@
 const constructInboxSuggestion = (suggestion) => {
     const inboxDivContent = document.createElement('div');
-    inboxDivContent.setAttribute('class', 'row inboxContent border-bottom py-3');
+    inboxDivContent.setAttribute('class', 'row inboxContent border-bottom py-2');
     inboxDivContent.style.cursor = "pointer";
 
         const fullName = document.createElement('div');
-        fullName.setAttribute('class', 'col-7 font-weight-bold');
+        fullName.setAttribute('class', 'col-4 col-md-3 col-lg-3 font-weight-bold');
         fullName.textContent = suggestion.fullname;
 
-        const date = document.createElement('div');
-        date.setAttribute('class', 'col-5 font-weight-bold');
-        date.textContent = suggestion.created_at;
-
         const subject = document.createElement('div');
-        subject.setAttribute('class', 'col-12');
+        subject.setAttribute('class', 'col-6 col-md-5 col-lg-6');
         subject.textContent = suggestion.subject;
 
-        const deleteBtnDiv = document.createElement('div');
-        deleteBtnDiv.setAttribute('class', 'col-12 d-flex justify-content-start');
-            const deleteBtn = document.createElement('button');
-            deleteBtn.setAttribute('class', 'btn-comic inboxDeleteButton mt-1');
-            deleteBtn.setAttribute('type', 'submit');
-            deleteBtn.innerText = 'Delete';
-        deleteBtnDiv.appendChild(deleteBtn);
+        const date = document.createElement('div');
+        date.setAttribute('class', 'd-none d-md-block col-md-3 col-lg-2 font-weight-bold');
+        date.textContent = suggestion.created_at;
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.setAttribute('class', 'btn-comic inboxDeleteButton mt-1');
+        deleteBtn.setAttribute('type', 'submit');
+        deleteBtn.innerText = 'Delete';
 
     inboxDivContent.appendChild(fullName);
-    inboxDivContent.appendChild(date);
     inboxDivContent.appendChild(subject);
-    inboxDivContent.append(deleteBtnDiv);
+    inboxDivContent.appendChild(date);
+    inboxDivContent.appendChild(deleteBtn);
 
     return inboxDivContent;
 };
@@ -34,33 +31,41 @@ const constructInboxSuggestion = (suggestion) => {
 const constructFullSuggestion = (suggestion) => {
 
     const fullSuggestion = document.createElement('div');
-    fullSuggestion.setAttribute('class', 'row pl-3 pb-2 pt-2');
+    fullSuggestion.setAttribute('class', 'row pb-2');
 
         const fullName = document.createElement('div');
-        fullName.setAttribute('class', 'col-8 font-weight-bold');
+        fullName.setAttribute('class', 'col-8 col-sm-9 font-weight-bold');
         fullName.textContent = suggestion.fullname;
 
         const date = document.createElement('div');
-        date.setAttribute('class', 'col-4 font-weight-bold');
+        date.setAttribute('class', 'col-4 col-sm-3 font-weight-bold');
         date.textContent = suggestion.created_at;
 
         const email = document.createElement('div');
-        email.setAttribute('class', 'col-lg-12 ');
+        email.setAttribute('class', 'col-12 ');
         email.textContent = 'E-mail: ' + suggestion.email;
 
         const subject = document.createElement('div');
-        subject.setAttribute('class', 'col-lg-12 mb-2 ');
+        subject.setAttribute('class', 'col-12 mb-2 ');
         subject.textContent = 'Subject: ' + suggestion.subject;
 
         const message = document.createElement('div');
-        message.setAttribute('class', 'col-lg-12');
+        message.setAttribute('class', 'col-12');
         message.textContent = suggestion.message_content;
+
+        const backToInbox = document.createElement('button');
+        backToInbox.setAttribute('class', 'btn btn-comic mt-3 ml-3 mr-auto');
+        backToInbox.textContent = 'Back to Inbox';
+        backToInbox.addEventListener('click', (event) => {
+            window.location = '?route=inbox';
+        });
 
     fullSuggestion.appendChild(fullName);
     fullSuggestion.appendChild(date);
     fullSuggestion.appendChild(email);
     fullSuggestion.appendChild(subject);
     fullSuggestion.appendChild(message);
+    fullSuggestion.appendChild(backToInbox);
 
     return fullSuggestion;
 };

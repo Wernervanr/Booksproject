@@ -200,7 +200,7 @@ table {
   font-weight: bold;
   font-size: 1.5rem;
   background: url('../slides/listingheader.jpg');
-  background-size: 100%;
+  background-size: auto;
   color: white;
 }
 
@@ -305,6 +305,7 @@ table {
 .inboxDeleteButton {
   font-size: 10px;
   border-radius: 10%;
+  max-height: 20px;
 }
 
 .read {
