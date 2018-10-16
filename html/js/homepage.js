@@ -37,15 +37,11 @@ $(document).ready(() => {
 
             let books = JSON.parse(data);
 
-            const recommendedWrapper = document.createElement('div');
-            recommendedWrapper.setAttribute('class', 'bg-white');
-
             const recommendedDiv = document.querySelector('.recommended');
-            recommendedDiv.appendChild(recommendedWrapper);
 
             books.forEach(function (book) {
                 let constructedRecommended = constructRecommended(book);
-                recommendedWrapper.appendChild(constructedRecommended);
+                recommendedDiv.appendChild(constructedRecommended);
             })
         })
         .fail((request, status, error) =>

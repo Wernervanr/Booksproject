@@ -3,12 +3,12 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-4 border order-2 order-lg-1">
-        <div class="inboxDiv px-4">
+    <div class="col-lg-12 order-2">
+        <div class="inboxDiv">
             <!--Javascript generated content-->
         </div>
     </div>
-    <div id="myClickedSuggestion" class="clickedsuggestion order-1 order-lg-2 mb-3">
+    <div id="myClickedSuggestion" class="clickedsuggestion order-1 mb-3">
         <!--Javascript generated content-->
     </div>
 </div>

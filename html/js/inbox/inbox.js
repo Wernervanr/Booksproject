@@ -6,30 +6,32 @@ $(document).ready(() => {
             let suggestions = JSON.parse(data);
 
             suggestions.forEach(function(suggestion) {
-                let constructedSuggestion = constructSuggestion(suggestion);
+                const constructedInboxSuggestion = constructInboxSuggestion(suggestion);
 
-                const smallSuggestionDisplay = document.querySelector('.inboxDiv');
-                smallSuggestionDisplay.appendChild(constructedSuggestion);
+                const inbox = document.querySelector('.inboxDiv');
+                inbox.appendChild(constructedInboxSuggestion);
 
-                determineIfRead(suggestion.id, constructedSuggestion, 'suggestion');
+                determineIfRead(suggestion.id, constructedInboxSuggestion, 'suggestion');
 
-                constructedSuggestion.addEventListener('click', (event) => {
+                constructedInboxSuggestion.addEventListener('click', (event) => {
                     // If the target clicked is the delete button.
                     if (event.target.classList.contains('inboxDeleteButton')) {
                         event.stopPropagation();
-                        deleteThisSuggestion(constructedSuggestion, suggestion.id);
+                        deleteThisSuggestion(constructedInboxSuggestion, suggestion.id);
                     }
                     // If the target clicked is the suggestion itself.
                     else {
-                        const fullSuggestionDisplay = document.querySelector('.clickedsuggestion');
-                        removeChildNodes(fullSuggestionDisplay);
+                        removeChildNodes(inbox);
 
-                        let constructedFullSuggestion = constructFullSuggestion(suggestion);
-                        fullSuggestionDisplay.appendChild(constructedFullSuggestion);
+                        const constructedSuggestion = constructFullSuggestion(suggestion);
 
-                        toggleFullSuggestion();
+                        const suggestionDisplay = document.querySelector('.clickedsuggestion');
+                        suggestionDisplay.setAttribute('class', 'clickedsuggestion order-1 mb-3 col-12');
+                        removeChildNodes(suggestionDisplay);
+                        suggestionDisplay.appendChild(constructedSuggestion);
+
                         saveAsRead(suggestion.id, 'suggestion');
-                        determineIfRead(suggestion.id, constructedSuggestion, 'suggestion');
+                        determineIfRead(suggestion.id, constructedInboxSuggestion, 'suggestion');
                     }
                 });
             });

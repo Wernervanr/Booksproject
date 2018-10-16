@@ -19,7 +19,7 @@ const constructCard = (book) => {
 const constructImage = (book) => {
     const imageTag = document.createElement('img');
     imageTag.setAttribute('class', 'card-img-top');
-    imageTag.setAttribute('alt', 'Comic Cover');
+    imageTag.setAttribute('alt', book.title + ' Cover');
     imageTag.style.cursor = "pointer";
     imageTag.addEventListener('click', (event) => {
         window.location = '?route=show&id=' + book.id;
@@ -157,4 +157,52 @@ const constructBook = (details) => {
     allDetails.appendChild(descriptionCont);
 
     return allDetails;
+};
+
+const deleteThisBook = (bookId) => {
+    if (window.confirm('Are you sure you want to delete this comic book?')) {
+        deleteBook(bookId)
+            .done((data) => {
+                window.location = '?route=listing';
+            })
+            .fail((request, status, error) => {
+                window.alert('Unfortunately an error occurred during the deletion of this book');
+            })
+    } else {
+        event.preventDefault();
+    }
+};
+
+// NEW-BOOK / UPDATE-BOOK
+const submitBook = (bookId, form, method) => {
+    if (form.checkValidity()) {
+
+        const book = {
+            title: form.title.value,
+            publisher: form.publisher.value,
+            series_no: form.series_no.value,
+            price: form.price.value,
+            description: form.description.value
+        };
+
+        if (method === 'create') {
+            createBook(book)
+                .done((data, text) => {
+                    form.reset();
+                    appendSuccessMessage('Book succesfully added to the library!', '.message-container');
+                    window.location = '?route=show&id=' + JSON.parse(data);
+                })
+                .fail((request, status, error) => {
+                    console.log(request);
+                });
+        } else if (method === 'update') {
+            updateBook(bookId, book)
+                .done((data, text) => {
+                    window.location = '?route=show&id=' + bookId;
+                })
+                .fail((request,status, error) => {
+                    console.log(request);
+                });
+        }
+    }
 };

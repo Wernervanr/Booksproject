@@ -8,32 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (event) => {
         validateFieldsWhenSubmit(inputFields);
         event.preventDefault();
-
-        if (form.checkValidity()) {
-
-            const book = {
-                title: form.title.value,
-                publisher: form.publisher.value,
-                series_no: form.series_no.value,
-                price: form.price.value,
-                description: form.description.value
-            };
-
-            createBook(book)
-                .done((data, text) => {
-                    form.reset();
-                    appendSuccessMessage('Book succesfully added to the library!', '.message-container');
-                        window.location = '?route=show&id=' + JSON.parse(data);
-                })
-                .fail((request,status, error) => {
-                    console.log(request);
-                });
-        }
+        submitBook(null, form, 'create');
     });
 
     inputTitle.addEventListener('blur', (event) => {
         if (event.target.value.length < 5 && inputTitle.checkValidity()) {
-            event.target.setCustomValidity('Titel moet meer dan vier karakters hebben')
+            event.target.setCustomValidity('Title should include more than four characters')
         } else {
             event.target.setCustomValidity('')
         }
