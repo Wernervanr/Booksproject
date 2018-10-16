@@ -6,29 +6,29 @@ $(document).ready(() => {
             let suggestions = JSON.parse(data);
 
             suggestions.forEach(function(suggestion) {
-                const constructedSuggestion = constructSuggestion(suggestion);
+                const constructedInboxSuggestion = constructInboxSuggestion(suggestion);
 
-                const smallSuggestionDisplay = document.querySelector('.inboxDiv');
-                smallSuggestionDisplay.appendChild(constructedSuggestion);
+                const inbox = document.querySelector('.inboxDiv');
+                inbox.appendChild(constructedInboxSuggestion);
 
-                determineIfRead(suggestion.id, constructedSuggestion, 'suggestion');
+                determineIfRead(suggestion.id, constructedInboxSuggestion, 'suggestion');
 
-                constructedSuggestion.addEventListener('click', (event) => {
+                constructedInboxSuggestion.addEventListener('click', (event) => {
                     // If the target clicked is the delete button.
                     if (event.target.classList.contains('inboxDeleteButton')) {
                         event.stopPropagation();
-                        deleteThisSuggestion(constructedSuggestion, suggestion.id);
+                        deleteThisSuggestion(constructedInboxSuggestion, suggestion.id);
                     }
                     // If the target clicked is the suggestion itself.
                     else {
-                        const constructedFullSuggestion = constructFullSuggestion(suggestion);
-                        const fullSuggestionDisplay = document.querySelector('.clickedsuggestion');
+                        const constructedSuggestion = constructFullSuggestion(suggestion);
+                        const suggestionDisplay = document.querySelector('.clickedsuggestion');
 
-                        const renderedFullSuggestion = renderFullSuggestion(fullSuggestionDisplay);
-                        renderedFullSuggestion.appendChild(constructedFullSuggestion);
+                        const renderedSuggestionDisplay = renderFullSuggestion(suggestionDisplay);
+                        renderedSuggestionDisplay.appendChild(constructedSuggestion);
 
                         saveAsRead(suggestion.id, 'suggestion');
-                        determineIfRead(suggestion.id, constructedSuggestion, 'suggestion');
+                        determineIfRead(suggestion.id, constructedInboxSuggestion, 'suggestion');
                     }
                 });
             });
