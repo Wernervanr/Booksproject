@@ -26,8 +26,8 @@ $(document).ready(() => {
                         const constructedSuggestion = constructFullSuggestion(suggestion);
 
                         const suggestionDisplay = document.querySelector('.clickedsuggestion');
-                            removeChildNodes(suggestionDisplay);
                         suggestionDisplay.setAttribute('class', 'clickedsuggestion order-1 mb-3 col-12');
+                        removeChildNodes(suggestionDisplay);
                         suggestionDisplay.appendChild(constructedSuggestion);
 
                         saveAsRead(suggestion.id, 'suggestion');

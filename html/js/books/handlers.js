@@ -163,7 +163,6 @@ const deleteThisBook = (bookId) => {
     if (window.confirm('Are you sure you want to delete this comic book?')) {
         deleteBook(bookId)
             .done((data) => {
-                window.alert('Book was succesfully deleted.');
                 window.location = '?route=listing';
             })
             .fail((request, status, error) => {
