@@ -51,4 +51,5 @@
     </div>
 </form>
 
+<script src="js/books/handlers.js"></script>
 <script src="js/books/new-book.js"></script>

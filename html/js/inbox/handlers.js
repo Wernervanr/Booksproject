@@ -1,23 +1,23 @@
 const constructInboxSuggestion = (suggestion) => {
-    let inboxDivContent = document.createElement('div');
+    const inboxDivContent = document.createElement('div');
     inboxDivContent.setAttribute('class', 'row inboxContent border-bottom py-3');
     inboxDivContent.style.cursor = "pointer";
 
-        let fullName = document.createElement('div');
+        const fullName = document.createElement('div');
         fullName.setAttribute('class', 'col-7 font-weight-bold');
         fullName.textContent = suggestion.fullname;
 
-        let date = document.createElement('div');
+        const date = document.createElement('div');
         date.setAttribute('class', 'col-5 font-weight-bold');
         date.textContent = suggestion.created_at;
 
-        let subject = document.createElement('div');
+        const subject = document.createElement('div');
         subject.setAttribute('class', 'col-12');
         subject.textContent = suggestion.subject;
 
-        let deleteBtnDiv = document.createElement('div');
+        const deleteBtnDiv = document.createElement('div');
         deleteBtnDiv.setAttribute('class', 'col-12 d-flex justify-content-start');
-            let deleteBtn = document.createElement('button');
+            const deleteBtn = document.createElement('button');
             deleteBtn.setAttribute('class', 'btn-comic inboxDeleteButton mt-1');
             deleteBtn.setAttribute('type', 'submit');
             deleteBtn.innerText = 'Delete';
@@ -33,26 +33,26 @@ const constructInboxSuggestion = (suggestion) => {
 
 const constructFullSuggestion = (suggestion) => {
 
-    let fullSuggestion = document.createElement('div');
+    const fullSuggestion = document.createElement('div');
     fullSuggestion.setAttribute('class', 'row pl-3 pb-2 pt-2');
 
-        let fullName = document.createElement('div');
+        const fullName = document.createElement('div');
         fullName.setAttribute('class', 'col-8 font-weight-bold');
         fullName.textContent = suggestion.fullname;
 
-        let date = document.createElement('div');
+        const date = document.createElement('div');
         date.setAttribute('class', 'col-4 font-weight-bold');
         date.textContent = suggestion.created_at;
 
-        let email = document.createElement('div');
+        const email = document.createElement('div');
         email.setAttribute('class', 'col-lg-12 ');
         email.textContent = 'E-mail: ' + suggestion.email;
 
-        let subject = document.createElement('div');
+        const subject = document.createElement('div');
         subject.setAttribute('class', 'col-lg-12 mb-2 ');
         subject.textContent = 'Subject: ' + suggestion.subject;
 
-        let message = document.createElement('div');
+        const message = document.createElement('div');
         message.setAttribute('class', 'col-lg-12');
         message.textContent = suggestion.message_content;
 

@@ -5,7 +5,7 @@ $(document).ready(() => {
 
             let details = JSON.parse(data);
 
-            let titleDiv = document.createElement('h2');
+            const titleDiv = document.createElement('h2');
             titleDiv.textContent = details.title;
             titleDiv.setAttribute('class', 'subtitle mt-2');
 

@@ -31,7 +31,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="recommended order-md-4 mt-4" id="recommended">
+            <div class="recommended order-md-4 mt-4 bg-white" id="recommended">
                 <p class="mt-2 mx-1 sectionheader">See our recommended rarest comics below!</p>
             </div>
         </div>

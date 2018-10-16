@@ -169,13 +169,41 @@ const deleteThisBook = (bookId) => {
             .fail((request, status, error) => {
                 window.alert('Unfortunately an error occurred during the deletion of this book');
             })
+    } else {
+        event.preventDefault();
     }
 };
 
-// deletebook hier. Ook nieuwe layout inbox maken (voorbeeld = gmail) //
+// NEW-BOOK / UPDATE-BOOK
+const submitBook = (bookId, form, method) => {
+    if (form.checkValidity()) {
 
-// CREATE BOOK
+        const book = {
+            title: form.title.value,
+            publisher: form.publisher.value,
+            series_no: form.series_no.value,
+            price: form.price.value,
+            description: form.description.value
+        };
 
-
-// NEW BOOK
-
+        if (method === 'create') {
+            createBook(book)
+                .done((data, text) => {
+                    form.reset();
+                    appendSuccessMessage('Book succesfully added to the library!', '.message-container');
+                    window.location = '?route=show&id=' + JSON.parse(data);
+                })
+                .fail((request, status, error) => {
+                    console.log(request);
+                });
+        } else if (method === 'update') {
+            updateBook(bookId, book)
+                .done((data, text) => {
+                    window.location = '?route=show&id=' + bookId;
+                })
+                .fail((request,status, error) => {
+                    console.log(request);
+                });
+        }
+    }
+};
