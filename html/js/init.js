@@ -50,6 +50,19 @@ const deleteSuggestion = (suggestionId) => {
 
     // End contact
 
+    // Login and register
+
+        // register
+
+const createUser = (user) => {
+    return $.post(env.api + '?route=registeruser', JSON.stringify(user));
+};
+
+        // Login
+
+
+    // End login and register
+
 // -- END API CALLS -- //
 
 // -- MARK ITEMS AS READ -- //

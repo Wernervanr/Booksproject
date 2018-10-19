@@ -3,6 +3,7 @@
 use App\Controllers\Api\BookController;
 use App\Controllers\Api\BookVoteController;
 use App\Controllers\Api\SuggestionController;
+use App\Controllers\Api\UserController;
 use Dotenv\Dotenv;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -58,10 +59,6 @@ if ($route === 'books' && $method === 'GET') {
     $suggestionController = new SuggestionController();
     $suggestionController->getSuggestions();
 
-} else if ($route === 'suggestion' && $method === 'GET') {
-    $suggestionController = new SuggestionController();
-    $suggestionController->getOneSuggestion();
-
 } else if ($route === 'suggestions' && $method === 'POST') {
     $suggestionController = new SuggestionController();
     $suggestionController->createSuggestion();
@@ -71,6 +68,14 @@ if ($route === 'books' && $method === 'GET') {
     $suggestionController->deleteSuggestion();
 
     // end contact
+
+    // register
+
+} else if ($route === 'registeruser' && $method === 'POST') {
+    $suggestionController = new UserController();
+    $suggestionController->createUser();
+
+    // end register
 
 
 } else if ($route === 'votes') {

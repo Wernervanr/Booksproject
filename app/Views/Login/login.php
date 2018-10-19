@@ -10,11 +10,12 @@
                 <input type="text" name="username" id="username" class="form-control mb-2" />
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" class="form-control" />
+                <a class="registerbutton" href="?route=register">Or click to register</a>
             </div>
         </div>
     </div>
 
-    <br clear="all" />
+<!--    <br clear="all" />-->
 
     <button type="submit" class="btn btn-comic">Login</button>
 </form>

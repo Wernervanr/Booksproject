@@ -325,3 +325,15 @@ table {
 }
 
 
+
+.registerbutton {
+  font-size: 10px;
+  &:hover {
+    cursor: pointer;
+    color: $comic-red;
+    text-decoration: none;
+    font-style: italic;
+  }
+}
+
+

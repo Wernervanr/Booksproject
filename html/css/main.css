@@ -303,5 +303,14 @@ table .listing:hover {
     padding-top: 15px;
   }
 }
+.registerbutton {
+  font-size: 10px;
+}
+.registerbutton:hover {
+  cursor: pointer;
+  color: #ed1d24;
+  text-decoration: none;
+  font-style: italic;
+}
 
 /*# sourceMappingURL=main.css.map */
