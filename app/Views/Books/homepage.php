@@ -155,7 +155,7 @@
     </div>
 </div>
 
-<?php if ($viewModel['profile']) { ?>
+<?php if ($viewModel['adminProfile']) { ?>
     <script>let profile = 'logged in';</script>
 <?php } else {?>
     <script>let profile = null;</script>

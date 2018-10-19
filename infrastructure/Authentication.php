@@ -1,27 +1,33 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wernervanranderaat
- * Date: 06/08/2018
- * Time: 11:16
- */
 
 namespace Infrastructure;
 
+use App\Models\User;
 
-use App\Controllers\BaseController;
-
-class Authentication extends BaseController
+class Authentication
 {
     public static function login(string $username, string $password) : bool
     {
-        if ($username === 'admin' && $password ==='admin') {
-            $_SESSION['profile'] = array(
-                'userId' => 1,
-                'userName' => 'Admin',
-                'userFullName' => 'Admin'
-            );
-            return true;
+        $userModel = new User();
+        $user = $userModel->getUser($username);
+
+        if ($user != false) {
+            $hashedPassword = $user['password'];
+            if (password_verify($password, $hashedPassword))
+            {
+                $_SESSION['profile'] = array
+                (
+                    'userId' => $user['id'],
+                    'userName' => $user['username'],
+                    'userFirstName' => $user['first_name'],
+                    'userLastName' => $user['last_name'],
+                    'userEmail' => $user['email'],
+                    'role' => $user['role']
+                );
+                return true;
+            } else {
+                return false;
+            }
         }
         return false;
     }
@@ -36,5 +42,13 @@ class Authentication extends BaseController
 
     public static function getProfile() {
         return $_SESSION['profile'] ?? null;
+    }
+
+    public static function getAdminProfile() {
+        if (isset($_SESSION['profile'])) {
+            if ($_SESSION['profile']['role'] === 'admin') {
+                return true;
+            }
+        }
     }
 }

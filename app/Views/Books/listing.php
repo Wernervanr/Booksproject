@@ -15,7 +15,7 @@
                     <th class="d-none d-sm-table-cell">Publisher</th>
                     <th class="d-none d-sm-table-cell">Series No.</th>
                     <th class="d-none d-sm-table-cell">Price</th>
-                    <?php if($viewModel['profile']) { ?>
+                    <?php if($viewModel['adminProfile']) { ?>
                         <th class="text-center text-sm-left">Delete</th>
                     <?php } ?>
                 </tr>
@@ -32,7 +32,7 @@
                 <td class="publisher d-none d-sm-table-cell"></td>
                 <td class="series_no d-none d-sm-table-cell"></td>
                 <td class="price d-none d-sm-table-cell">&euro; </td>
-                <?php if($viewModel['profile']) { ?>
+                <?php if($viewModel['adminProfile']) { ?>
                     <td class="delete">
                         <button class="btn btn-comic btn-delete">Delete</button>
                     </td>
@@ -40,7 +40,7 @@
             </tr>
         </template>
 
-        <?php if($viewModel['profile']) { ?>
+        <?php if($viewModel['adminProfile']) { ?>
             <div class="row mt-2 ml-1">
                 <button type="button" class="btn btn-comic" onclick="window.location='?route=create'">New Book</button>
             </div>
@@ -48,7 +48,7 @@
     </div>
 </div>
 
-<?php if ($viewModel['profile']) { ?>
+<?php if ($viewModel['adminProfile']) { ?>
     <script>let profile = 'logged in';</script>
 <?php } else {?>
     <script>let profile = null;</script>

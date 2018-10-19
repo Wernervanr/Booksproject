@@ -20,7 +20,8 @@ class BookController extends BaseController
             'pageTitle' => "Comic Books",
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile()
+            'profile' => Authentication::getProfile(),
+            'adminProfile' => Authentication::getAdminProfile()
         ];
 
         // HOMEPAGE MOET listing ZIJN, ALLEEN TER TEST NU HOMEPAGE
@@ -34,7 +35,8 @@ class BookController extends BaseController
             'pageTitle' => "Comic Books",
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile()
+            'profile' => Authentication::getProfile(),
+            'adminProfile' => Authentication::getAdminProfile()
         ];
 
         $this->renderWebView('/Books/listing', $viewModel);
@@ -55,6 +57,7 @@ class BookController extends BaseController
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile(),
+            'adminProfile' => Authentication::getAdminProfile(),
             'imagePath' => $imagePath
         ];
 
@@ -70,7 +73,8 @@ class BookController extends BaseController
             'book' => $book->one($id),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile()
+            'profile' => Authentication::getProfile(),
+            'adminProfile' => Authentication::getAdminProfile()
         ];
 
         $this->renderWebView('/Books/update-book', $viewModel);
@@ -82,7 +86,8 @@ class BookController extends BaseController
             'pageTitle' => "Add a comic book",
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile()
+            'profile' => Authentication::getProfile(),
+            'adminProfile' => Authentication::getAdminProfile()
         ];
 
         $this->renderWebView('/Books/new-book', $viewModel);

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: wernervanranderaat
- * Date: 2018-10-19
- * Time: 11:08
- */
 
 namespace App\Models;
 
@@ -31,4 +25,17 @@ class User extends Database
         )
         ", $columns);
     }
+
+    public function getUser($username)
+    {
+        $query = "SELECT * FROM users WHERE username = :username";
+        $parameters = [
+            'username' => $username,
+        ];
+
+        $user = $this->getOne($query, $parameters);
+
+        return $user;
+    }
+
 }

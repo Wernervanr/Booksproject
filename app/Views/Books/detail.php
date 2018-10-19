@@ -29,7 +29,7 @@
                 <button class="btn btn-comic" onClick="window.location = 'index.php?route=listing'">Back</button>
             </div>
 
-            <?php if ($viewModel['profile']) { ?>
+            <?php if ($viewModel['adminProfile']) { ?>
                 <div class="p2 row mr-1">
                     <button class="btn btn-comic mr-1" onClick="window.location = '?route=edit&id=<?php echo $viewModel['book']['id'] ?>'">Edit book</button>
                     <form id="deleteBtn">
@@ -46,7 +46,7 @@
             <img class="mb-4" src="<?php echo $viewModel['imagePath']; ?>" width="300px" />
         <?php } ?>
 
-        <?php if ($viewModel['profile']) { ?>
+        <?php if ($viewModel['adminProfile']) { ?>
             <form action="?route=upload-image&id=<?php echo $viewModel['book']['id'] ?>" enctype="multipart/form-data" method="post">
                 <div class="mb-1"><b>Select image file to upload</b></div>
                 <div class="mb-2"><input type="file" name="imageFile" id="imageFile" accept="image/*"/></div>
@@ -61,7 +61,7 @@
 <script src="js/books/handlers.js"></script>
 <script src="js/books/detail-listing.js"></script>
 
-<?php if ($viewModel['profile']) { ?>
+<?php if ($viewModel['adminProfile']) { ?>
     <script>let loggedIn = true;</script>
 <?php } else { ?>
     <script>let loggedIn = false;</script>
