@@ -17,7 +17,7 @@
                     Click on 'catalog' to scroll through a collection of epic comics, or browse through the site to find inspiration for cosplay, recommended
                     'must-have' comic books and trailers for upcoming superhero movies.</p>
                     <p>Want to contact me? Lit up the bat-signal, or simply fill the contact form at the bottom of the website.</p>
-                    <img class="d-none d-lg-block my-3" width="100%" src="slides/batsignal.png" alt="Bat signal">
+                    <img class="d-none d-lg-block my-5" width="100%" src="slides/batsignal.png" alt="Bat signal">
                 </div>
             </div>
         </div>
