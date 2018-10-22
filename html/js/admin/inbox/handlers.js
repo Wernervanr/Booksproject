@@ -31,41 +31,22 @@ const constructInboxSuggestion = (suggestion) => {
 const constructFullSuggestion = (suggestion) => {
 
     const fullSuggestion = document.createElement('div');
-    fullSuggestion.setAttribute('class', 'row pb-2');
+    fullSuggestion.setAttribute('class', 'pb-2');
 
-        const fullName = document.createElement('div');
-        fullName.setAttribute('class', 'col-8 col-sm-9 font-weight-bold');
-        fullName.textContent = suggestion.fullname;
+    const email = document.createElement('div');
+    email.setAttribute('class', 'col-12 ');
+    email.textContent = 'E-mail: ' + suggestion.email;
 
-        const date = document.createElement('div');
-        date.setAttribute('class', 'col-4 col-sm-3 font-weight-bold');
-        date.textContent = suggestion.created_at;
+    const message = document.createElement('div');
+    message.setAttribute('class', 'col-12');
+    message.textContent = suggestion.message_content;
 
-        const email = document.createElement('div');
-        email.setAttribute('class', 'col-12 ');
-        email.textContent = 'E-mail: ' + suggestion.email;
+    const backToInbox = document.createElement('button');
+    backToInbox.setAttribute('class', 'btn btn-comic mt-3 ml-3 mr-auto');
+    backToInbox.textContent = 'hide';
 
-        const subject = document.createElement('div');
-        subject.setAttribute('class', 'col-12 mb-2 ');
-        subject.textContent = 'Subject: ' + suggestion.subject;
-
-        const message = document.createElement('div');
-        message.setAttribute('class', 'col-12');
-        message.textContent = suggestion.message_content;
-
-        const backToInbox = document.createElement('button');
-        backToInbox.setAttribute('class', 'btn btn-comic mt-3 ml-3 mr-auto');
-        backToInbox.textContent = 'Back to Inbox';
-        backToInbox.addEventListener('click', (event) => {
-            window.location = '?route=inbox';
-        });
-
-    fullSuggestion.appendChild(fullName);
-    fullSuggestion.appendChild(date);
     fullSuggestion.appendChild(email);
-    fullSuggestion.appendChild(subject);
     fullSuggestion.appendChild(message);
-    fullSuggestion.appendChild(backToInbox);
 
     return fullSuggestion;
 };
@@ -78,7 +59,7 @@ const deleteThisSuggestion = (suggestionDiv, suggestionId) => {
                 removeAsRead(suggestionId, 'suggestion');
             })
             .fail((request, status, error) => {
-                window.alert('Unfortunately an error occurred during the deletion of this book');
+                window.alert('Unfortunately an error occurred during the deletion of this suggestion');
             })
     }
 };

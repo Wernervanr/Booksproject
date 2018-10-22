@@ -28,9 +28,9 @@ class User extends Database
 
     public function getUser($username)
     {
-        $query = "SELECT * FROM users WHERE username = :username";
+        $query = "SELECT * FROM {$this->table_name} WHERE username = :username";
         $parameters = [
-            'username' => $username,
+            'username' => $username
         ];
 
         $user = $this->getOne($query, $parameters);
@@ -38,4 +38,22 @@ class User extends Database
         return $user;
     }
 
+    public function getAllUsers()
+    {
+        $query = "SELECT * FROM {$this->table_name}";
+
+        $users = $this->getAll($query);
+
+        return $users;
+    }
+
+    public function delete($id)
+    {
+        $query = "DELETE FROM {$this->table_name} WHERE {$this->primary_key} = :id";
+        $parameters = [
+            'id' => $id
+        ];
+
+        $this->execute($query, $parameters);
+    }
 }

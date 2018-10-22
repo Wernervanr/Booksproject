@@ -4,6 +4,7 @@ use App\Controllers\Web\BookController;
 use App\Controllers\Web\LoginController;
 use App\Controllers\Web\UserController;
 use App\Controllers\Web\SuggestionController;
+use App\Controllers\Web\AdminController;
 use Dotenv\Dotenv;
 use Infrastructure\LogManager;
 
@@ -90,7 +91,9 @@ if ($route == "index") {
     $suggestionController = new SuggestionController();
     $suggestionController->listing();
 
+// Adminpage
+
 } else if ($adminProfile && $route == "admin" && $method == "GET") {
-    $bookController = new BookController();
-    $bookController->create();
+    $adminController = new AdminController();
+    $adminController->listing();
 }

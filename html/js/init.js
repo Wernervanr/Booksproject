@@ -15,6 +15,7 @@ const updateBook = (bookId, book) => {
 };
 
 const deleteBook = (bookId) => {
+    console.log(bookId);
     return $.post(env.api + '?route=delete&id=' + bookId);
 };
 
@@ -34,7 +35,7 @@ const getRecommended = () => {
     return $.get(env.api + '?route=recommended')
 };
 
-    // Contact
+    // Suggestions
 
 const getSuggestions = () => {
     return $.get(env.api + '?route=suggestions')
@@ -48,20 +49,24 @@ const deleteSuggestion = (suggestionId) => {
     return $.post(env.api + '?route=deletesuggestion&id=' + suggestionId);
 };
 
-    // End contact
+    // End suggestions
 
-    // Login and register
+    // Users
 
-        // register
+const getUsers = () => {
+    return $.get(env.api + '?route=allusers');
+};
 
 const createUser = (user) => {
     return $.post(env.api + '?route=registeruser', JSON.stringify(user));
 };
 
-        // Login
+const deleteUser = (userId) => {
+    return $.post(env.api + '?route=deleteuser&id=' + userId);
+};
 
 
-    // End login and register
+    // End Users
 
 // -- END API CALLS -- //
 

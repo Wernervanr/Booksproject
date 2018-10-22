@@ -53,7 +53,7 @@ if ($route === 'books' && $method === 'GET') {
     $bookController->getRecommendedBooks();
 
 
-    // contact
+    // suggestions
 
 } else if ($route === 'suggestions' && $method === 'GET') {
     $suggestionController = new SuggestionController();
@@ -67,15 +67,23 @@ if ($route === 'books' && $method === 'GET') {
     $suggestionController = new SuggestionController();
     $suggestionController->deleteSuggestion();
 
-    // end contact
+    // end suggestions
 
-    // register
+    // users
+
+} else if ($route === 'allusers' && $method === 'GET') {
+    $userController = new UserController();
+    $userController->getAllUsers();
 
 } else if ($route === 'registeruser' && $method === 'POST') {
-    $suggestionController = new UserController();
-    $suggestionController->createUser();
+    $userController = new UserController();
+    $userController->createUser();
 
-    // end register
+} else if ($route === 'deleteuser' && $method === 'POST') {
+    $userController = new UserController();
+    $userController->deleteUser();
+
+    // end users
 
 
 } else if ($route === 'votes') {

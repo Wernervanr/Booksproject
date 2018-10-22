@@ -25,4 +25,20 @@ class UserController extends BaseController
 
         $userModel->save($fields);
     }
+
+    public function getAllUsers() {
+        $userModel = new User();
+
+        $users = $userModel->getAllUsers();
+
+        $this->renderJson(200, $users);
+    }
+
+    public function deleteUser() {
+        $id = $_GET['id'] ?? null;
+
+        $userModel = new User();
+
+        $userModel->delete($id);
+    }
 }

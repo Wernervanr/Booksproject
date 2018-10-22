@@ -36,6 +36,10 @@ class Authentication
         session_destroy();
     }
 
+    public static function isLoggedIn() {
+        return isset($_SESSION['profile']);
+    }
+
     public static function getProfile() {
         return $_SESSION['profile'] ?? null;
     }

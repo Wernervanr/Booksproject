@@ -267,7 +267,8 @@ table .listing:hover {
   height: 315px;
 }
 
-.inboxDiv {
+.inboxDiv,
+.userListing {
   max-height: 725px;
   overflow: scroll;
 }
@@ -280,7 +281,8 @@ table .listing:hover {
   color: #ed1d24;
 }
 
-.inboxDeleteButton {
+.inboxDeleteButton,
+.userDeleteButton {
   font-size: 10px;
   border-radius: 10%;
   max-height: 20px;
@@ -311,6 +313,11 @@ table .listing:hover {
   color: #ed1d24;
   text-decoration: none;
   font-style: italic;
+}
+
+.admin-all-suggestions,
+.admin-all-users:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -21,17 +21,17 @@ $(document).ready(() => {
                     }
                     // If the target clicked is the suggestion itself.
                     else {
-                        removeChildNodes(inbox);
+                        determineIfRead(suggestion.id, constructedInboxSuggestion, 'suggestion');
 
                         const constructedSuggestion = constructFullSuggestion(suggestion);
 
-                        const suggestionDisplay = document.querySelector('.clickedsuggestion');
-                        suggestionDisplay.setAttribute('class', 'clickedsuggestion order-1 mb-3 col-12');
-                        removeChildNodes(suggestionDisplay);
-                        suggestionDisplay.appendChild(constructedSuggestion);
+                        if (constructedInboxSuggestion.childNodes.length > 4) {
+                            constructedInboxSuggestion.removeChild(constructedInboxSuggestion.lastChild);
+                        } else {
+                            constructedInboxSuggestion.appendChild(constructedSuggestion);
+                        }
 
                         saveAsRead(suggestion.id, 'suggestion');
-                        determineIfRead(suggestion.id, constructedInboxSuggestion, 'suggestion');
                     }
                 });
             });
