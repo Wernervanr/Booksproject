@@ -155,11 +155,5 @@
     </div>
 </div>
 
-<?php if ($viewModel['adminProfile']) { ?>
-    <script>let profile = 'logged in';</script>
-<?php } else {?>
-    <script>let profile = null;</script>
-<?php } ?>
-
 <script src="js/books/handlers.js"></script>
 <script src="js/homepage.js"></script>

@@ -60,9 +60,3 @@
 <script>let bookId = <?php echo $viewModel['book']['id']; ?>;</script>
 <script src="js/books/handlers.js"></script>
 <script src="js/books/detail-listing.js"></script>
-
-<?php if ($viewModel['adminProfile']) { ?>
-    <script>let loggedIn = true;</script>
-<?php } else { ?>
-    <script>let loggedIn = false;</script>
-<?php } ?>

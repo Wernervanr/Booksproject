@@ -33,6 +33,13 @@ $route = $_GET['route']??"index";
 $id = $_GET['id']??null;
 $method = $_SERVER['REQUEST_METHOD'];
 
+$adminProfile = false;
+if (isset($_SESSION['profile'])) {
+    if ($_SESSION['profile']['role'] === 'admin') {
+        $adminProfile = true;
+    }
+}
+
 // Books
 
 if ($route == "index") {
@@ -47,11 +54,11 @@ if ($route == "index") {
     $bookController = new BookController();
     $bookController->show($id);
 
-} else if ($route == "edit" && $method == "GET") {
+} else if ($adminProfile && $route == "edit" && $method == "GET") {
     $bookController = new BookController();
     $bookController->edit($id);
 
-} else if ($route == "create" && $method == "GET") {
+} else if ($adminProfile && $route == "create" && $method == "GET") {
     $bookController = new BookController();
     $bookController->create();
 
@@ -82,4 +89,8 @@ if ($route == "index") {
 }  else if ($route == 'inbox' && $method == 'GET') {
     $suggestionController = new SuggestionController();
     $suggestionController->listing();
+
+} else if ($adminProfile && $route == "admin" && $method == "GET") {
+    $bookController = new BookController();
+    $bookController->create();
 }

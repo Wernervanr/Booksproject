@@ -36,15 +36,11 @@ class Authentication
         session_destroy();
     }
 
-    public static function isLoggedIn() {
-        return isset($_SESSION['profile']);
-    }
-
     public static function getProfile() {
         return $_SESSION['profile'] ?? null;
     }
 
-    public static function getAdminProfile() {
+    public static function isAdminProfile() {
         if (isset($_SESSION['profile'])) {
             if ($_SESSION['profile']['role'] === 'admin') {
                 return true;

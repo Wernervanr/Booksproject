@@ -21,7 +21,7 @@ class BookController extends BaseController
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile(),
-            'adminProfile' => Authentication::getAdminProfile()
+            'adminProfile' => Authentication::isAdminProfile()
         ];
 
         // HOMEPAGE MOET listing ZIJN, ALLEEN TER TEST NU HOMEPAGE
@@ -36,7 +36,7 @@ class BookController extends BaseController
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile(),
-            'adminProfile' => Authentication::getAdminProfile()
+            'adminProfile' => Authentication::isAdminProfile()
         ];
 
         $this->renderWebView('/Books/listing', $viewModel);
@@ -57,7 +57,7 @@ class BookController extends BaseController
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile(),
-            'adminProfile' => Authentication::getAdminProfile(),
+            'adminProfile' => Authentication::isAdminProfile(),
             'imagePath' => $imagePath
         ];
 
@@ -74,7 +74,7 @@ class BookController extends BaseController
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile(),
-            'adminProfile' => Authentication::getAdminProfile()
+            'adminProfile' => Authentication::isAdminProfile()
         ];
 
         $this->renderWebView('/Books/update-book', $viewModel);
@@ -87,7 +87,7 @@ class BookController extends BaseController
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile(),
-            'adminProfile' => Authentication::getAdminProfile()
+            'adminProfile' => Authentication::isAdminProfile()
         ];
 
         $this->renderWebView('/Books/new-book', $viewModel);

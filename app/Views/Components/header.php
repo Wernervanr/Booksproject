@@ -47,6 +47,9 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="?route=logout">Logout</a>
                             <a class="dropdown-item" href="?route=inbox">Inbox</a>
+                            <?php if ($viewModel['adminProfile']) { ?>
+                                <a class="dropdown-item" href="?route=admin">Admin page</a>
+                            <?php } ?>
                         </div>
                     </li>
 
