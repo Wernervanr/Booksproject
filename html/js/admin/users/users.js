@@ -19,7 +19,13 @@ $(document).ready(() => {
                     }
                     // If the target clicked is the suggestion itself.
                     else {
-                        // Do something
+                        const userUpdateForm = constructUserUpdateForm(user);
+
+                        if (constructedUser.childNodes.length > 5) {
+                            constructedUser.removeChild(constructedUser.lastChild);
+                        } else {
+                            constructedUser.appendChild(userUpdateForm);
+                        }
                     }
                 });
             });

@@ -23,9 +23,7 @@ class BookController extends BaseController
             'profile' => Authentication::getProfile(),
             'adminProfile' => Authentication::isAdminProfile()
         ];
-
-        // HOMEPAGE MOET listing ZIJN, ALLEEN TER TEST NU HOMEPAGE
-
+        
         $this->renderWebView('/Books/homepage', $viewModel);
     }
 

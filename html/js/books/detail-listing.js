@@ -22,11 +22,9 @@ $(document).ready(() => {
             console.log(request);
         });
 
-    if (loggedIn === true) {
-        const deleteButton = document.getElementById('deleteBtn');
-        deleteButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            deleteThisBook(bookId);
-        });
-    }
+    const deleteButton = document.getElementById('deleteBtn');
+    deleteButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        deleteThisBook(bookId);
+    });
 });
