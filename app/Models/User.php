@@ -26,6 +26,33 @@ class User extends Database
         ", $columns);
     }
 
+    public function delete($id)
+    {
+        $query = "DELETE FROM {$this->table_name} WHERE {$this->primary_key} = :id";
+        $parameters = [
+            'id' => $id
+        ];
+
+        $this->execute($query, $parameters);
+    }
+
+    public function updateByUser($columns = [], $id = null)
+    {
+        $columns['id'] = $id;
+
+        $this->execute("
+                UPDATE {$this->table_name} SET
+                    username = :username,
+                    password = :password,
+                    first_name = :first_name,
+                    last_name = :last_name,
+                    email = :email
+                WHERE {$this->primary_key} = :id
+                ", $columns);
+    }
+
+    // Login
+
     public function getUser($username)
     {
         $query = "SELECT * FROM {$this->table_name} WHERE username = :username";
@@ -38,6 +65,8 @@ class User extends Database
         return $user;
     }
 
+    // Admin
+
     public function getAllUsers()
     {
         $query = "SELECT * FROM {$this->table_name}";
@@ -47,13 +76,16 @@ class User extends Database
         return $users;
     }
 
-    public function delete($id)
+    public function update($columns = [], $id = null)
     {
-        $query = "DELETE FROM {$this->table_name} WHERE {$this->primary_key} = :id";
-        $parameters = [
-            'id' => $id
-        ];
-
-        $this->execute($query, $parameters);
+        $columns['id'] = $id;
+        $this->execute("
+                UPDATE {$this->table_name} SET
+                    username = :username,
+                    password = :password,
+                    role = :role,
+                    email = :email
+                WHERE {$this->primary_key} = :id
+                ", $columns);
     }
 }

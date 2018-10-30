@@ -61,6 +61,14 @@ const createUser = (user) => {
     return $.post(env.api + '?route=registeruser', JSON.stringify(user));
 };
 
+const updateUserByAdmin = (updatedUser, userId) => {
+    return $.post(env.api + '?route=updateuserbyadmin&id=' + userId, JSON.stringify(updatedUser));
+};
+
+const updateUserByUser = (updatedUser, userId) => {
+    return $.post(env.api + '?route=updateuserbyuser&id=' + userId, JSON.stringify(updatedUser));
+};
+
 const deleteUser = (userId) => {
     return $.post(env.api + '?route=deleteuser&id=' + userId);
 };

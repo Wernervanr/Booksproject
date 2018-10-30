@@ -26,6 +26,30 @@ class UserController extends BaseController
         $userModel->save($fields);
     }
 
+    public function deleteUser() {
+        $id = $_GET['id'] ?? null;
+
+        $userModel = new User();
+
+        $userModel->delete($id);
+    }
+
+    public function updateUserByUser() {
+        $userModel = new User();
+
+        $user = json_decode(file_get_contents("php://input"));
+
+        $fields = [
+            'derp' => $user[0]
+        ];
+
+        $id = $_GET['id'] ?? null;
+
+        $userModel->updateByUser($fields, $id);
+    }
+
+    // Admin functions
+
     public function getAllUsers() {
         $userModel = new User();
 
@@ -34,11 +58,30 @@ class UserController extends BaseController
         $this->renderJson(200, $users);
     }
 
-    public function deleteUser() {
-        $id = $_GET['id'] ?? null;
-
+    public function updateUserByAdmin() {
         $userModel = new User();
 
-        $userModel->delete($id);
+        $user = json_decode(file_get_contents("php://input"));
+        $password = $user->password;
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        if ($password != null) {
+            $fields = [
+                'username' => $user->username,
+                'password' => $hashedPassword,
+                'role' => $user->role,
+                'email' => $user->email
+            ];
+        } else {
+            $fields = [
+                'username' => $user->username,
+                'role' => $user->role,
+                'email' => $user->email
+            ];
+        }
+
+        $id = $_GET['id'] ?? null;
+
+        $userModel->update($fields, $id);
     }
 }

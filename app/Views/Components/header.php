@@ -46,7 +46,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="?route=logout">Logout</a>
-                            <a class="dropdown-item" href="#">My profile</a>
+                            <a class="dropdown-item" href="?route=userprofile">My profile</a>
                             <?php if ($viewModel['adminProfile']) { ?>
                                 <a class="dropdown-item" href="?route=admin">Admin page</a>
                             <?php } ?>

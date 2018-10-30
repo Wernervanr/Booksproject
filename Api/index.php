@@ -79,6 +79,14 @@ if ($route === 'books' && $method === 'GET') {
     $userController = new UserController();
     $userController->createUser();
 
+} else if ($route === 'updateuserbyadmin' && $method === 'POST') {
+    $userController = new UserController();
+    $userController->updateUserByAdmin();
+
+} else if ($route === 'updateuserbyuser' && $method === 'POST') {
+    $userController = new UserController();
+    $userController->updateUserByUser();
+
 } else if ($route === 'deleteuser' && $method === 'POST') {
     $userController = new UserController();
     $userController->deleteUser();

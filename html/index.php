@@ -3,7 +3,6 @@
 use App\Controllers\Web\BookController;
 use App\Controllers\Web\LoginController;
 use App\Controllers\Web\UserController;
-use App\Controllers\Web\SuggestionController;
 use App\Controllers\Web\AdminController;
 use Dotenv\Dotenv;
 use Infrastructure\LogManager;
@@ -85,11 +84,9 @@ if ($route == "index") {
     $loginController = new UserController();
     $loginController->register();
 
-// Suggestions
-
-}  else if ($route == 'inbox' && $method == 'GET') {
-    $suggestionController = new SuggestionController();
-    $suggestionController->listing();
+} else if ($route == "userprofile" && $method == 'GET') {
+    $loginController = new UserController();
+    $loginController->userProfile();
 
 // Adminpage
 

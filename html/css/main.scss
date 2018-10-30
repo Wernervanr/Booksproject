@@ -305,7 +305,10 @@ table {
 
 .inboxDeleteButton,
 .userDeleteButton,
-.userSaveButton {
+.userSaveButton,
+.userSubmitButton,
+.userHideButton,
+.changeDetailsButton {
   font-size: 10px;
   border-radius: 10%;
   max-height: 20px;
