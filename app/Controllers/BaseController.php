@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Controllers\Web\LoginController;
+
 abstract class BaseController
 {
     private $errors = [];
@@ -52,6 +54,13 @@ abstract class BaseController
 
     public function renderWebView(string $view, array $viewModel) : void
     {
+        $viewModel['errors'] = $this->getErrors();
+        $viewModel['messages'] = $this->getMessages();
+        $viewModel['profile'] = LoginController::getProfile();
+        $viewModel['adminProfile'] = LoginController::isAdminProfile();
+
+        // Bovenstaande kan uit alle controllers verwijderd worden.
+
         include __DIR__ . '/../../app/Views/layout.php';
     }
 

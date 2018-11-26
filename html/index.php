@@ -6,6 +6,7 @@ use App\Controllers\Web\UserController;
 use App\Controllers\Web\AdminController;
 use Dotenv\Dotenv;
 use Infrastructure\LogManager;
+use Repositories\UserRepository;
 
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -69,24 +70,27 @@ if ($route == "index") {
 // Login
 
 } else if ($route == "login" && $method == 'GET') {
-    $loginController = new LoginController();
+    $userRepository = new UserRepository();
+    $loginController = new LoginController($userRepository);
     $loginController->show();
 
 } else if ($route == "login" && $method == 'POST') {
-    $loginController = new LoginController();
+    $userRepository = new UserRepository();
+    $loginController = new LoginController($userRepository);
     $loginController->login();
 
 }  else if ($route == 'logout') {
-    $loginController = new LoginController();
+    $userRepository = new UserRepository();
+    $loginController = new LoginController($userRepository);
     $loginController->logout();
 
 } else if ($route == "register" && $method == 'GET') {
-    $loginController = new UserController();
-    $loginController->register();
+    $userController = new UserController();
+    $userController->register();
 
 } else if ($route == "userprofile" && $method == 'GET') {
-    $loginController = new UserController();
-    $loginController->userProfile();
+    $userController = new UserController();
+    $userController->userProfile();
 
 // Adminpage
 

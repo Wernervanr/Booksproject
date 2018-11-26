@@ -3,10 +3,23 @@
 namespace App\Controllers\Web;
 
 use App\Controllers\BaseController;
+use App\Models\Entities\User;
+use App\Models\Interfaces\UserRepositoryInterface;
 use Infrastructure\Authentication;
 
 class LoginController extends BaseController
 {
+
+    private $userRepository;
+
+    public function __construct(UserRepositoryInterface $userRepository)
+    {
+        parent::__construct();
+
+        $this->userRepository = $userRepository;
+    }
+
+
     public function show() : void
     {
         $viewModel = [
@@ -24,7 +37,19 @@ class LoginController extends BaseController
         $username = $_POST['username'] ?? '';
         $password = $_POST['password'] ?? '';
 
-        if (Authentication::login($username,$password)) {
+        /** @var User $user */
+        $user = $this->userRepository->login($username, $password);
+
+        if ($user) {
+            $_SESSION['profile'] = array
+            (
+                'userId' => $user->getId(),
+                'userName' => $user->getEmail(),
+                'userFirstName' => $user->getFirstName(),
+                'userLastName' => $user->getLastName(),
+                'userFullName' => $user->getFullName()
+            );
+
             header('Location: ?route=index');
         }
         else {
